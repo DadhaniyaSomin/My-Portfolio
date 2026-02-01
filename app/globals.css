@@ -280,3 +280,20 @@ html {
 .custom-inset-shadow {
   box-shadow: rgba(165, 174, 184, 0.32) 0px 2px 1.5px 0px inset;
 }
+
+/* Instant Logo Switching Utilities */
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+.dark .logo-light {
+  display: none;
+}
+
+.dark .logo-dark {
+  display: block;
+}

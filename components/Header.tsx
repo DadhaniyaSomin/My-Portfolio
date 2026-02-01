@@ -59,18 +59,23 @@ export const Header = () => {
   ]
 
   return (
-    <header className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "top-2" : ""}`}>
+    <header className={`fixed top-3 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "top-1" : ""}`}>
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="bg-background/50 dark:bg-slate-900/50 backdrop-blur-xl border border-border dark:border-white/10 rounded-2xl px-6 py-4 flex items-center justify-between">
+        <div className="bg-background/60 dark:bg-slate-900/60 backdrop-blur-xl border border-border dark:border-white/10 rounded-xl px-5 py-2.5 flex items-center justify-between shadow-sm">
 
           <div className="flex items-center justify-between w-full relative">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <div className="relative w-10 h-10 flex items-center justify-center">
+              <div className="relative w-9 h-9 flex items-center justify-center">
                 <img
-                  src={mounted && (theme === "light" || resolvedTheme === "light") ? "/logo-dark.png" : "/logo.png"}
+                  src="/logo-dark.png"
                   alt="TP Logo"
-                  className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  className="logo-light w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
+                <img
+                  src="/logo.png"
+                  alt="TP Logo"
+                  className="logo-dark w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
             </Link>
@@ -85,7 +90,7 @@ export const Header = () => {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="relative px-4 py-2 text-sm font-semibold transition-colors"
+                      className="relative px-3.5 py-2 text-sm font-semibold transition-colors"
                       onMouseEnter={() => setHoveredPath(item.href)}
                       onMouseLeave={() => setHoveredPath(null)}
                     >
@@ -97,7 +102,7 @@ export const Header = () => {
                       {/* Simple Bottom Border on Hover Only */}
                       {item.href === hoveredPath && (
                         <motion.div
-                          className="absolute -bottom-[21px] left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8),0_0_5px_rgba(59,130,246,0.8)]"
+                          className="absolute -bottom-[16px] left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8),0_0_5px_rgba(59,130,246,0.8)]"
                           layoutId="navbar-underline"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}

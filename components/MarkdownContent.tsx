@@ -268,6 +268,16 @@ function ListItem({ children }: { children?: React.ReactNode }) {
 
 // Paragraph component
 function Paragraph({ children }: { children?: React.ReactNode }) {
+    // Detect if children is just an image (or our RoundedImage component)
+    // to avoid the "In HTML, <figcaption> cannot be a descendant of <p>" error.
+    const hasImage = React.Children.toArray(children).some((child: any) =>
+        child?.type?.displayName === "RoundedImage" || child?.props?.src || child?.type === "img" || (child?.props?.node?.tagName === "img")
+    );
+
+    if (hasImage) {
+        return <div className="mb-6">{children}</div>;
+    }
+
     return <p className="mb-6 text-[17px] md:text-lg leading-7 text-foreground/80">{children}</p>;
 }
 
