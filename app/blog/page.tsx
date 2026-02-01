@@ -23,14 +23,14 @@ export default async function BlogListPage() {
     const posts: BlogPost[] = await getPosts()
 
     return (
-        <div className="min-h-screen bg-black text-white pt-32 pb-20">
+        <div className="min-h-screen bg-background text-foreground pt-32 pb-20 transition-colors duration-300">
             <div className="container mx-auto max-w-6xl">
 
                 <div className="text-center mb-16">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white uppercase tracking-tight">
+                    <h1 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
                         Blogs
                     </h1>
-                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                         Thoughts, tutorials, and insights about web & mobile development
                     </p>
                 </div>
@@ -41,8 +41,8 @@ export default async function BlogListPage() {
             </div>
 
             {/* background glow */}
-            <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-purple-600/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 -z-10" />
-            <div className="fixed bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 -z-10" />
+            <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 -z-10" />
+            <div className="fixed bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 -z-10" />
         </div>
     )
 }

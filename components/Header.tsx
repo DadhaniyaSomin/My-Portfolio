@@ -5,12 +5,20 @@ import { Menu, X, Github, Linkedin, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { ThemeToggle } from "./ThemeToggle"
+import { useTheme } from "next-themes"
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [hoveredPath, setHoveredPath] = useState<string | null>(null)
   const [activeSection, setActiveSection] = useState('')
+  const [mounted, setMounted] = useState(false)
+  const { theme, resolvedTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,14 +61,14 @@ export const Header = () => {
   return (
     <header className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "top-2" : ""}`}>
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-4 flex items-center justify-between">
+        <div className="bg-background/50 dark:bg-slate-900/50 backdrop-blur-xl border border-border dark:border-white/10 rounded-2xl px-6 py-4 flex items-center justify-between">
 
           <div className="flex items-center justify-between w-full relative">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <div className="relative w-10 h-10 flex items-center justify-center">
                 <img
-                  src="/logo.png"
+                  src={mounted && (theme === "light" || resolvedTheme === "light") ? "/logo-dark.png" : "/logo.png"}
                   alt="TP Logo"
                   className="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
@@ -81,7 +89,7 @@ export const Header = () => {
                       onMouseEnter={() => setHoveredPath(item.href)}
                       onMouseLeave={() => setHoveredPath(null)}
                     >
-                      <span className={`relative z-10 transition-colors duration-300 ${isActive ? 'text-white' : 'text-white/70 hover:text-white'
+                      <span className={`relative z-10 transition-colors duration-300 ${isActive ? 'text-foreground' : 'text-foreground/70 hover:text-foreground'
                         }`}>
                         {item.name}
                       </span>
@@ -113,7 +121,7 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white/70 hover:text-white hover:bg-white/10"
+                  className="text-foreground/70 hover:text-foreground hover:bg-muted"
                 >
                   <Github className="h-5 w-5" />
                 </Button>
@@ -126,7 +134,7 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white/70 hover:text-white hover:bg-white/10"
+                  className="text-foreground/70 hover:text-foreground hover:bg-muted"
                 >
                   <Linkedin className="h-5 w-5" />
                 </Button>
@@ -139,23 +147,27 @@ export const Header = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white/70 hover:text-white hover:bg-white/10"
+                  className="text-foreground/70 hover:text-foreground hover:bg-muted"
                 >
                   <Instagram className="h-5 w-5" />
                 </Button>
               </a>
+              <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-white flex-shrink-0 ml-4"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+          <div className="flex items-center md:hidden">
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-foreground flex-shrink-0 ml-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -164,14 +176,14 @@ export const Header = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden mt-2 bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-2xl p-4"
+            className="md:hidden mt-2 bg-background/90 backdrop-blur-xl border border-border rounded-2xl p-4"
           >
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-3 text-white/70 hover:text-white hover:bg-white/10 rounded-xl transition-colors font-medium text-sm"
+                  className="px-4 py-3 text-foreground/70 hover:text-foreground hover:bg-muted rounded-xl transition-colors font-medium text-sm"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

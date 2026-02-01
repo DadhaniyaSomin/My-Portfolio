@@ -31,15 +31,15 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
   }, [initialPosts])
 
   return (
-    <section id="blog" className="py-20 bg-black">
+    <section id="blog" className="py-20 bg-background transition-colors duration-300">
       <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
             Latest Blogs
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Thoughts, tutorials, and insights about web & mobile development
           </p>
         </div>
@@ -66,7 +66,7 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
             <div className="flex justify-center mt-16">
               <Link
                 href="/blog"
-                className="flex gap-2 items-center text-zinc-500 hover:text-white group"
+                className="flex gap-2 items-center text-muted-foreground hover:text-foreground group transition-colors"
               >
                 <span className="text-lg font-medium">View more blogs</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

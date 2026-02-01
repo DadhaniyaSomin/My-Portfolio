@@ -59,27 +59,27 @@ export const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-black relative flex items-center justify-center w-full overflow-hidden">
+    <section id="contact" className="py-20 bg-background relative flex items-center justify-center w-full overflow-hidden transition-colors duration-300">
       {/* Grid Background */}
       <div
         className="absolute inset-0 h-full w-full pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(to right, #262626 1px, transparent 1px), linear-gradient(to bottom, #262626 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(to right, hsl(var(--foreground) / 0.1) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--foreground) / 0.1) 1px, transparent 1px)`,
           backgroundSize: "40px 40px",
         }}
       />
       {/* Radial gradient mask */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      {/* Bottom Fade Gradient (white color slightly low as requested) - Adjusted to be subtle and bottom-to-top */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/5 to-transparent z-0"></div>
+      {/* Bottom Fade Gradient */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-primary/5 to-transparent z-0"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
             Get In Touch
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             If you have any queries regarding my academic projects or would like to discuss them with me, please feel free to reach out!
           </p>
         </div>
@@ -88,7 +88,7 @@ export const ContactSection = () => {
           {/* Contact Info */}
           <div className="space-y-8 h-full">
             <CardWithCorners className="p-4 md:p-8 h-full">
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Let's Connect</h3>
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -96,8 +96,8 @@ export const ContactSection = () => {
                     <Mail className="h-6 w-6 text-[#ffd074]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-white font-medium">Email</p>
-                    <p className="text-white/60 break-all">pankhaniyatushar9@gmail.com</p>
+                    <p className="text-foreground font-medium">Email</p>
+                    <p className="text-muted-foreground break-all">pankhaniyatushar9@gmail.com</p>
                   </div>
                 </div>
 
@@ -106,8 +106,8 @@ export const ContactSection = () => {
                     <Phone className="h-6 w-6 text-[#b087ff]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-white font-medium">Phone</p>
-                    <p className="text-white/60">+91 9313346569</p>
+                    <p className="text-foreground font-medium">Phone</p>
+                    <p className="text-muted-foreground">+91 9313346569</p>
                   </div>
                 </div>
 
@@ -116,24 +116,24 @@ export const ContactSection = () => {
                     <MapPin className="h-6 w-6 text-[#ffd074]" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-white font-medium">Location</p>
-                    <p className="text-white/60">Anand, Gujarat, India</p>
+                    <p className="text-foreground font-medium">Location</p>
+                    <p className="text-muted-foreground">Anand, Gujarat, India</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <p className="text-white font-medium mb-4">Follow Me</p>
+              <div className="mt-8 pt-8 border-t border-border">
+                <p className="text-foreground font-medium mb-4">Follow Me</p>
                 <div className="flex space-x-4">
                   {/* TODO: Replace with your actual social media links */}
-                  <a href="https://github.com/tushar-2223" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                    <Github className="h-5 w-5 text-white" />
+                  <a href="https://github.com/tushar-2223" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all">
+                    <Github className="h-5 w-5 text-foreground" />
                   </a>
-                  <a href="https://www.linkedin.com/in/tushar2223" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                    <Linkedin className="h-5 w-5 text-white" />
+                  <a href="https://www.linkedin.com/in/tushar2223" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all">
+                    <Linkedin className="h-5 w-5 text-foreground" />
                   </a>
-                  <a href="https://www.instagram.com/tushar.p_22/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">
-                    <Instagram className="h-5 w-5 text-white" />
+                  <a href="https://www.instagram.com/tushar.p_22/" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all">
+                    <Instagram className="h-5 w-5 text-foreground" />
                   </a>
                 </div>
               </div>
@@ -143,12 +143,12 @@ export const ContactSection = () => {
           {/* Contact Form */}
           <div className="h-full">
             <CardWithCorners className="p-4 md:p-8 h-full">
-              <h3 className="text-2xl font-bold text-white mb-6">Send Message</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Send Message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-white/80 mb-2">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-foreground/80 mb-2">
                       First Name
                     </label>
                     <Input
@@ -158,13 +158,13 @@ export const ContactSection = () => {
                       value={formData.firstName}
                       onChange={handleChange}
                       placeholder="John"
-                      className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-[#ffd074] focus:ring-[#ffd074]/20"
+                      className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                       required
                       disabled={isSubmitting}
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-white/80 mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-foreground/80 mb-2">
                       Last Name
                     </label>
                     <Input
@@ -174,7 +174,7 @@ export const ContactSection = () => {
                       value={formData.lastName}
                       onChange={handleChange}
                       placeholder="Doe"
-                      className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-[#ffd074] focus:ring-[#ffd074]/20"
+                      className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                       required
                       disabled={isSubmitting}
                     />
@@ -182,7 +182,7 @@ export const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-2">
                     Email
                   </label>
                   <Input
@@ -192,14 +192,14 @@ export const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-[#b087ff] focus:ring-[#b087ff]/20"
+                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-[#b087ff] focus:ring-[#b087ff]/20"
                     required
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-2">
                     Subject
                   </label>
                   <Input
@@ -209,14 +209,14 @@ export const ContactSection = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Academic Project Inquiry"
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-[#ffd074] focus:ring-[#ffd074]/20"
+                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-[#ffd074] focus:ring-[#ffd074]/20"
                     required
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-2">
                     Message
                   </label>
                   <Textarea
@@ -226,7 +226,7 @@ export const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your query or project..."
                     rows={5}
-                    className="bg-white/5 border-white/20 text-white placeholder:text-white/40 focus:border-[#b087ff] focus:ring-[#b087ff]/20 resize-none"
+                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-[#b087ff] focus:ring-[#b087ff]/20 resize-none"
                     required
                     disabled={isSubmitting}
                   />
@@ -244,11 +244,11 @@ export const ContactSection = () => {
             </CardWithCorners>
           </div>
         </div>
-        <div className="mt-20 pt-8 border-t border-white/10 text-center">
-          <p className="text-gray-500">
+        <div className="mt-20 pt-8 border-t border-border text-center">
+          <p className="text-muted-foreground">
             &copy; {new Date().getFullYear()} Tushar Pankhaniya. All rights reserved.
           </p>
-          <p className="text-gray-600 mt-2">
+          <p className="text-muted-foreground/60 mt-2">
             Made with ❤️ and lots of ☕
           </p>
         </div>

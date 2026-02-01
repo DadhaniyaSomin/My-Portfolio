@@ -26,7 +26,7 @@ export function BlogCard({ post }: Props) {
         <div className="space-y-4">
 
           {/* Date + Author */}
-          <div className="flex items-center justify-between text-sm text-white/50">
+          <div className="flex items-center justify-between text-sm text-muted-foreground">
 
             <span className="flex gap-1 items-center">
               <Calendar className="h-4 w-4" />
@@ -41,12 +41,12 @@ export function BlogCard({ post }: Props) {
           </div>
 
           {/* Title – 2 lines */}
-          <h3 className="text-xl font-bold group-hover:text-blue-400 transition line-clamp-2">
+          <h3 className="text-xl font-bold group-hover:text-primary transition line-clamp-2">
             {post.title}
           </h3>
 
           {/* Summary – 1 line */}
-          <p className="text-white/70 text-sm line-clamp-1">
+          <p className="text-foreground/70 text-sm line-clamp-1">
             {post.summary}
           </p>
 
@@ -55,7 +55,7 @@ export function BlogCard({ post }: Props) {
             {post.tags.slice(0, 3).map(tag => (
               <Badge
                 key={tag}
-                className="bg-white/10 border border-white/20 text-xs text-white/80"
+                className="bg-muted border border-border text-xs text-foreground/80 shadow-none hover:bg-muted"
               >
                 {tag}
               </Badge>

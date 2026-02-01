@@ -56,7 +56,7 @@ const Index = async () => {
   const { blogs, projects } = await getInitialData()
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />

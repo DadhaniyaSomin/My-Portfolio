@@ -63,7 +63,7 @@ export default async function BlogDetailPage({
   const { post, content } = data
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-300">
 
       {/* HERO */}
       <div className="relative min-h-[60vh] flex flex-col justify-end pb-8">
@@ -71,22 +71,22 @@ export default async function BlogDetailPage({
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${post.coverImage})` }}
         >
-          <div className="absolute inset-0 bg-black/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         </div>
 
         <div className="relative z-10 container mx-auto max-w-6xl">
 
-          <Link href="/blog" className="flex items-center gap-2 text-white/70 mb-5">
+          <Link href="/blog" className="flex items-center gap-2 text-foreground/70 mb-5 hover:text-foreground transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </Link>
 
           <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
 
-          <p className="text-white/70 mb-6">{post.summary}</p>
+          <p className="text-foreground/70 mb-6">{post.summary}</p>
 
-          <div className="flex gap-4 text-sm text-white/60">
+          <div className="flex gap-4 text-sm text-foreground/60">
 
             <span className="flex gap-1 items-center">
               <Clock className="w-4 h-4" />
@@ -105,7 +105,7 @@ export default async function BlogDetailPage({
 
       {/* DIVIDER */}
       <div className="container mx-auto max-w-6xl py-4">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
       {/* CONTENT */}

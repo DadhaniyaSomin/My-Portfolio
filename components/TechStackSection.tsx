@@ -70,13 +70,13 @@ export const TechStackSection = () => {
   ];
 
   return (
-    <section id="tech" className="py-20 md:px-6 bg-black">
+    <section id="tech" className="py-20 md:px-6 bg-background transition-colors duration-300">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
             Tech Stack
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Technologies I use to build seamless experiences
           </p>
         </div>
@@ -84,7 +84,7 @@ export const TechStackSection = () => {
         <div className="space-y-12">
           {categories.map((category, catIndex) => (
             <div key={catIndex} className="flex flex-col items-center">
-              <h3 className="text-xl md:text-2xl font-semibold text-white/90 mb-8 tracking-wide">
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground/90 mb-8 tracking-wide">
                 {category.title}
               </h3>
 
@@ -99,12 +99,12 @@ export const TechStackSection = () => {
                       rel="noopener noreferrer"
                       className="group inline-block text-center cursor-pointer"
                     >
-                      <div className={`h-20 w-20 md:h-24 md:w-24 rounded-[20px] border border-zinc-800 bg-zinc-900/50 p-2 transition-all duration-500 group-hover:-translate-y-3 ${category.hoverClass}`}>
-                        <div className="grid h-full place-items-center rounded-xl border border-white/5 bg-zinc-800/50 shadow-inner">
-                          <IconComponent className="w-10 h-10 text-white/70 group-hover:text-white transition-colors duration-300 group-hover:scale-110" />
+                      <div className={`h-20 w-20 md:h-24 md:w-24 rounded-[20px] border border-border bg-muted/50 p-2 transition-all duration-500 group-hover:-translate-y-3 ${category.hoverClass}`}>
+                        <div className="grid h-full place-items-center rounded-xl border border-border bg-muted shadow-inner">
+                          <IconComponent className="w-10 h-10 text-foreground/70 group-hover:text-foreground transition-colors duration-300 group-hover:scale-110" />
                         </div>
                       </div>
-                      <p className="mt-3 text-sm text-gray-500 group-hover:text-gray-300 transition-colors duration-300 font-medium">
+                      <p className="mt-3 text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300 font-medium">
                         {tech.name}
                       </p>
                     </a>

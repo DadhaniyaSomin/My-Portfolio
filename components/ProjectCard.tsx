@@ -15,23 +15,23 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group relative transition-all ease-in-out h-full">
       {/* Back layer (purple) - positioned first so it's behind */}
-      <div className="absolute h-full w-full left-1.5 top-1.5 group-hover:left-2 group-hover:top-2 bg-zinc-900 group-hover:bg-[#b087ff] border border-zinc-700 group-hover:border-zinc-500 rounded-2xl transition-all ease-in-out shadow-xl group-hover:shadow-2xl"></div>
+      <div className="absolute h-full w-full left-1.5 top-1.5 group-hover:left-2 group-hover:top-2 bg-muted group-hover:bg-[#b087ff] border border-border group-hover:border-slate-500 rounded-2xl transition-all ease-in-out shadow-xl group-hover:shadow-2xl"></div>
 
       {/* Middle layer (yellow) */}
-      <div className="absolute h-full w-full left-0 top-0 bg-zinc-900 group-hover:bg-[#ffd074] border border-zinc-700 rounded-2xl transition-all ease-in-out"></div>
+      <div className="absolute h-full w-full left-0 top-0 bg-muted group-hover:bg-[#ffd074] border border-border rounded-2xl transition-all ease-in-out"></div>
 
       {/* Main card - on top */}
       <button
         type="button"
-        className="relative flex justify-between px-6 md:px-8 rounded-2xl h-auto min-h-32 py-4 items-center bg-zinc-900 border border-zinc-700 hover:border-zinc-600 top-0 left-0 group-hover:-top-2 group-hover:-left-2 transition-all ease-in-out w-full shadow-lg hover:shadow-xl"
+        className="relative flex justify-between px-6 md:px-8 rounded-2xl h-auto min-h-32 py-4 items-center bg-card border border-border hover:border-slate-400 dark:hover:border-zinc-600 top-0 left-0 group-hover:-top-2 group-hover:-left-2 transition-all ease-in-out w-full shadow-lg hover:shadow-xl"
         onClick={() => window.open(`https://${project.url}`, "_blank")}
       >
         <div className="flex flex-col gap-2 text-start relative pr-2 min-w-0 flex-1">
           <div className="flex flex-col gap-0.5 min-w-0">
-            <p className="text-lg md:text-xl font-bold text-white leading-tight group-hover:text-white transition-colors truncate">
+            <p className="text-lg md:text-xl font-bold text-foreground leading-tight group-hover:text-black dark:group-hover:text-white transition-colors truncate">
               {project.title}
             </p>
-            <p className="text-xs md:text-sm text-zinc-400 group-hover:text-blue-400 overflow-hidden whitespace-nowrap truncate transition-colors">
+            <p className="text-xs md:text-sm text-muted-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 overflow-hidden whitespace-nowrap truncate transition-colors">
               {project.url}
             </p>
           </div>
@@ -58,7 +58,7 @@ function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
 
-        <ExternalLink className="w-5 h-5 md:w-6 md:h-6 text-zinc-500 group-hover:text-white transition-colors flex-shrink-0 ml-2" />
+        <ExternalLink className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-black dark:group-hover:text-white transition-colors flex-shrink-0 ml-2" />
       </button>
     </div>
   )

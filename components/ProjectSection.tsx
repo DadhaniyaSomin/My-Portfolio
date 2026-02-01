@@ -82,22 +82,22 @@ const ProjectSection = ({ initialProjects }: { initialProjects?: Project[] }) =>
   }, [initialProjects]);
 
   return (
-    <section id="projects" className="py-20  relative overflow-hidden">
+    <section id="projects" className="py-20 bg-background relative overflow-hidden transition-colors duration-300">
       <AnimatedDotBackground />
       <div className="container mx-auto max-w-6xl relative z-10">
         {/* Header section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white uppercase tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
             ACADEMIC PROJECTS
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A collection of tools and applications I've built to solve real-world problems
           </p>
         </div>
 
         {loading ? (
           <div className="flex justify-center items-center min-h-[200px]">
-            <Loader2 className="w-8 h-8 text-white animate-spin" />
+            <Loader2 className="w-8 h-8 text-foreground animate-spin" />
           </div>
         ) : (
           <div className="flex flex-wrap gap-6 md:gap-10 lg:gap-10 xl:gap-16 justify-center w-full">
@@ -114,7 +114,7 @@ const ProjectSection = ({ initialProjects }: { initialProjects?: Project[] }) =>
             href="https://github.com/tushar-2223"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-2 justify-center items-center text-zinc-500 hover:text-white transition-all ease-linear group"
+            className="flex gap-2 justify-center items-center text-muted-foreground hover:text-foreground transition-all ease-linear group"
             aria-label="Visit GitHub to see more projects"
           >
             <span className="text-lg font-medium">Visit GitHub to see More</span>

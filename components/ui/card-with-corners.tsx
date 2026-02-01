@@ -7,14 +7,14 @@ const CardWithCorners = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HT
   ({ className, children, ...props }, ref) => (
     <div
       ref={ref}
-      className={cn("relative border border-white/[0.2] bg-black/50 backdrop-blur-sm rounded-lg p-6", className)}
+      className={cn("relative border border-border bg-muted/30 backdrop-blur-sm rounded-lg p-6", className)}
       {...props}
     >
       {/* Corner Icons */}
-      <CornerIcon className="absolute h-6 w-6 -top-2 -left-2 md:-top-3 md:-left-3 text-white" />
-      <CornerIcon className="absolute h-6 w-6 -bottom-2 -left-2 md:-bottom-3 md:-left-3 text-white" />
-      <CornerIcon className="absolute h-6 w-6 -top-2 -right-2 md:-top-3 md:-right-3 text-white" />
-      <CornerIcon className="absolute h-6 w-6 -bottom-2 -right-2 md:-bottom-3 md:-right-3 text-white" />
+      <CornerIcon className="absolute h-6 w-6 -top-2 -left-2 md:-top-3 md:-left-3 text-foreground" />
+      <CornerIcon className="absolute h-6 w-6 -bottom-2 -left-2 md:-bottom-3 md:-left-3 text-foreground" />
+      <CornerIcon className="absolute h-6 w-6 -top-2 -right-2 md:-top-3 md:-right-3 text-foreground" />
+      <CornerIcon className="absolute h-6 w-6 -bottom-2 -right-2 md:-bottom-3 md:-right-3 text-foreground" />
 
       {children}
     </div>

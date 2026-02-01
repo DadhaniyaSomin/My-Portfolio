@@ -1,9 +1,9 @@
 export function BlogCardSkeleton() {
   return (
-    <div className="group border border-white/10 rounded-2xl overflow-hidden bg-white/5 backdrop-blur h-full flex flex-col">
+    <div className="group border border-border rounded-2xl overflow-hidden bg-muted/30 backdrop-blur h-full flex flex-col transition-colors duration-300">
       {/* Image Skeleton */}
-      <div className="relative w-full h-48 overflow-hidden bg-white/5">
-        <div className="w-full h-full bg-gradient-to-r from-white/5 via-white/10 to-white/5 animate-shimmer" />
+      <div className="relative w-full h-48 overflow-hidden bg-muted">
+        <div className="w-full h-full bg-gradient-to-r from-muted via-muted/80 to-muted animate-shimmer" />
       </div>
 
       {/* Content */}
