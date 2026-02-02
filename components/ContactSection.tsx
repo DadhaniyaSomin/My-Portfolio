@@ -1,12 +1,13 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { CardWithCorners } from "@/components/ui/card-with-corners"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Loader2, Instagram } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Loader2, Instagram, Heart } from "lucide-react"
+import { motion } from "framer-motion"
 import { toast } from "sonner"
 
 export const ContactSection = () => {
@@ -18,6 +19,20 @@ export const ContactSection = () => {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [visitorCount, setVisitorCount] = useState<number | null>(null)
+
+  useEffect(() => {
+    const fetchCount = async () => {
+      try {
+        const response = await fetch("https://api.counterapi.dev/v1/tusharpankhaniya/visits/up")
+        const data = await response.json()
+        setVisitorCount(data.count)
+      } catch (error) {
+        console.error("Error fetching visitor count:", error)
+      }
+    }
+    fetchCount()
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -59,7 +74,7 @@ export const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-background relative flex items-center justify-center w-full overflow-hidden transition-colors duration-300">
+    <section id="contact" className="pt-20 pb-10 bg-background relative flex items-center justify-center w-full overflow-hidden transition-colors duration-300">
       {/* Grid Background */}
       <div
         className="absolute inset-0 h-full w-full pointer-events-none"
@@ -84,7 +99,7 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Contact Info */}
           <div className="space-y-8 h-full">
             <CardWithCorners className="p-4 md:p-8 h-full">
@@ -242,6 +257,48 @@ export const ContactSection = () => {
                 </Button>
               </form>
             </CardWithCorners>
+          </div>
+        </div>
+
+        {/* Integrated Footer */}
+        <div className="mt-12 w-full px-4">
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-border/60 to-transparent mb-8" />
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-0">
+            <p className="text-muted-foreground text-sm order-2 md:order-1">
+              © 2026 Tushar Pankhaniya. All rights reserved.
+            </p>
+
+            <div className="flex flex-col md:flex-row items-center gap-6 order-1 md:order-2">
+              {visitorCount !== null && (
+                <div className="flex items-center bg-foreground/5 dark:bg-white/5 backdrop-blur-md border border-border dark:border-white/10 px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.05)] group hover:border-emerald-500/40 transition-all duration-500">
+                  <div className="relative flex h-2 w-2 mr-3">
+                    <motion.span
+                      animate={{
+                        scale: [1, 2.2, 1],
+                        opacity: [0.6, 0, 0.6],
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
+                    />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.9)]" />
+                  </div>
+                  <span className="text-foreground dark:text-white/90 font-medium tracking-tight whitespace-nowrap">
+                    {visitorCount.toLocaleString()} <span className="text-muted-foreground dark:text-white/30 ml-1 font-normal text-xs uppercase tracking-widest">visitors</span>
+                  </span>
+                </div>
+              )}
+
+              <div className="flex items-center text-muted-foreground text-sm">
+                <span>Made with</span>
+                <Heart className="h-4 w-4 text-red-500 mx-2 fill-current" />
+                <span>and lots of coffee</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
