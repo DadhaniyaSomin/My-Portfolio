@@ -244,14 +244,6 @@ export const ContactSection = () => {
             </CardWithCorners>
           </div>
         </div>
-        <div className="mt-20 pt-8 border-t border-border text-center">
-          <p className="text-muted-foreground">
-            &copy; {new Date().getFullYear()} Tushar Pankhaniya. All rights reserved.
-          </p>
-          <p className="text-muted-foreground/60 mt-2">
-            Made with ❤️ and lots of ☕
-          </p>
-        </div>
       </div>
     </section>
   )

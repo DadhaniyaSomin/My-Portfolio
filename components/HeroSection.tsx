@@ -14,7 +14,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-2xl text-foreground/70 mb-10 max-w-2xl mx-auto leading-relaxed font-light font-[family-name:var(--font-geist-sans)] px-4">
-            I am a mobile application developer with 1+ year experience building cool applications with React Native and Flutter.
+            I am a mobile application developer with 2+ years of experience building cool applications with React Native and Flutter.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 px-4">

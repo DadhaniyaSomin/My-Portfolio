@@ -6,8 +6,9 @@ import { Providers } from "@/components/providers"
 import { Header } from "@/components/Header"
 import { PageTransition } from "@/components/PageTransition"
 import { Toaster } from "@/components/ui/sonner"
-import { GoogleAnalytics } from "@next/third-parties/google"
+// import { GoogleAnalytics } from "@next/third-parties/google"
 import { ContactSection } from "@/components/ContactSection"
+import { Footer } from "@/components/Footer"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -52,9 +53,10 @@ export default function RootLayout({
             {children}
           </PageTransition>
           <ContactSection />
+          <Footer />
           <Toaster />
         </Providers>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+        {/* <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} /> */}
         <Analytics />
         <SpeedInsights />
       </body>

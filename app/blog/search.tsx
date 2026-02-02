@@ -23,7 +23,7 @@ export default function BlogSearch({ posts }: { posts: BlogPost[] }) {
           placeholder="Search blogs by title, summary, or tags..."
           value={query}
           onChange={e => setQuery(e.target.value)}
-          className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-purple-500/50"
+          className="w-full bg-muted/50 border border-border rounded-2xl py-4 pl-12 pr-4 text-foreground focus:outline-none focus:border-primary/50 transition-colors duration-300"
         />
       </div>
 
