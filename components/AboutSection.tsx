@@ -35,13 +35,13 @@ export const AboutSection = () => {
 
                                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
                                     <p>
-                                        I am a Mobile App Developer specializing in React Native and Flutter with experience building scalable, high-performance cross-platform applications. With over 2 years of professional experience, I’ve worked on developing apps with seamless UI/UX, smooth performance, and robust integrations.
+                                        I am a mobile app developer specializing in React Native and Flutter, building scalable, high-performance cross-platform applications. With 2+ years of professional experience, I focus on polished UI/UX, smooth performance, and reliable integrations.
                                     </p>
                                     <p>
-                                        At WebMobTech Solutions, I design and develop mobile applications with a focus on clean architecture, efficient state management (RxDart, Redux), and smooth deployment on both Android and iOS platforms.
+                                        At WebMobTech Solutions, I design and deliver mobile applications with clean architecture and efficient state management (RxDart, Redux), targeting both Android and iOS.
                                     </p>
                                     <p>
-                                        I am always exploring the latest in mobile technologies, such as AI-powered mobile apps and cross-platform architecture, to create impactful user experiences.
+                                        I explore AI-powered mobile experiences and modern cross-platform architecture to create impactful products. I also use tools like Claude Code, Codex, Antigravity, and Cursor to speed up development while keeping quality high.
                                     </p>
                                 </div>
                             </motion.div>

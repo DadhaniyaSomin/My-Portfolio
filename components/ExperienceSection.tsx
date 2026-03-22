@@ -12,9 +12,9 @@ export const ExperienceSection = () => {
                     <a href="https://webmobtech.com/" target="_blank" rel="noopener noreferrer">
                         <h4 className="text-xl font-semibold text-[#b087ff] mb-2 hover:underline cursor-pointer inline-block">WebMobTech Solutions Pvt. Ltd.</h4>
                     </a>
-                    <p className="text-sm text-gray-500 mb-4">📍 Ahmedabad</p>
+                    <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
                     <p className="text-foreground/80 text-base leading-relaxed mb-6">
-                        Developing and delivering high-quality mobile applications using Flutter and React Native, including Smart City, Medical TV, and Fintech solutions. Currently working on a product-based Cloth Changer / AI Style Changer application, implementing core monetization and growth features such as In-App Purchases, Deep Linking, and Google AdMob Ads integration. Focused on clean architecture, scalable performance, and advanced state management using Redux, Riverpod, and RxDart, ensuring maintainable and production-ready apps.
+                        Building and shipping Flutter and React Native apps across 6+ projects, including Smart City, Fintech, TV applications, AI Style Changer, e-commerce, and IoT experiences with device hardware integrations. Currently focused on a product-based AI Style Changer, delivering monetization and growth features such as in-app purchases, deep linking, and Google AdMob. Emphasis on clean architecture, scalable performance, and production-ready state management with Redux, Riverpod, and RxDart.
                     </p>
                     <div className="flex flex-wrap gap-2">
                         {["Flutter", "Dart", "React Native", "TypeScript", "Redux", "Riverpod", "RxDart", "REST APIs", "Firebase", "Deep Linking", "In-App Purchases", "Google AdMob", "Push Notifications", "Git", "Play Store & App Store Deployment"].map((tech, i) => (
@@ -34,9 +34,9 @@ export const ExperienceSection = () => {
                     <a href="https://webmobtech.com/" target="_blank" rel="noopener noreferrer">
                         <h4 className="text-xl font-semibold text-[#b087ff] mb-2 hover:underline cursor-pointer inline-block">WebMobTech Solutions Pvt. Ltd.</h4>
                     </a>
-                    <p className="text-sm text-gray-500 mb-4">📍 Ahmedabad</p>
+                    <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
                     <p className="text-foreground/80 text-base leading-relaxed mb-6">
-                        Completed structured React Native training and developed 3+ training projects, focusing on real-world app development patterns. Gained hands-on experience with scalable state management using Redux and built type-safe applications using TypeScript.
+                        Completed structured React Native training and delivered 3+ training projects focused on real-world mobile patterns. Built an AI chatbot application (AI Pal), inspired by ChatGPT, and strengthened skills in TypeScript and Redux-based state management.
                     </p>
                     <div className="flex flex-wrap gap-2">
                         {["React Native", "JavaScript", "TypeScript", "Redux", "API Integration", "Git"].map((tech, i) => (
@@ -56,7 +56,7 @@ export const ExperienceSection = () => {
                     <a href="https://tatvasoft.com/" target="_blank" rel="noopener noreferrer">
                         <h4 className="text-xl font-semibold text-[#b087ff] mb-2 hover:underline cursor-pointer inline-block">Tatvasoft</h4>
                     </a>
-                    <p className="text-sm text-gray-500 mb-4">📍 Ahmedabad</p>
+                    <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
                     <p className="text-foreground/80 text-base leading-relaxed mb-6">
                         Built an Online Book Store system with user cart features and an admin panel for managing orders and quality control. Worked across frontend + backend integration, delivering a complete functional web solution.
                     </p>

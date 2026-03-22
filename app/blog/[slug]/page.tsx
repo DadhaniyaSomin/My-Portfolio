@@ -9,6 +9,7 @@ import { ArrowLeft, Clock, Eye } from "lucide-react"
 import readingDuration from "reading-duration"
 import { SITE_URL } from "@/lib/utils"
 import MarkdownContent from "@/components/MarkdownContent"
+import BlogTableOfContents from "@/components/BlogTableOfContents"
 
 type ApiResponse = {
   post: BlogPost
@@ -112,9 +113,15 @@ export default async function BlogDetailPage({
       <div className="container mx-auto max-w-6xl pt-4 pb-16 relative">
         <BgGradient />
 
-        <article className="max-w-none">
-          <MarkdownContent content={content} />
-        </article>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
+          <article className="max-w-none min-w-0 order-2 lg:order-1">
+            <MarkdownContent content={content} />
+          </article>
+
+          <div className="order-1 lg:order-2">
+            <BlogTableOfContents content={content} />
+          </div>
+        </div>
       </div>
     </div>
   )

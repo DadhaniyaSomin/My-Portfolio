@@ -3,7 +3,7 @@
 import {
   SiReact, SiFlutter, SiExpo, SiRedux, SiDart,
   SiTypescript, SiJavascript, SiNextdotjs, SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss,
-  SiFirebase, SiSupabase, SiGit, SiGithub, SiFigma
+  SiFirebase, SiSupabase, SiGit, SiGithub, SiFigma, SiAndroid, SiApple
 } from 'react-icons/si';
 import { FaCode, FaRobot, FaGamepad, FaBrain } from 'react-icons/fa';
 import { VscCode } from 'react-icons/vsc';
@@ -28,6 +28,8 @@ export const TechStackSection = () => {
       technologies: [
         { name: "React Native", icon: SiReact, url: "https://reactnative.dev" },
         { name: "Flutter", icon: SiFlutter, url: "https://flutter.dev" },
+        { name: "Android", icon: SiAndroid, url: "https://developer.android.com" },
+        { name: "iOS", icon: SiApple, url: "https://developer.apple.com/ios" },
         { name: "Expo", icon: SiExpo, url: "https://expo.dev" },
         { name: "Redux Toolkit", icon: SiRedux, url: "https://redux-toolkit.js.org" },
         { name: "Flutter Flame", icon: FaGamepad, url: "https://flame-engine.org" },
@@ -49,6 +51,7 @@ export const TechStackSection = () => {
         { name: "Node.js", icon: SiNodedotjs, url: "https://nodejs.org" },
         { name: "Express.js", icon: SiExpress, url: "https://expressjs.com" },
         { name: "MongoDB", icon: SiMongodb, url: "https://www.mongodb.com" },
+        { name: "MERN Stack", icon: FaCode, url: "https://www.mongodb.com/mern-stack" },
         { name: "Tailwind CSS", icon: SiTailwindcss, url: "https://tailwindcss.com" },
       ],
       hoverClass: "group-hover:border-[#ffd074]",
@@ -59,8 +62,10 @@ export const TechStackSection = () => {
         { name: "Firebase", icon: SiFirebase, url: "https://firebase.google.com" },
         { name: "Supabase", icon: SiSupabase, url: "https://supabase.com" },
         { name: "VS Code", icon: VscCode, url: "https://code.visualstudio.com" },
+        { name: "Cursor", icon: VscCode, url: "https://cursor.com" },
+        { name: "Codex", icon: FaCode, url: "https://openai.com" },
+        { name: "Claude Code", icon: FaBrain, url: "https://claude.ai" },
         { name: "Antigravity", icon: FaRobot, url: "https://deepmind.google" },
-        { name: "Claude", icon: FaBrain, url: "https://claude.ai" },
         { name: "Git", icon: SiGit, url: "https://git-scm.com" },
         { name: "GitHub", icon: SiGithub, url: "https://github.com" },
         { name: "Figma", icon: SiFigma, url: "https://figma.com" },
