@@ -35,7 +35,7 @@ async function getInitialData() {
         .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' '),
       url: repo.html_url.replace('https://', ''),
-      logoUrl: `/placeholder.png`,
+      logoUrl: `/placeholder.webp`,
       description: repo.description || undefined,
       language: repo.language || undefined,
       stars: repo.stargazers_count,

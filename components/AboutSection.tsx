@@ -12,9 +12,10 @@ export const AboutSection = () => {
 
                         {/* Left Column - Image */}
                         <div className="w-full md:w-1/2 flex justify-center">
-                            <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl shadow-2xl dark:shadow-black/50">
+                            <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl">
                                 <img
-                                    src="/profile.jpg"
+                                    src="/profile.webp"
+                                    srcSet="/profile@1x.webp 1x, /profile@2x.webp 2x, /profile@3x.webp 3x, /profile@4x.webp 4x"
                                     alt="Tushar Pankhaniya"
                                     className="w-full h-full object-cover"
                                 />

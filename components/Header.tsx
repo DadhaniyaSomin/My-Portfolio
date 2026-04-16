@@ -68,12 +68,14 @@ export const Header = () => {
             <Link href="/" className="flex items-center">
               <div className="relative w-9 h-9 flex items-center justify-center">
                 <img
-                  src="/logo-dark.png"
+                  src="/logo-dark.webp"
+                  srcSet="/logo-dark@1x.webp 1x, /logo-dark@2x.webp 2x, /logo-dark@3x.webp 3x, /logo-dark@4x.webp 4x"
                   alt="TP Logo"
                   className="logo-light w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/logo.png"
+                  src="/logo.webp"
+                  srcSet="/logo@1x.webp 1x, /logo@2x.webp 2x, /logo@3x.webp 3x, /logo@4x.webp 4x"
                   alt="TP Logo"
                   className="logo-dark w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
