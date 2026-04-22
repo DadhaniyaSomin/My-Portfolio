@@ -11,6 +11,35 @@ import { SITE_URL } from "@/lib/utils"
 import MarkdownContent from "@/components/MarkdownContent"
 import BlogTableOfContents from "@/components/BlogTableOfContents"
 
+function generateBlogPostSchema(post: BlogPost, content: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.summary,
+    image: post.coverImage ?? undefined,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      name: "Tushar Pankhaniya",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Tushar Pankhaniya",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${post.id}`,
+    },
+    wordCount: content.split(/\s+/).length,
+    articleSection: "Technology",
+    inLanguage: "en-US",
+  }
+}
+
 type ApiResponse = {
   post: BlogPost
   content: string
@@ -43,10 +72,30 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.summary,
+    alternates: {
+      canonical: `${SITE_URL}/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.summary,
-      images: [{ url: post.coverImage ?? "" }],
+      url: `${SITE_URL}/blog/${slug}`,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Tushar Pankhaniya"],
+      images: post.coverImage
+        ? [
+            {
+              url: post.coverImage,
+              alt: post.title,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.summary,
+      images: post.coverImage ? [post.coverImage] : [],
     },
   }
 }
@@ -63,8 +112,15 @@ export default async function BlogDetailPage({
 
   const { post, content } = data
 
+  const blogPostSchema = generateBlogPostSchema(post, content)
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-300">
+      {/* BlogPosting JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
+      />
 
       {/* HERO */}
       <div className="relative min-h-[60vh] flex flex-col justify-end pb-8">

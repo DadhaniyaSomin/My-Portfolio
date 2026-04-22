@@ -11,17 +11,103 @@ import { ContactSection } from "@/components/ContactSection"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
+const SITE_URL = "https://tusharpankhaniya.vercel.app"
+
+// JSON-LD Structured Data
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Tushar Pankhaniya",
+  url: SITE_URL,
+  image: `${SITE_URL}/profile.webp`,
+  jobTitle: "Mobile Application Developer",
+  worksFor: {
+    "@type": "Organization",
+    name: "WebMobTech Solutions Pvt. Ltd.",
+    url: "https://webmobtech.com",
+  },
+  knowsAbout: [
+    "React Native",
+    "Flutter",
+    "Mobile App Development",
+    "TypeScript",
+    "Cross-Platform Development",
+  ],
+  sameAs: [
+    "https://github.com/tushar-2223",
+    "https://www.linkedin.com/in/tushar2223",
+    "https://www.instagram.com/tushar.p_22/",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Anand",
+    addressRegion: "Gujarat",
+    addressCountry: "IN",
+  },
+  email: "pankhaniyatushar9@gmail.com",
+}
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Tushar Pankhaniya — Portfolio",
+  url: SITE_URL,
+  description:
+    "Portfolio of Tushar Pankhaniya — React Native & Flutter developer building high-performance cross-platform mobile applications.",
+  author: {
+    "@type": "Person",
+    name: "Tushar Pankhaniya",
+  },
+}
+
 export const metadata: Metadata = {
-  title: "Tushar Pankhaniya - Mobile Application Developer",
-  description: "The portfolio of Tushar Pankhaniya, a Mobile Application Developer specializing in React Native and Flutter, showcasing projects and blog posts.",
-  keywords: ["Tushar Pankhaniya", "Portfolio", "React Native Developer", "Flutter Developer", "Mobile App Developer"],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Tushar Pankhaniya — React Native & Flutter Developer | Portfolio",
+    template: "%s | Tushar Pankhaniya",
+  },
+  description:
+    "Mobile app developer with 2+ years of experience shipping React Native & Flutter apps. View projects, blog posts, and get in touch to build your next mobile application.",
+  keywords: [
+    "Tushar Pankhaniya",
+    "React Native Developer",
+    "Flutter Developer",
+    "Mobile App Developer",
+    "Cross-Platform Developer",
+    "React Native Portfolio",
+    "Flutter Portfolio",
+    "Mobile Application Developer India",
+    "Hire React Native Developer",
+    "Hire Flutter Developer",
+  ],
+  authors: [{ name: "Tushar Pankhaniya", url: SITE_URL }],
+  creator: "Tushar Pankhaniya",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
-    title: "Tushar Pankhaniya - Mobile Application Developer",
-    description: "The portfolio of Tushar Pankhaniya, a Mobile Application Developer specializing in React Native and Flutter, showcasing projects and blog posts.",
-    url: "https://tusharpankhaniya.vercel.app",
-    siteName: "Tushar Pankhaniya's Portfolio",
-    locale: 'en_US',
-    type: 'website',
+    title: "Tushar Pankhaniya — React Native & Flutter Developer",
+    description:
+      "Mobile app developer with 2+ years of experience shipping React Native & Flutter apps. View projects, blog posts, and get in touch.",
+    url: SITE_URL,
+    siteName: "Tushar Pankhaniya — Portfolio",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tushar Pankhaniya — React Native & Flutter Developer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tushar Pankhaniya — React Native & Flutter Developer",
+    description:
+      "Mobile app developer shipping high-performance React Native & Flutter apps. View projects & blog.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -29,12 +115,12 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-};
+}
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist-sans" })
 
@@ -46,6 +132,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geist.variable} font-geist-sans`}>
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <Providers>
           <Header />
           <PageTransition>

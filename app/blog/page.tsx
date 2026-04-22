@@ -5,6 +5,23 @@ import { CardWithCorners } from "@/components/ui/card-with-corners"
 import { Badge } from "@/components/ui/badge"
 import BlogSearch from "./search"
 import { SITE_URL } from "@/lib/utils"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Blog — Mobile Dev Insights & Tutorials",
+  description:
+    "Read Tushar Pankhaniya's blog on React Native, Flutter, mobile development best practices, and cross-platform architecture. Tutorials, tips, and real-world project insights.",
+  alternates: {
+    canonical: `${SITE_URL}/blog`,
+  },
+  openGraph: {
+    title: "Blog — Mobile Dev Insights | Tushar Pankhaniya",
+    description:
+      "Tutorials, insights, and tips on React Native, Flutter, and mobile app development.",
+    url: `${SITE_URL}/blog`,
+    type: "website",
+  },
+}
 
 async function getPosts() {
     const res = await fetch(`${SITE_URL}/api/blog`, {

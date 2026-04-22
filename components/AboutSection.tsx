@@ -16,7 +16,7 @@ export const AboutSection = () => {
                                 <img
                                     src="/profile.webp"
                                     srcSet="/profile@1x.webp 1x, /profile@2x.webp 2x, /profile@3x.webp 3x, /profile@4x.webp 4x"
-                                    alt="Tushar Pankhaniya"
+                                    alt="Tushar Pankhaniya — Mobile App Developer specializing in React Native and Flutter"
                                     className="w-full h-full object-cover"
                                 />
                             </div>

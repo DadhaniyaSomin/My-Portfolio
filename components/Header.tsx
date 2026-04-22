@@ -70,13 +70,13 @@ export const Header = () => {
                 <img
                   src="/logo-dark.webp"
                   srcSet="/logo-dark@1x.webp 1x, /logo-dark@2x.webp 2x, /logo-dark@3x.webp 3x, /logo-dark@4x.webp 4x"
-                  alt="TP Logo"
+                  alt="Tushar Pankhaniya — Mobile Developer Portfolio"
                   className="logo-light w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
                 <img
                   src="/logo.webp"
                   srcSet="/logo@1x.webp 1x, /logo@2x.webp 2x, /logo@3x.webp 3x, /logo@4x.webp 4x"
-                  alt="TP Logo"
+                  alt="Tushar Pankhaniya — Mobile Developer Portfolio"
                   className="logo-dark w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
                 />
               </div>
@@ -84,7 +84,7 @@ export const Header = () => {
 
             {/* Desktop Navigation - Centered */}
             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block">
-              <nav className="flex items-center space-x-1">
+              <nav aria-label="Main navigation" className="flex items-center space-x-1">
                 {navItems.map((item) => {
                   const isActive = activeSection === item.href.replace('/#', '') || (activeSection === '' && item.href === '/');
 
@@ -124,6 +124,7 @@ export const Header = () => {
                 href="https://github.com/tushar-2223"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Tushar's GitHub profile"
               >
                 <Button
                   variant="ghost"
@@ -137,6 +138,7 @@ export const Header = () => {
                 href="https://www.linkedin.com/in/tushar2223"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Connect with Tushar on LinkedIn"
               >
                 <Button
                   variant="ghost"
@@ -150,6 +152,7 @@ export const Header = () => {
                 href="https://www.instagram.com/tushar.p_22/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Follow Tushar on Instagram"
               >
                 <Button
                   variant="ghost"
