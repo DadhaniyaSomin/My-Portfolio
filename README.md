@@ -1,30 +1,55 @@
-# My Portfolio
+# Somin Dadhaniya
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Backend Software Engineer | Golang | Laravel | Docker | System Design
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/tushar2223s-projects/v0-my-portfolio)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/oHg9KqlFBwv)
+Hi! I'm Somin, a passionate backend engineer focused on building scalable, performant systems. I specialize in Golang, Laravel, and cloud infrastructure with a deep interest in database optimization and distributed systems.
 
-## Overview
+## 🛠️ Tech Stack
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+**Languages & Frameworks**
+- Go (Golang)
+- PHP / Laravel
+- TypeScript / JavaScript
+- SQL (PostgreSQL, MySQL)
 
-## Deployment
+**Infrastructure & Tools**
+- Docker & Kubernetes
+- Redis & RabbitMQ
+- AWS & Cloud Services
+- Git & CI/CD
 
-Your project is live at:
+**Database & Caching**
+- PostgreSQL
+- MySQL
+- Redis
+- Elasticsearch
 
-**[https://vercel.com/tushar2223s-projects/v0-my-portfolio](https://vercel.com/tushar2223s-projects/v0-my-portfolio)**
+## 📝 Blog
 
-## Build your app
+I write about backend engineering, system design, and practical tutorials. Check out my latest posts on [my blog](https://somindadhaniya.vercel.app/blog).
 
-Continue building your app on:
+Topics I cover:
+- Golang best practices
+- Laravel optimization
+- Docker containerization
+- Database performance tuning
+- Microservices architecture
+- API design patterns
 
-**[https://v0.dev/chat/projects/oHg9KqlFBwv](https://v0.dev/chat/projects/oHg9KqlFBwv)**
+## 🌐 Live Site
 
-## How It Works
+Visit my portfolio: [somindadhaniya.vercel.app](https://somindadhaniya.vercel.app)
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 📬 Connect
+
+- GitHub: [@somin](https://github.com/somin)
+- LinkedIn: [Somin Dadhaniya](https://linkedin.com/in/somin)
+- Email: somin@example.com
+
+## 🚀 Projects
+
+This portfolio showcases my work and technical writing. It's built with Next.js 15, TypeScript, and Tailwind CSS, with blog content managed via Notion CMS.
+
+---
+
+*Built with ❤️ using Next.js and Notion*

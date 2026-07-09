@@ -8,12 +8,6 @@ const notion = new Client({
 const DATABASE_ID = process.env.NOTION_DATABASE_ID;
 
 export async function GET(req: Request) {
-  // Security check: Only allow requests with the correct API secret
-  const secret = req.headers.get("x-api-secret")
-  if (secret !== process.env.INTERNAL_API_SECRET) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
-
   if (!process.env.NOTION_TOKEN || !DATABASE_ID) {
     console.error("Missing Notion Environment Variables");
     return NextResponse.json({ error: "Server configuration error" }, { status: 500 });

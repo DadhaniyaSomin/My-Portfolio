@@ -13,12 +13,6 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params
-  
-  // Security check: Only allow requests with the correct API secret
-  const secret = req.headers.get("x-api-secret")
-  if (secret !== process.env.INTERNAL_API_SECRET) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
 
   try {
     const page: any = await notion.pages.retrieve({
