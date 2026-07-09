@@ -33,6 +33,8 @@ function cleanHeadingText(value: string) {
 }
 
 function extractHeadings(content: string): Heading[] {
+  if (!content) return []
+
   return content
     .split("\n")
     .map((line) => {

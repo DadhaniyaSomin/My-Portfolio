@@ -14,10 +14,17 @@ export async function GET(
 ) {
   const { id } = await params
 
+  console.log("🚀 API Route: /api/blog/[id] called")
+  console.log("📝 Page ID:", id)
+
   try {
+    console.log("📡 Retrieving page from Notion...")
     const page: any = await notion.pages.retrieve({
       page_id: id,
     })
+
+    console.log("✅ Page retrieved successfully")
+    console.log("📄 Page properties:", JSON.stringify(page.properties, null, 2))
 
     const props = page.properties
 
@@ -27,9 +34,11 @@ export async function GET(
         page.cover.type === "external"
           ? page.cover.external.url
           : page.cover.file.url
+      console.log("🖼️ Cover image:", coverImage)
     }
 
     const authorData = props.Author?.people?.[0] || page.created_by
+    console.log("👤 Author:", authorData?.name || page.created_by?.name)
 
     const post = {
       id: page.id,
@@ -45,17 +54,23 @@ export async function GET(
       },
     }
 
+    console.log("📦 Post object:", JSON.stringify(post, null, 2))
+
+    console.log("📝 Converting page to Markdown...")
     const mdBlocks = await n2m.pageToMarkdown(page.id)
     const mdString = await n2m.toMarkdownString(mdBlocks)
 
-    console.log("Fetched post title:", post.title)
+    console.log("✅ Markdown conversion successful")
+    console.log("📄 Markdown length:", mdString.parent?.length || 0)
+    console.log("📤 Returning JSON response with post and content")
 
     return NextResponse.json({
       post,
       content: mdString.parent,
     })
   } catch (error: any) {
-    console.error("Detail API error:", error)
+    console.error("❌ Detail API error:", error)
+    console.error("Error details:", JSON.stringify(error, null, 2))
     return NextResponse.json(
       { error: "Blog not found" },
       { status: 404 }

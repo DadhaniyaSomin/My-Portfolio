@@ -10,6 +10,8 @@ import readingDuration from "reading-duration"
 import { SITE_URL } from "@/lib/utils"
 import MarkdownContent from "@/components/MarkdownContent"
 import BlogTableOfContents from "@/components/BlogTableOfContents"
+import { Client } from "@notionhq/client"
+import { NotionToMarkdown } from "notion-to-md"
 
 function generateBlogPostSchema(post: BlogPost, content: string) {
   return {
@@ -34,7 +36,7 @@ function generateBlogPostSchema(post: BlogPost, content: string) {
       "@type": "WebPage",
       "@id": `${SITE_URL}/blog/${post.id}`,
     },
-    wordCount: content.split(/\s+/).length,
+    wordCount: content?.split(/\s+/).length || 0,
     articleSection: "Technology",
     inLanguage: "en-US",
   }
@@ -46,15 +48,80 @@ type ApiResponse = {
 }
 
 async function getBlogData(slug: string): Promise<ApiResponse | null> {
-  const res = await fetch(`${SITE_URL}/api/blog/${slug}`, {
-    next: { revalidate: 3600 },
-    headers: {
-      "x-api-secret": process.env.INTERNAL_API_SECRET || "",
-    },
+  console.log("🚀 getBlogData called with slug:", slug)
+
+  const notion = new Client({
+    auth: process.env.NOTION_TOKEN,
   })
 
-  if (!res.ok) return null
-  return res.json()
+  const n2m = new NotionToMarkdown({ notionClient: notion })
+
+  if (!process.env.NOTION_TOKEN) {
+    console.error("❌ Missing NOTION_TOKEN")
+    return null
+  }
+
+  try {
+    console.log("📡 Querying Notion database to find page by slug...")
+    const response = await notion.databases.query({
+      database_id: process.env.NOTION_DATABASE_ID!,
+      filter: {
+        property: "Slug",
+        rich_text: {
+          equals: slug,
+        },
+      },
+    })
+
+    console.log("📊 Query results:", response.results.length)
+
+    if (response.results.length === 0) {
+      console.error("❌ No page found with slug:", slug)
+      return null
+    }
+
+    const page: any = response.results[0]
+    console.log("✅ Found page:", page.id)
+
+    const props = page.properties
+
+    let coverImage = "/placeholder.svg"
+    if (page.cover) {
+      coverImage =
+        page.cover.type === "external"
+          ? page.cover.external.url
+          : page.cover.file.url
+    }
+
+    const authorData = props.Author?.people?.[0] || page.created_by
+
+    const post = {
+      id: page.id,
+      slug: slug,
+      title: props.Name?.title?.[0]?.plain_text ?? "Untitled",
+      summary: props.Summary?.rich_text?.[0]?.plain_text ?? "",
+      tags: props.Tags?.multi_select?.map((t: any) => t.name) ?? [],
+      date: page.created_time,
+      coverImage,
+      author: {
+        name: authorData?.name ?? (process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya"),
+        avatar: authorData?.avatar_url ?? null,
+      },
+    }
+
+    console.log("📝 Converting page to Markdown...")
+    const mdBlocks = await n2m.pageToMarkdown(page.id)
+    const mdString = await n2m.toMarkdownString(mdBlocks)
+
+    console.log("✅ Successfully fetched blog data")
+    return {
+      post,
+      content: mdString.parent,
+    }
+  } catch (error) {
+    console.error("❌ Failed to fetch blog data:", error)
+    return null
+  }
 }
 
 export async function generateMetadata({
