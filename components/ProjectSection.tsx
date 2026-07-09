@@ -66,12 +66,13 @@ const ProjectSection = ({ initialProjects }: { initialProjects?: Project[] }) =>
         console.error('Error fetching GitHub repos:', err);
         setError('Failed to load projects');
         // Fallback to static projects
+        const githubUsername = process.env.NEXT_PUBLIC_GITHUB_USERNAME || 'somindadhaniya';
         setProjects([
-          { id: "1", title: "BlueBird Movies", url: "github.com/tushar-2223/BlueBird-Movies", logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
-          { id: "2", title: "Hotel Management System", url: "github.com/tushar-2223/Hotel-Management-System", logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
-          { id: "3", title: "AI Pal", url: "github.com/tushar-2223/AI-Pal", logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
-          { id: "4", title: "Offline Translator", url: "github.com/tushar-2223/offline_translator", logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
-          { id: "5", title: "Flash Note", url: "github.com/tushar-2223/Flash-Note", logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
+          { id: "1", title: "BlueBird Movies", url: `github.com/${githubUsername}/BlueBird-Movies`, logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
+          { id: "2", title: "Hotel Management System", url: `github.com/${githubUsername}/Hotel-Management-System`, logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
+          { id: "3", title: "AI Pal", url: `github.com/${githubUsername}/AI-Pal`, logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
+          { id: "4", title: "Offline Translator", url: `github.com/${githubUsername}/offline_translator`, logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
+          { id: "5", title: "Flash Note", url: `github.com/${githubUsername}/Flash-Note`, logoUrl: "/placeholder.svg", stars: 0, forks: 0 },
         ]);
       } finally {
         setLoading(false);
@@ -111,7 +112,7 @@ const ProjectSection = ({ initialProjects }: { initialProjects?: Project[] }) =>
 
         <div className="flex justify-center mt-16">
           <a
-            href="https://github.com/tushar-2223"
+            href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME || "somindadhaniya"}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex gap-2 justify-center items-center text-muted-foreground hover:text-foreground transition-all ease-linear group"

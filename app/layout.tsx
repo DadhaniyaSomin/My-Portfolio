@@ -11,86 +11,89 @@ import { ContactSection } from "@/components/ContactSection"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const SITE_URL = "https://tusharpankhaniya.vercel.app"
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://somindadhaniya.vercel.app"
 
 // JSON-LD Structured Data
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Tushar Pankhaniya",
+  name: "Somin Dadhaniya",
   url: SITE_URL,
   image: `${SITE_URL}/profile.webp`,
-  jobTitle: "Mobile Application Developer",
+  jobTitle: "Backend Software Engineer",
   worksFor: {
     "@type": "Organization",
-    name: "WebMobTech Solutions Pvt. Ltd.",
+    name: "Webmobtech",
     url: "https://webmobtech.com",
   },
   knowsAbout: [
-    "React Native",
-    "Flutter",
-    "Mobile App Development",
-    "TypeScript",
-    "Cross-Platform Development",
+    "Golang",
+    "PHP",
+    "Laravel",
+    "Backend Architecture",
+    "Microservices",
+    "Docker",
+    "PostgreSQL",
+    "RESTful APIs",
   ],
   sameAs: [
-    "https://github.com/tushar-2223",
-    "https://www.linkedin.com/in/tushar2223",
-    "https://www.instagram.com/tushar.p_22/",
+    "https://github.com/somindadhaniya",
+    "https://www.linkedin.com/in/somin-dadhaniya",
+    "https://www.instagram.com/somin_dadhaniya/",
   ],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Anand",
+    addressLocality: "Ahmedabad",
     addressRegion: "Gujarat",
     addressCountry: "IN",
   },
-  email: "pankhaniyatushar9@gmail.com",
+  email: "somindadhaniya@gmail.com",
 }
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Tushar Pankhaniya — Portfolio",
+  name: "Somin Dadhaniya — Portfolio",
   url: SITE_URL,
   description:
-    "Portfolio of Tushar Pankhaniya — React Native & Flutter developer building high-performance cross-platform mobile applications.",
+    "Portfolio of Somin Dadhaniya — Backend Software Engineer specializing in scalable systems, RESTful APIs, Golang, Laravel, Docker, and cloud-native infrastructure.",
   author: {
     "@type": "Person",
-    name: "Tushar Pankhaniya",
+    name: "Somin Dadhaniya",
   },
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Tushar Pankhaniya — React Native & Flutter Developer | Portfolio",
-    template: "%s | Tushar Pankhaniya",
+    default: "Somin Dadhaniya — Backend Software Engineer | Portfolio",
+    template: "%s | Somin Dadhaniya",
   },
   description:
-    "Mobile app developer with 2+ years of experience shipping React Native & Flutter apps. View projects, blog posts, and get in touch to build your next mobile application.",
+    "Backend Software Engineer with 3 years of experience building scalable systems, RESTful APIs, and cloud-native infrastructure using Golang, Laravel, Docker, and PostgreSQL.",
   keywords: [
-    "Tushar Pankhaniya",
-    "React Native Developer",
-    "Flutter Developer",
-    "Mobile App Developer",
-    "Cross-Platform Developer",
-    "React Native Portfolio",
-    "Flutter Portfolio",
-    "Mobile Application Developer India",
-    "Hire React Native Developer",
-    "Hire Flutter Developer",
+    "Somin Dadhaniya",
+    "Backend Software Engineer",
+    "Golang Developer",
+    "Laravel Developer",
+    "PHP Developer",
+    "Backend Developer India",
+    "Microservices",
+    "REST API Developer",
+    "Docker Kubernetes",
+    "Backend Portfolio",
   ],
-  authors: [{ name: "Tushar Pankhaniya", url: SITE_URL }],
-  creator: "Tushar Pankhaniya",
+  authors: [{ name: "Somin Dadhaniya", url: SITE_URL }],
+  creator: "Somin Dadhaniya",
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Tushar Pankhaniya — React Native & Flutter Developer",
+    title: "Somin Dadhaniya — Backend Software Engineer",
     description:
-      "Mobile app developer with 2+ years of experience shipping React Native & Flutter apps. View projects, blog posts, and get in touch.",
+      "Backend Software Engineer with 3 years of experience building scalable APIs, microservices, and cloud-native infrastructure.",
     url: SITE_URL,
-    siteName: "Tushar Pankhaniya — Portfolio",
+    siteName: "Somin Dadhaniya — Portfolio",
     locale: "en_US",
     type: "website",
     images: [
@@ -98,15 +101,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Tushar Pankhaniya — React Native & Flutter Developer Portfolio",
+        alt: "Somin Dadhaniya — Backend Software Engineer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tushar Pankhaniya — React Native & Flutter Developer",
+    title: "Somin Dadhaniya — Backend Software Engineer",
     description:
-      "Mobile app developer shipping high-performance React Native & Flutter apps. View projects & blog.",
+      "Backend Software Engineer building scalable APIs, microservices, and cloud-native systems. View projects & blog.",
     images: ["/og-image.png"],
   },
   robots: {

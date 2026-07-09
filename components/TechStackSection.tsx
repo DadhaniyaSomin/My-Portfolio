@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  SiReact, SiFlutter, SiExpo, SiRedux, SiDart,
-  SiTypescript, SiJavascript, SiNextdotjs, SiNodedotjs, SiExpress, SiMongodb, SiTailwindcss,
-  SiFirebase, SiSupabase, SiGit, SiGithub, SiFigma, SiAndroid, SiApple
+  SiGo, SiPhp, SiLaravel, SiPostgresql, SiMysql, SiRedis,
+  SiDocker, SiKubernetes, SiGithubactions, SiGit, SiGithub,
+  SiNginx, SiRabbitmq, SiApachekafka, SiGrafana, SiElasticsearch,
+  SiTypescript, SiJavascript
 } from 'react-icons/si';
-import { FaCode, FaRobot, FaGamepad, FaBrain } from 'react-icons/fa';
-import { VscCode } from 'react-icons/vsc';
+import { FaServer, FaCode, FaNetworkWired, FaAws } from 'react-icons/fa';
 import { IconType } from 'react-icons';
 
 interface Technology {
@@ -24,53 +24,44 @@ interface Category {
 export const TechStackSection = () => {
   const categories: Category[] = [
     {
-      title: "Mobile Tech Stack",
+      title: "Backend & Languages",
       technologies: [
-        { name: "React Native", icon: SiReact, url: "https://reactnative.dev" },
-        { name: "Flutter", icon: SiFlutter, url: "https://flutter.dev" },
-        { name: "Android", icon: SiAndroid, url: "https://developer.android.com" },
-        { name: "iOS", icon: SiApple, url: "https://developer.apple.com/ios" },
-        { name: "Expo", icon: SiExpo, url: "https://expo.dev" },
-        { name: "Redux Toolkit", icon: SiRedux, url: "https://redux-toolkit.js.org" },
-        { name: "Flutter Flame", icon: FaGamepad, url: "https://flame-engine.org" },
-        { name: "Reanimated", icon: SiReact, url: "https://docs.swmansion.com/react-native-reanimated" },
-        { name: "Unistyles", icon: SiReact, url: "https://reactnativeunistyles.vercel.app" },
-        { name: "Flutter Bloc", icon: SiFlutter, url: "https://bloclibrary.dev" },
-        { name: "Riverpod", icon: SiFlutter, url: "https://riverpod.dev" },
-        { name: "RxDart", icon: SiDart, url: "https://pub.dev/packages/rxdart" },
-      ],
-      hoverClass: "group-hover:border-[#b087ff]",
-    },
-    {
-      title: "Web Tech Stack",
-      technologies: [
+        { name: "Golang", icon: SiGo, url: "https://go.dev" },
+        { name: "PHP", icon: SiPhp, url: "https://www.php.net" },
+        { name: "Laravel", icon: SiLaravel, url: "https://laravel.com" },
+        { name: "PostgreSQL", icon: SiPostgresql, url: "https://www.postgresql.org" },
+        { name: "MySQL", icon: SiMysql, url: "https://www.mysql.com" },
+        { name: "Redis", icon: SiRedis, url: "https://redis.io" },
+        { name: "gRPC", icon: FaNetworkWired, url: "https://grpc.io" },
+        { name: "REST APIs", icon: FaServer, url: "https://restfulapi.net" },
         { name: "TypeScript", icon: SiTypescript, url: "https://www.typescriptlang.org" },
         { name: "JavaScript", icon: SiJavascript, url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-        { name: "Next.js", icon: SiNextdotjs, url: "https://nextjs.org" },
-        { name: "React", icon: SiReact, url: "https://react.dev" },
-        { name: "Node.js", icon: SiNodedotjs, url: "https://nodejs.org" },
-        { name: "Express.js", icon: SiExpress, url: "https://expressjs.com" },
-        { name: "MongoDB", icon: SiMongodb, url: "https://www.mongodb.com" },
-        { name: "MERN Stack", icon: FaCode, url: "https://www.mongodb.com/mern-stack" },
-        { name: "Tailwind CSS", icon: SiTailwindcss, url: "https://tailwindcss.com" },
       ],
-      hoverClass: "group-hover:border-[#ffd074]",
+      hoverClass: "group-hover:border-[#CCFF00]",
     },
     {
-      title: "Tools & Libraries",
+      title: "DevOps & Infrastructure",
       technologies: [
-        { name: "Firebase", icon: SiFirebase, url: "https://firebase.google.com" },
-        { name: "Supabase", icon: SiSupabase, url: "https://supabase.com" },
-        { name: "VS Code", icon: VscCode, url: "https://code.visualstudio.com" },
-        { name: "Cursor", icon: VscCode, url: "https://cursor.com" },
-        { name: "Codex", icon: FaCode, url: "https://openai.com" },
-        { name: "Claude Code", icon: FaBrain, url: "https://claude.ai" },
-        { name: "Antigravity", icon: FaRobot, url: "https://deepmind.google" },
+        { name: "Docker", icon: SiDocker, url: "https://www.docker.com" },
+        { name: "Kubernetes", icon: SiKubernetes, url: "https://kubernetes.io" },
+        { name: "AWS", icon: FaAws, url: "https://aws.amazon.com" },
+        { name: "GitHub Actions", icon: SiGithubactions, url: "https://github.com/features/actions" },
+        { name: "Nginx", icon: SiNginx, url: "https://nginx.org" },
+        { name: "Grafana", icon: SiGrafana, url: "https://grafana.com" },
+        { name: "Elasticsearch", icon: SiElasticsearch, url: "https://www.elastic.co" },
+      ],
+      hoverClass: "group-hover:border-[#CCFF00]",
+    },
+    {
+      title: "Architecture & Tools",
+      technologies: [
+        { name: "Microservices", icon: FaCode, url: "https://microservices.io" },
+        { name: "RabbitMQ", icon: SiRabbitmq, url: "https://www.rabbitmq.com" },
+        { name: "Kafka", icon: SiApachekafka, url: "https://kafka.apache.org" },
         { name: "Git", icon: SiGit, url: "https://git-scm.com" },
         { name: "GitHub", icon: SiGithub, url: "https://github.com" },
-        { name: "Figma", icon: SiFigma, url: "https://figma.com" },
       ],
-      hoverClass: "group-hover:border-[#b087ff]",
+      hoverClass: "group-hover:border-[#CCFF00]",
     }
   ];
 
@@ -82,7 +73,7 @@ export const TechStackSection = () => {
             Tech Stack
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Technologies I use to build seamless experiences
+            Technologies I use to engineer scalable backend systems
           </p>
         </div>
 

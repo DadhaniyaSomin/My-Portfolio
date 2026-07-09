@@ -5,19 +5,19 @@ import { Timeline } from "@/components/ui/timeline";
 export const ExperienceSection = () => {
     const data = [
         {
-            title: "June 2024 - Present",
+            title: "2024 — Present",
             content: (
                 <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Mobile App Developer</h3>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Software Engineer</h3>
                     <a href="https://webmobtech.com/" target="_blank" rel="noopener noreferrer">
-                        <h4 className="text-xl font-semibold text-[#b087ff] mb-2 hover:underline cursor-pointer inline-block">WebMobTech Solutions Pvt. Ltd.</h4>
+                        <h4 className="text-xl font-semibold text-[#CCFF00] mb-2 hover:underline cursor-pointer inline-block">Webmobtech</h4>
                     </a>
                     <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
                     <p className="text-foreground/80 text-base leading-relaxed mb-6">
-                        Building and shipping Flutter and React Native apps across 6+ projects, including Smart City, Fintech, TV applications, AI Style Changer, e-commerce, and IoT experiences with device hardware integrations. Currently focused on a product-based AI Style Changer, delivering monetization and growth features such as in-app purchases, deep linking, and Google AdMob. Emphasis on clean architecture, scalable performance, and production-ready state management with Redux, Riverpod, and RxDart.
+                        Introduced and implemented a CI/CD pipeline using GitHub Actions, automating testing and deployment. Built and consumed sophisticated RESTful APIs for integration with mobile applications and partner services. Pioneered the adoption of Docker for local development, standardizing the environment and onboarding new developers 50% faster. Currently leading a project to introduce Golang for a high-performance reporting microservice.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                        {["Flutter", "Dart", "React Native", "TypeScript", "Redux", "Riverpod", "RxDart", "REST APIs", "Firebase", "Deep Linking", "In-App Purchases", "Google AdMob", "Push Notifications", "Git", "Play Store & App Store Deployment"].map((tech, i) => (
+                        {["Golang", "Laravel", "PHP", "Docker", "GitHub Actions", "CI/CD", "RESTful APIs", "PostgreSQL", "MySQL", "Microservices"].map((tech, i) => (
                             <span key={i} className="text-xs font-medium text-foreground/60 bg-muted px-2 py-1 rounded border border-border">
                                 {tech}
                             </span>
@@ -27,19 +27,19 @@ export const ExperienceSection = () => {
             ),
         },
         {
-            title: "Dec 2023 - May 2024",
+            title: "2022 — 2024",
             content: (
                 <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Mobile App Development Intern</h3>
-                    <a href="https://webmobtech.com/" target="_blank" rel="noopener noreferrer">
-                        <h4 className="text-xl font-semibold text-[#b087ff] mb-2 hover:underline cursor-pointer inline-block">WebMobTech Solutions Pvt. Ltd.</h4>
+                    <h3 className="text-2xl font-bold text-foreground mb-2">Backend Developer</h3>
+                    <a href="https://e2logy.com/" target="_blank" rel="noopener noreferrer">
+                        <h4 className="text-xl font-semibold text-[#CCFF00] mb-2 hover:underline cursor-pointer inline-block">E2logy</h4>
                     </a>
                     <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
                     <p className="text-foreground/80 text-base leading-relaxed mb-6">
-                        Completed structured React Native training and delivered 3+ training projects focused on real-world mobile patterns. Built an AI chatbot application (AI Pal), inspired by ChatGPT, and strengthened skills in TypeScript and Redux-based state management.
+                        Developed new features and modules for client projects using Laravel and MySQL. Built and integrated RESTful API endpoints for front-end consumption. Collaborated with front-end developers to integrate back-end logic. Optimized database queries and implemented caching with Redis, improving application response time by 25%. Integrated multiple third-party payment APIs (Stripe, PayPal). Mentored junior developers on Laravel best practices and conducted code reviews.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                        {["React Native", "JavaScript", "TypeScript", "Redux", "API Integration", "Git"].map((tech, i) => (
+                        {["Laravel", "PHP", "MySQL", "Redis", "RESTful APIs", "Stripe", "PayPal", "Git", "PHPUnit", "MVC"].map((tech, i) => (
                             <span key={i} className="text-xs font-medium text-foreground/60 bg-muted px-2 py-1 rounded border border-border">
                                 {tech}
                             </span>
@@ -48,28 +48,6 @@ export const ExperienceSection = () => {
                 </div>
             ),
         },
-        {
-            title: "May 2023 - June 2023",
-            content: (
-                <div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">Front End Developer Intern</h3>
-                    <a href="https://tatvasoft.com/" target="_blank" rel="noopener noreferrer">
-                        <h4 className="text-xl font-semibold text-[#b087ff] mb-2 hover:underline cursor-pointer inline-block">Tatvasoft</h4>
-                    </a>
-                    <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
-                    <p className="text-foreground/80 text-base leading-relaxed mb-6">
-                        Built an Online Book Store system with user cart features and an admin panel for managing orders and quality control. Worked across frontend + backend integration, delivering a complete functional web solution.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                        {["React.js", "Tailwind CSS", "Material UI", "Node.js", "Express.js", "MongoDB"].map((tech, i) => (
-                            <span key={i} className="text-xs font-medium text-foreground/60 bg-muted px-2 py-1 rounded border border-border">
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            ),
-        }
     ];
 
     return (

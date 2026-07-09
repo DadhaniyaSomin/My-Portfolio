@@ -6,4 +6,4 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 //constants
-export const SITE_URL = "https://tusharpankhaniya.vercel.app"
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://somindadhaniya.vercel.app"

@@ -58,7 +58,7 @@ export default function BlogGrid({ posts, showViewMore = false }: Props) {
                                 <div className="flex justify-between pt-2 text-sm">
                                     <span className="flex gap-1 items-center text-white/50">
                                         <User className="h-3 w-3" />
-                                        {post.author?.name ?? "Tushar Pankhaniya"}
+                                        {post.author?.name ?? (process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya")}
                                     </span>
                                     <span className="flex items-center text-blue-400">
                                         Read More

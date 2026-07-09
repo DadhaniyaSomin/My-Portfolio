@@ -22,12 +22,12 @@ function generateBlogPostSchema(post: BlogPost, content: string) {
     dateModified: post.date,
     author: {
       "@type": "Person",
-      name: "Tushar Pankhaniya",
+      name: process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya",
       url: SITE_URL,
     },
     publisher: {
       "@type": "Person",
-      name: "Tushar Pankhaniya",
+      name: process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya",
       url: SITE_URL,
     },
     mainEntityOfPage: {
@@ -81,7 +81,7 @@ export async function generateMetadata({
       url: `${SITE_URL}/blog/${slug}`,
       type: "article",
       publishedTime: post.date,
-      authors: ["Tushar Pankhaniya"],
+      authors: [process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya"],
       images: post.coverImage
         ? [
             {

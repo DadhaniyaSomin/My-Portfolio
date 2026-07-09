@@ -24,14 +24,15 @@ export const ContactSection = () => {
   useEffect(() => {
     const fetchCount = async () => {
       try {
-        const response = await fetch("https://api.counterapi.dev/v1/tusharpankhaniya/visits/up")
+        const counterId = process.env.NEXT_PUBLIC_VISITOR_COUNTER_ID || "somindadhaniya"
+        const response = await fetch(`https://api.counterapi.dev/v1/${counterId}/visits/up`)
         const data = await response.json()
         setVisitorCount(data.count)
       } catch (error) {
         console.error("Error fetching visitor count:", error)
       }
     }
-    fetchCount()
+    // fetchCount()
   }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -107,32 +108,38 @@ export const ContactSection = () => {
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-[#ffd074]/20 rounded-lg flex-shrink-0">
-                    <Mail className="h-6 w-6 text-[#ffd074]" />
+                  <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-foreground font-medium">Email</p>
-                    <p className="text-muted-foreground break-all">pankhaniyatushar9@gmail.com</p>
+                    <p className="text-muted-foreground break-all">
+                      {process.env.NEXT_PUBLIC_CONTACT_EMAIL || "somindadhaniya111@gmail.com"}
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-[#b087ff]/20 rounded-lg flex-shrink-0">
-                    <Phone className="h-6 w-6 text-[#b087ff]" />
+                  <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                    <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-foreground font-medium">Phone</p>
-                    <p className="text-muted-foreground">+91 9313346569</p>
+                    <p className="text-muted-foreground">
+                      {process.env.NEXT_PUBLIC_CONTACT_PHONE || "+91 8469518057"}
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-[#ffd074]/20 rounded-lg flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-[#ffd074]" />
+                  <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-foreground font-medium">Location</p>
-                    <p className="text-muted-foreground">Anand, Gujarat, India</p>
+                    <p className="text-muted-foreground">
+                      {process.env.NEXT_PUBLIC_CONTACT_ADDRESS || "Gandhinagar, Gujarat, India"}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -140,14 +147,28 @@ export const ContactSection = () => {
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground font-medium mb-4">Follow Me</p>
                 <div className="flex space-x-4">
-                  {/* TODO: Replace with your actual social media links */}
-                  <a href="https://github.com/tushar-2223" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all">
+                  <a
+                    href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME || "somindadhaniya"}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all"
+                  >
                     <Github className="h-5 w-5 text-foreground" />
                   </a>
-                  <a href="https://www.linkedin.com/in/tushar2223" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all">
+                  <a
+                    href={`https://www.linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_USERNAME || "somin-dadhaniya"}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all"
+                  >
                     <Linkedin className="h-5 w-5 text-foreground" />
                   </a>
-                  <a href="https://www.instagram.com/tushar.p_22/" target="_blank" rel="noopener noreferrer" className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all">
+                  <a
+                    href={`https://www.instagram.com/${process.env.NEXT_PUBLIC_INSTAGRAM_USERNAME || "somin_dadhaniya"}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all"
+                  >
                     <Instagram className="h-5 w-5 text-foreground" />
                   </a>
                 </div>
@@ -207,7 +228,7 @@ export const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
-                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-[#b087ff] focus:ring-[#b087ff]/20"
+                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                     required
                     disabled={isSubmitting}
                   />
@@ -224,7 +245,7 @@ export const ContactSection = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Academic Project Inquiry"
-                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-[#ffd074] focus:ring-[#ffd074]/20"
+                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                     required
                     disabled={isSubmitting}
                   />
@@ -241,13 +262,13 @@ export const ContactSection = () => {
                     onChange={handleChange}
                     placeholder="Tell me about your query or project..."
                     rows={5}
-                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-[#b087ff] focus:ring-[#b087ff]/20 resize-none"
+                    className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20 resize-none"
                     required
                     disabled={isSubmitting}
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-gradient-to-r from-[#ffd074] to-[#b087ff] hover:brightness-110 text-black font-bold py-3" disabled={isSubmitting}>
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-black font-bold py-3 shadow-[0_0_15px_rgba(204,255,0,0.25)] hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all duration-300" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   ) : (
@@ -266,7 +287,7 @@ export const ContactSection = () => {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-0">
             <p className="text-muted-foreground text-sm order-2 md:order-1">
-              © 2026 Tushar Pankhaniya. All rights reserved.
+              © 2026 {process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya"}. All rights reserved.
             </p>
 
             <div className="flex flex-col md:flex-row items-center gap-6 order-1 md:order-2">

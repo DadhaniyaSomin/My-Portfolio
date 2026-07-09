@@ -35,7 +35,7 @@ export function BlogCard({ post }: Props) {
 
             <span className="flex gap-1 items-center">
               <User className="h-4 w-4" />
-              {post.author?.name ?? "Tushar Pankhaniya"}
+              {post.author?.name ?? (process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya")}
             </span>
 
           </div>

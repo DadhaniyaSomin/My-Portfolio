@@ -46,7 +46,7 @@ export async function GET(
       date: page.created_time,
       coverImage,
       author: {
-        name: authorData?.name ?? "Tushar Pankhaniya",
+        name: authorData?.name ?? (process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya"),
         avatar: authorData?.avatar_url ?? null,
       },
     }

@@ -1,49 +1,53 @@
-import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Linkedin, Github, Instagram } from "lucide-react";
-import { BackgroundLines } from "@/components/ui/background-lines";
+import { Button } from "@/components/ui/button"
+import { Download } from "lucide-react"
 
 export const HeroSection = () => {
   return (
-    <section id="home" role="banner" className="relative bg-background transition-colors duration-300">
-      <BackgroundLines className="flex items-center justify-center w-full flex-col pt-24 min-h-screen bg-transparent">
-        <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-b from-foreground to-foreground/80 bg-clip-text text-transparent leading-tight tracking-tight font-[family-name:var(--font-geist-sans)] px-2">
-            Hi, I'm Tushar
-            <br />
-            React Native & Flutter Developer
-          </h1>
+    <section
+      id="home"
+      role="banner"
+      className="relative min-h-screen flex flex-col justify-center items-center bg-[#050508] text-foreground overflow-hidden py-24 px-6 select-none"
+    >
+      {/* Top Small Label */}
+      <div className="text-[10px] md:text-xs font-medium tracking-[0.25em] text-zinc-400 uppercase mb-8 md:mb-10 text-center">
+        Crafting High-Performance Backend Services Since — 2022
+      </div>
 
-          <p className="text-lg md:text-2xl text-foreground/70 mb-10 max-w-2xl mx-auto leading-relaxed font-light font-[family-name:var(--font-geist-sans)] px-4">
-            Building polished, high-performance mobile apps with React Native & Flutter. 2+ years of shipping production applications across fintech, AI, and IoT.
-          </p>
+      {/* Main Title */}
+      <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] font-black text-center text-[#CCFF00] uppercase tracking-tighter leading-[0.85] sm:leading-[0.85] md:leading-[0.85] mb-10 md:mb-14 select-text">
+        Somin
+        <br />
+        Dadhaniya
+      </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 px-4">
-            <a href="https://drive.google.com/file/d/1uYz2Y7rcRB-62QXZgwQw8UbfYG3YWu7j/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#ffd074] to-[#b087ff] hover:brightness-110 text-black px-8 py-3 font-bold font-[family-name:var(--font-geist-sans)] shadow-lg hover:shadow-[0_0_20px_rgba(255,208,116,0.3)] transition-all duration-300 rounded-full">
-                <Download className="mr-2 h-5 w-5" />
-                Download Resume
-              </Button>
-            </a>
-          </div>
+      {/* Sparkle Icon */}
+      <div className="flex justify-center mb-10 md:mb-14">
+        <svg
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-7 h-7 md:w-9 md:h-9 text-[#CCFF00] animate-[pulse_2s_infinite]"
+        >
+          <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
+        </svg>
+      </div>
 
-          {/* Social Buttons - Mobile Only */}
-          <div className="flex justify-center flex-wrap gap-4 mb-16 md:hidden px-4">
-            <a href="https://github.com/tushar-2223" target="_blank" rel="noopener noreferrer" aria-label="Visit Tushar's GitHub profile" className="group p-3 bg-muted border border-border rounded-xl hover:border-primary transition-all duration-300">
-              <Github className="h-6 w-6 text-foreground/50 group-hover:text-foreground transition-colors" />
-            </a>
-            <a href="https://www.linkedin.com/in/tushar2223" target="_blank" rel="noopener noreferrer" aria-label="Connect with Tushar on LinkedIn" className="group p-3 bg-muted border border-border rounded-xl hover:border-primary transition-all duration-300">
-              <Linkedin className="h-6 w-6 text-foreground/50 group-hover:text-foreground transition-colors" />
-            </a>
-            <a href="https://www.instagram.com/tushar.p_22/" target="_blank" rel="noopener noreferrer" aria-label="Follow Tushar on Instagram" className="group p-3 bg-muted border border-border rounded-xl hover:border-primary transition-all duration-300">
-              <Instagram className="h-6 w-6 text-foreground/50 group-hover:text-foreground transition-colors" />
-            </a>
-          </div>
+      {/* Description Text */}
+      <p className="text-sm md:text-base text-zinc-400 max-w-xl text-center leading-relaxed px-4 mb-10 select-text">
+        I'm <span className="font-bold text-white">Somin Dadhaniya</span> — A Software Engineer specializing in building scalable, efficient backend systems with 3 years of full-lifecycle development experience.
+      </p>
 
-          <div className="animate-bounce">
-            <ArrowDown className="h-6 w-6 text-foreground/40 mx-auto" />
-          </div>
-        </div>
-      </BackgroundLines>
+      {/* Action Button */}
+      <div className="flex justify-center items-center">
+        <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer" className="inline-block">
+          <Button
+            size="lg"
+            className="bg-[#CCFF00] hover:bg-[#b8e600] text-black px-8 py-2.5 font-bold shadow-lg hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all duration-300 rounded-full text-xs md:text-sm uppercase tracking-wider"
+          >
+            <Download className="mr-2 h-4 w-4" />
+            Download Resume
+          </Button>
+        </a>
+      </div>
     </section>
-  );
-};
+  )
+}

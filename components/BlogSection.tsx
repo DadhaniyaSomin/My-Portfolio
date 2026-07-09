@@ -40,7 +40,7 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
             Latest Blogs
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Thoughts, tutorials, and insights about web & mobile development
+            Thoughts, tutorials, and insights about software engineering
           </p>
         </div>
 

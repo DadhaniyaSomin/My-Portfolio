@@ -14,9 +14,8 @@ export const AboutSection = () => {
                         <div className="w-full md:w-1/2 flex justify-center">
                             <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl">
                                 <img
-                                    src="/profile.webp"
-                                    srcSet="/profile@1x.webp 1x, /profile@2x.webp 2x, /profile@3x.webp 3x, /profile@4x.webp 4x"
-                                    alt="Tushar Pankhaniya — Mobile App Developer specializing in React Native and Flutter"
+                                    src="/profession.jpg"
+                                    alt="Somin Dadhaniya — Backend Software Engineer specializing in scalable systems and APIs"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -36,13 +35,13 @@ export const AboutSection = () => {
 
                                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
                                     <p>
-                                        I am a mobile app developer specializing in React Native and Flutter, building scalable, high-performance cross-platform applications. With 2+ years of professional experience, I focus on polished UI/UX, smooth performance, and reliable integrations.
+                                        My passion lies at the intersection of logic and creativity — engineering robust, scalable systems and crafting intuitive digital experiences. With a Bachelor of Technology in Computer Science and 3 years of full-lifecycle development experience, I bring a unique perspective to software engineering.
                                     </p>
                                     <p>
-                                        At WebMobTech Solutions, I design and deliver mobile applications with clean architecture and efficient state management (RxDart, Redux), targeting both Android and iOS.
+                                        I don&apos;t just write code — I engineer solutions that balance technical excellence with user-centric design principles, ensuring the applications I build are both powerful and delightful to use.
                                     </p>
                                     <p>
-                                        I explore AI-powered mobile experiences and modern cross-platform architecture to create impactful products. I also use tools like Claude Code, Codex, Antigravity, and Cursor to speed up development while keeping quality high.
+                                        I am actively expanding my expertise into high-performance systems with Golang, complemented by robust DevOps practices including Docker, Kubernetes, and CI/CD pipelines.
                                     </p>
                                 </div>
                             </motion.div>
