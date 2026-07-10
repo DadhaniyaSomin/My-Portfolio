@@ -4,23 +4,80 @@ import { TechStackSection } from "@/components/TechStackSection"
 import { AboutSection } from "@/components/AboutSection"
 import { ExperienceSection } from "@/components/ExperienceSection"
 import { BlogSection } from "@/components/BlogSection"
+import { BlogPost } from "@/types/blog"
+import { Client } from "@notionhq/client"
 
 import { SITE_URL } from "@/lib/utils"
 
 async function getInitialData() {
+  console.log("🚀 Fetching homepage data")
+
+  const notion = new Client({
+    auth: process.env.NOTION_TOKEN,
+  })
+
+  const DATABASE_ID = process.env.NOTION_DATABASE_ID
+
+  if (!process.env.NOTION_TOKEN || !DATABASE_ID) {
+    console.error("❌ Missing Notion environment variables")
+    return { blogs: [] }
+  }
+
   try {
-    const blogsRes = await fetch(`${SITE_URL}/api/blog`, {
-      cache: "force-cache",
-      headers: { "x-api-secret": process.env.INTERNAL_API_SECRET || "" },
+    console.log("📡 Querying Notion for homepage blogs...")
+    const response = await notion.databases.query({
+      database_id: DATABASE_ID,
+      // Temporarily removed filter to see all pages
+      // filter: {
+      //   property: "Status",
+      //   status: {
+      //     equals: "Done",
+      //   },
+      // },
+      sorts: [
+        {
+          timestamp: "created_time",
+          direction: "descending",
+        },
+      ],
     })
 
-    const blogs = blogsRes.ok ? await blogsRes.json() : []
+    console.log("✅ Notion query successful, results:", response.results.length)
+
+    const posts = response.results.map((page: any) => {
+      const props = page.properties
+
+      let coverImage = "/placeholder.svg"
+      if (page.cover) {
+        coverImage = page.cover.type === "external"
+          ? page.cover.external.url
+          : page.cover.file.url
+      }
+
+      const authorData = props.Author?.people?.[0] || page.created_by
+
+      return {
+        id: page.id,
+        title: props.Name?.title?.[0]?.plain_text ?? "Untitled",
+        slug: props.Slug?.rich_text?.[0]?.plain_text ?? page.id,
+        summary: props.Summary?.rich_text?.[0]?.plain_text ?? "",
+        tags: props.Tags?.multi_select?.map((t: any) => t.name) ?? [],
+        date: page.created_time,
+        coverImage: coverImage,
+        author: {
+          name: authorData?.name ?? (process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya"),
+          avatar: authorData?.avatar_url ?? null,
+        }
+      }
+    })
+
+    console.log("✅ Successfully mapped", posts.length, "posts for homepage")
 
     return {
-      blogs: blogs.slice(0, 3),
+      blogs: posts.slice(0, 3) as BlogPost[],
     }
   } catch (error) {
-    console.error("Error fetching homepage data:", error)
+    console.error("❌ Error fetching homepage data:", error)
     return { blogs: [] }
   }
 }

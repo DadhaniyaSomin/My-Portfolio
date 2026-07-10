@@ -208,7 +208,7 @@ export default function BlogTableOfContents({
   };
 
   return (
-    <aside className="toc lg:sticky lg:top-24">
+    <aside className="toc lg:sticky lg:top-24 self-start">
       <h3>
         <List className="mr-2 h-4 w-4 text-primary" />
         Table of Contents
