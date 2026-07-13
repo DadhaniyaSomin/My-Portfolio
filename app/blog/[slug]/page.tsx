@@ -86,11 +86,23 @@ async function getBlogData(slug: string): Promise<ApiResponse | null> {
     const props = page.properties
 
     let coverImage = "/placeholder.svg"
+    // Check page-level cover first
     if (page.cover) {
-      coverImage =
-        page.cover.type === "external"
+      if (page.cover.type === "files") {
+        coverImage = page.cover.files[0]?.type === "external"
+          ? page.cover.files[0]?.external?.url
+          : page.cover.files[0]?.file?.url
+      } else {
+        coverImage = page.cover.type === "external"
           ? page.cover.external.url
           : page.cover.file.url
+      }
+    }
+    // Check property-level cover as fallback
+    else if (props.cover && props.cover.type === "files" && props.cover.files?.length > 0) {
+      coverImage = props.cover.files[0]?.type === "external"
+        ? props.cover.files[0]?.external?.url
+        : props.cover.files[0]?.file?.url
     }
 
     const authorData = props.Author?.people?.[0] || page.created_by
@@ -151,11 +163,11 @@ export async function generateMetadata({
       authors: [process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya"],
       images: post.coverImage
         ? [
-            {
-              url: post.coverImage,
-              alt: post.title,
-            },
-          ]
+          {
+            url: post.coverImage,
+            alt: post.title,
+          },
+        ]
         : [],
     },
     twitter: {

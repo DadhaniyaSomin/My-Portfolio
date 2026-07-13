@@ -56,87 +56,71 @@ export const Header = () => {
   ]
 
   return (
-    <header className={`fixed top-3 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "top-1" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}`}>
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="bg-background/60 dark:bg-slate-900/60 backdrop-blur-xl border border-border dark:border-white/10 rounded-xl px-5 py-2.5 flex items-center justify-between shadow-sm">
+        <div className="bg-gradient-to-r from-background/80 via-background/90 to-background/80 dark:from-slate-900/80 dark:via-slate-900/90 dark:to-slate-900/80 backdrop-blur-xl border border-border/50 dark:border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg shadow-primary/5">
 
-          <div className="flex items-center justify-between w-full relative">
-            {/* Logo (Separate) */}
-            <Link href="/" className="flex items-center">
-              <div className="relative w-9 h-9 flex items-center justify-center">
-                <img
-                  src="/logo-dark.webp"
-                  srcSet="/logo-dark@1x.webp 1x, /logo-dark@2x.webp 2x, /logo-dark@3x.webp 3x, /logo-dark@4x.webp 4x"
-                  alt="Somin Dadhaniya — Backend Software Engineer Portfolio"
-                  className="logo-light w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-                />
-                <img
-                  src="/logo.webp"
-                  srcSet="/logo@1x.webp 1x, /logo@2x.webp 2x, /logo@3x.webp 3x, /logo@4x.webp 4x"
-                  alt="Somin Dadhaniya — Backend Software Engineer Portfolio"
-                  className="logo-dark w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            </Link>
+          {/* Desktop Navigation - Centered PillNav */}
+          <div className="hidden md:block">
+            <PillNav
+              items={navItems}
+              activeHref={activeSection}
+              hoverCircleBgColor="#CCFF00"
+              hoveredPillTextColor="#000000"
+              ease="power2.out"
+              initialLoadAnimation={true}
+            />
+          </div>
 
-            {/* Desktop Navigation - Centered PillNav */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block">
-              <PillNav
-                items={navItems}
-                activeHref={activeSection}
-                hoverCircleBgColor="#CCFF00"
-                hoveredPillTextColor="#000000"
-                ease="power2.out"
-                initialLoadAnimation={true}
-              />
-            </div>
-
-            {/* Social Icons (Right Side - Desktop Only) */}
-            <div className="hidden md:flex items-center space-x-2">
-              <a
-                href="https://github.com/somindadhaniya"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Somin's GitHub profile"
+          {/* Social Icons (Right Side - Desktop Only) */}
+          <div className="hidden md:flex items-center space-x-1">
+            <a
+              href="https://github.com/somindadhaniya"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Somin's GitHub profile"
+              className="group"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-foreground/60 hover:text-foreground hover:bg-primary/10 hover:scale-110 transition-all duration-200"
               >
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-foreground/70 hover:text-foreground hover:bg-muted"
-                >
-                  <Github className="h-5 w-5" />
-                </Button>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/somin-dadhaniya"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Connect with Somin on LinkedIn"
+                <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+              </Button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/somin-dadhaniya"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Connect with Somin on LinkedIn"
+              className="group"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-foreground/60 hover:text-foreground hover:bg-primary/10 hover:scale-110 transition-all duration-200"
               >
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-foreground/70 hover:text-foreground hover:bg-muted"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </Button>
-              </a>
-              <a
-                href="https://www.instagram.com/somin_dadhaniya/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow Somin on Instagram"
+                <Linkedin className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+              </Button>
+            </a>
+            <a
+              href="https://www.instagram.com/somin_dadhaniya/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Somin on Instagram"
+              className="group"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-foreground/60 hover:text-foreground hover:bg-primary/10 hover:scale-110 transition-all duration-200"
               >
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-foreground/70 hover:text-foreground hover:bg-muted"
-                >
-                  <Instagram className="h-5 w-5" />
-                </Button>
-              </a>
-              <ThemeToggle />
-            </div>
+                <Instagram className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+              </Button>
+            </a>
+            <div className="w-px h-6 bg-border/50 mx-2" />
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Toggle */}

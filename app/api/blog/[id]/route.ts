@@ -31,9 +31,9 @@ export async function GET(
     let coverImage = "/placeholder.svg"
     if (page.cover) {
       coverImage =
-        page.cover.type === "external"
-          ? page.cover.external.url
-          : page.cover.file.url
+        page.cover.files.type === "external"
+          ? page.cover.files.external.url
+          : page.cover.files.file.url
       console.log("🖼️ Cover image:", coverImage)
     }
 

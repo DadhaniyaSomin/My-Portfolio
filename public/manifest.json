@@ -1,0 +1,10 @@
+{
+  "name": "Somin Dadhaniya - Backend Software Engineer",
+  "short_name": "Somin Dadhaniya",
+  "description": "Backend Software Engineer specializing in Golang, Laravel, Docker, and System Design",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary"
+}

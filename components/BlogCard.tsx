@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Calendar, User } from "lucide-react"
+import { Calendar, User, Clock, ArrowRight } from "lucide-react"
 import { BlogPost } from "@/types/blog"
 import { CardWithCorners } from "@/components/ui/card-with-corners"
 import { Badge } from "@/components/ui/badge"
@@ -11,55 +11,73 @@ type Props = {
 }
 
 export function BlogCard({ post }: Props) {
+  const tagColors: Record<string, string> = {
+    'golang': 'bg-blue-500/10 text-blue-500 border-blue-500/20',
+    'programming': 'bg-green-500/10 text-green-500 border-green-500/20',
+    'concurruncy': 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20',
+    'docker': 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20',
+    'laravel': 'bg-red-500/10 text-red-500 border-red-500/20',
+  }
+
+  const getTagColor = (tag: string) => {
+    const lowerTag = tag.toLowerCase()
+    return tagColors[lowerTag] || 'text-primary border-primary/20'
+  }
+
   return (
     <Link href={`/blog/${post.slug}`}>
-      <CardWithCorners className="group hover:scale-105 transition-all cursor-pointer">
+      <CardWithCorners className="group cursor-pointer overflow-hidden border-border/50">
 
-        <div className="aspect-video overflow-hidden mb-4 -mx-6 -mt-6">
+        {/* Cover Image with Blur and Gradient Overlay */}
+        <div className="aspect-video overflow-hidden relative -mx-6 -mt-6 mb-4">
           <img
             src={post.coverImage || "/placeholder.svg"}
-            className="w-full h-full object-cover group-hover:scale-110 transition"
+            className="w-full h-full object-cover blur-sm"
             alt={post.title}
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3 px-1">
 
-          {/* Date + Author */}
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
-
-            <span className="flex gap-1 items-center">
-              <Calendar className="h-4 w-4" />
-              {new Date(post.date).toLocaleDateString()}
+          {/* Metadata Row */}
+          <div className="flex items-center justify-between text-xs text-muted-foreground/80">
+            <span className="flex gap-1.5 items-center">
+              <Calendar className="h-3.5 w-3.5" />
+              {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
             </span>
-
-            <span className="flex gap-1 items-center">
-              <User className="h-4 w-4" />
+            <span className="flex gap-1.5 items-center">
+              <User className="h-3.5 w-3.5" />
               {post.author?.name ?? (process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya")}
             </span>
-
           </div>
 
-          {/* Title – 2 lines */}
-          <h3 className="text-xl font-bold group-hover:text-primary transition line-clamp-2">
+          {/* Title */}
+          <h3 className="text-lg font-bold  transition-colors line-clamp-2 leading-tight">
             {post.title}
           </h3>
 
-          {/* Summary – 1 line */}
-          <p className="text-foreground/70 text-sm line-clamp-1">
+          {/* Summary */}
+          <p className="text-foreground/60 text-sm line-clamp-2 leading-relaxed">
             {post.summary}
           </p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 pt-1">
             {post.tags.slice(0, 3).map(tag => (
               <Badge
                 key={tag}
-                className="bg-muted border border-border text-xs text-foreground/80 shadow-none hover:bg-muted"
+                className={`${getTagColor(tag)} text-xs font-medium px-2.5 py-1 transition-colors`}
               >
                 {tag}
               </Badge>
             ))}
+          </div>
+
+          {/* Read More Indicator */}
+          <div className="flex items-center gap-2 text-xs text-primary/70  transition-colors pt-2">
+            <span>Read more</span>
+            <ArrowRight className="h-3.5 w-3.5  transition-transform" />
           </div>
 
         </div>

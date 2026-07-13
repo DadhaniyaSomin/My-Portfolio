@@ -5,9 +5,9 @@
 }
 
 .pill-nav {
-  --nav-h: 38px;
-  --pill-pad-x: 16px;
-  --pill-gap: 4px;
+  --nav-h: 42px;
+  --pill-pad-x: 20px;
+  --pill-gap: 6px;
   width: max-content;
   display: flex;
   align-items: center;
@@ -21,6 +21,9 @@
   height: var(--nav-h);
   background: var(--nav-bg, transparent);
   border-radius: 9999px;
+  padding: 4px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .pill-list {
@@ -49,15 +52,19 @@
   text-decoration: none;
   border-radius: 9999px;
   box-sizing: border-box;
-  font-weight: 500;
-  font-size: 13.5px;
+  font-weight: 600;
+  font-size: 14px;
   line-height: 1;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
   white-space: nowrap;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
 }
 
 .pill .hover-circle {
@@ -70,7 +77,9 @@
   display: block;
   pointer-events: none;
   will-change: transform;
+  box-shadow: 0 0 20px var(--hover-circle-bg, #CCFF00);
 }
+
 
 .pill .label-stack {
   position: relative;
@@ -95,18 +104,23 @@
   z-index: 3;
   display: inline-block;
   will-change: transform, opacity;
+  font-weight: 700;
 }
-
+/* 
 .pill.is-active::after {
   content: '';
   position: absolute;
-  bottom: 3px;
+  bottom: 4px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background: var(--hover-circle-bg, #CCFF00);
   border-radius: 50%;
   z-index: 4;
-  box-shadow: 0 0 8px var(--hover-circle-bg, #CCFF00);
+  box-shadow: 0 0 12px var(--hover-circle-bg, #CCFF00);
 }
+
+.pill.is-active {
+  color: var(--hover-circle-bg, #CCFF00);
+} */
