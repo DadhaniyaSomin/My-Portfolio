@@ -66,6 +66,11 @@ const websiteSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   manifest: "/manifest.json",
+  icons: {
+    icon: '/letter-s.ico',
+    shortcut: [],
+    apple: [],
+  },
   title: {
     default: "Somin Dadhaniya — Backend Software Engineer | Portfolio",
     template: "%s | Somin Dadhaniya",

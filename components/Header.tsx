@@ -58,7 +58,7 @@ export const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}`}>
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl border border-border/50 dark:border-white/10 rounded-2xl px-6 py-3 flex items-center justify-center shadow-lg shadow-primary/5 relative">
+        <div className="bg-background/95 dark:bg-transparent backdrop-blur-xl border border-border/50 dark:border-white/10 rounded-2xl px-6 py-3 flex items-between  md:justify-center shadow-lg shadow-primary/5 relative">
 
           {/* Desktop Navigation - Centered PillNav */}
           <div className="hidden md:block">
@@ -97,15 +97,15 @@ export const Header = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="flex items-center md:hidden absolute right-4">
+          <div className="flex items-center md:hidden gap-1 flex-shrink-0">
             <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
-              className="text-foreground flex-shrink-0 ml-2"
+              className="text-foreground flex-shrink-0"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
@@ -117,7 +117,7 @@ export const Header = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="md:hidden mt-2 bg-background/90 backdrop-blur-xl border border-border rounded-2xl p-4"
+              className="md:hidden mt-2 bg-background/90 backdrop-blur-xl border border-border rounded-2xl p-4 relative z-0"
             >
               <div className="flex flex-col space-y-2">
                 {navItems.map((item) => (

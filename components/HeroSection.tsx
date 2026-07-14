@@ -38,7 +38,12 @@ export const HeroSection = () => {
 
       {/* Action Button */}
       <div className="flex justify-center items-center">
-        <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer" className="inline-block">
+        <a 
+          href={process.env.NEXT_PUBLIC_RESUME_URL} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="inline-block"
+        >
           <Button
             size="lg"
             className="bg-[#CCFF00] hover:bg-[#b8e600] text-black px-8 py-2.5 font-bold shadow-lg hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all duration-300 rounded-full text-xs md:text-sm uppercase tracking-wider"
