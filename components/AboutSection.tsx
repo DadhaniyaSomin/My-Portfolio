@@ -35,10 +35,10 @@ export const AboutSection = () => {
 
                                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
                                     <p>
-                                        My passion lies at the intersection of logic and creativity — engineering robust, scalable systems and crafting intuitive digital experiences. With a Bachelor of Technology in Computer Science and 3 years of full-lifecycle development experience, I bring a unique perspective to software engineering.
+                                        My passion lies at the intersection of logic and creativity engineering robust, scalable systems and crafting intuitive digital experiences. With a Bachelor of Technology in Computer Science and 3 years of full-lifecycle development experience, I bring a unique perspective to software engineering.
                                     </p>
                                     <p>
-                                        I don&apos;t just write code — I engineer solutions that balance technical excellence with user-centric design principles, ensuring the applications I build are both powerful and delightful to use.
+                                        I don&apos;t just write code  I engineer solutions that balance technical excellence with user-centric design principles, ensuring the applications I build are both powerful and delightful to use.
                                     </p>
                                     <p>
                                         I am actively expanding my expertise into high-performance systems with Golang, complemented by robust DevOps practices including Docker, Kubernetes, and CI/CD pipelines.
