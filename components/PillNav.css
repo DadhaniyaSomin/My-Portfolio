@@ -72,12 +72,12 @@
   left: 50%;
   bottom: 0;
   border-radius: 50%;
-  background: var(--hover-circle-bg, #CCFF00);
+  background: var(--hover-circle-bg, #ffffff);
   z-index: 1;
   display: block;
   pointer-events: none;
   will-change: transform;
-  box-shadow: 0 0 20px var(--hover-circle-bg, #CCFF00);
+  box-shadow: 0 0 20px var(--hover-circle-bg, #ffffff);
 }
 
 

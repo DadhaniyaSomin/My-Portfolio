@@ -96,7 +96,7 @@ export const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            If you have any queries regarding my academic projects or would like to discuss them with me, please feel free to reach out!
+            Building scalable systems and solving complex problems is my passion. Let's connect and discuss how we can collaborate on your next project or explore opportunities together.
           </p>
         </div>
 
@@ -147,14 +147,7 @@ export const ContactSection = () => {
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground font-medium mb-4">Follow Me</p>
                 <div className="flex space-x-4">
-                  <a
-                    href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME || "somindadhaniya"}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all"
-                  >
-                    <Github className="h-5 w-5 text-foreground" />
-                  </a>
+                  
                   <a
                     href={`https://www.linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_USERNAME || "somin-dadhaniya"}`}
                     target="_blank"
@@ -163,14 +156,7 @@ export const ContactSection = () => {
                   >
                     <Linkedin className="h-5 w-5 text-foreground" />
                   </a>
-                  <a
-                    href={`https://www.instagram.com/${process.env.NEXT_PUBLIC_INSTAGRAM_USERNAME || "somin_dadhaniya"}/`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-muted rounded-lg hover:brightness-90 transition-all"
-                  >
-                    <Instagram className="h-5 w-5 text-foreground" />
-                  </a>
+                  
                 </div>
               </div>
             </CardWithCorners>
@@ -244,7 +230,7 @@ export const ContactSection = () => {
                     type="text"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Academic Project Inquiry"
+                    placeholder="Project Inquiry"
                     className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                     required
                     disabled={isSubmitting}

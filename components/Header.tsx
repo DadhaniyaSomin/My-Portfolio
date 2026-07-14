@@ -58,39 +58,24 @@ export const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}`}>
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="bg-gradient-to-r from-background/80 via-background/90 to-background/80 dark:from-slate-900/80 dark:via-slate-900/90 dark:to-slate-900/80 backdrop-blur-xl border border-border/50 dark:border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg shadow-primary/5">
+        <div className="bg-background/95 dark:bg-slate-950/95 backdrop-blur-xl border border-border/50 dark:border-white/10 rounded-2xl px-6 py-3 flex items-center justify-center shadow-lg shadow-primary/5 relative">
 
           {/* Desktop Navigation - Centered PillNav */}
           <div className="hidden md:block">
             <PillNav
               items={navItems}
               activeHref={activeSection}
-              hoverCircleBgColor="#CCFF00"
+              hoverCircleBgColor="#ffffff"
               hoveredPillTextColor="#000000"
               ease="power2.out"
               initialLoadAnimation={true}
             />
           </div>
 
-          {/* Social Icons (Right Side - Desktop Only) */}
-          <div className="hidden md:flex items-center space-x-1">
+          {/* LinkedIn - Desktop */}
+          <div className="hidden md:block absolute right-16">
             <a
-              href="https://github.com/somindadhaniya"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Visit Somin's GitHub profile"
-              className="group"
-            >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-foreground/60 hover:text-foreground hover:bg-primary/10 hover:scale-110 transition-all duration-200"
-              >
-                <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-              </Button>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/somin-dadhaniya"
+              href="https://www.linkedin.com/in/dadhaniya-somin-3a4137121/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Connect with Somin on LinkedIn"
@@ -104,27 +89,15 @@ export const Header = () => {
                 <Linkedin className="h-5 w-5 group-hover:rotate-12 transition-transform" />
               </Button>
             </a>
-            <a
-              href="https://www.instagram.com/somin_dadhaniya/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow Somin on Instagram"
-              className="group"
-            >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-foreground/60 hover:text-foreground hover:bg-primary/10 hover:scale-110 transition-all duration-200"
-              >
-                <Instagram className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-              </Button>
-            </a>
-            <div className="w-px h-6 bg-border/50 mx-2" />
+          </div>
+
+          {/* Theme Toggle - Desktop */}
+          <div className="hidden md:block absolute right-6">
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center md:hidden absolute right-4">
             <ThemeToggle />
             <Button
               variant="ghost"

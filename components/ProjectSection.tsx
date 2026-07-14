@@ -89,7 +89,7 @@ const ProjectSection = ({ initialProjects }: { initialProjects?: Project[] }) =>
         {/* Header section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
-            ACADEMIC PROJECTS
+            PROJECTS
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A collection of tools and applications I've built to solve real-world problems

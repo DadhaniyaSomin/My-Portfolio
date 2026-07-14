@@ -202,7 +202,7 @@ export default async function BlogDetailPage({
       />
 
       {/* HERO */}
-      <div className="relative min-h-[60vh] flex flex-col justify-end pb-8">
+      <div className="relative min-h-[50vh] md:min-h-[60vh] flex flex-col justify-end pb-8 pt-16 md:pt-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${post.coverImage})` }}
@@ -211,26 +211,26 @@ export default async function BlogDetailPage({
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         </div>
 
-        <div className="relative z-10 container mx-auto max-w-6xl">
+        <div className="relative z-10 container mx-auto max-w-6xl px-4 md:px-6">
 
-          <Link href="/blog" className="flex items-center gap-2 text-foreground/70 mb-5 hover:text-foreground transition-colors">
+          <Link href="/blog" className="flex items-center gap-2 text-foreground/70 mb-4 md:mb-5 hover:text-foreground transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </Link>
 
-          <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+          {/* <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">{post.title}</h1> */}
 
-          <p className="text-foreground/70 mb-6">{post.summary}</p>
+          {/* <p className="text-foreground/70 mb-6 text-base md:text-lg line-clamp-3 md:line-clamp-2">{post.summary}</p> */}
 
-          <div className="flex gap-4 text-sm text-foreground/60">
+          <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm text-foreground/60">
 
-            <span className="flex gap-1 items-center">
-              <Clock className="w-4 h-4" />
+            <span className="flex gap-1.5 items-center">
+              <Clock className="w-3.5 h-3.5 md:w-4 md:h-4" />
               {formatDate(post.date)}
             </span>
 
-            <span className="flex gap-1 items-center">
-              <Eye className="w-4 h-4" />
+            <span className="flex gap-1.5 items-center">
+              <Eye className="w-3.5 h-3.5 md:w-4 md:h-4" />
               {readingDuration(content || "")}
             </span>
 
@@ -245,7 +245,7 @@ export default async function BlogDetailPage({
       </div>
 
       {/* CONTENT */}
-      <div className="container mx-auto max-w-6xl pt-4 pb-16 relative">
+      <div className="container mx-auto max-w-6xl pt-4 pb-16 relative px-4 md:px-6">
         <BgGradient />
 
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
@@ -253,7 +253,7 @@ export default async function BlogDetailPage({
             <MarkdownContent content={content} />
           </article>
 
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 hidden lg:block">
             <BlogTableOfContents content={content} />
           </div>
         </div>
