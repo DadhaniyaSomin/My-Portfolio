@@ -4,6 +4,7 @@ import { BlogPost } from "@/types/blog"
 import { CardWithCorners } from "@/components/ui/card-with-corners"
 import { Badge } from "@/components/ui/badge"
 import BlogSearch from "./search"
+import BlogClientPagination from "./client-pagination"
 import { SITE_URL } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Client } from "@notionhq/client"
@@ -128,8 +129,22 @@ async function getPosts() {
   }
 }
 
-export default async function BlogListPage() {
+// Extract all unique tags from posts
+function getAllTags(posts: BlogPost[]): string[] {
+  const tagSet = new Set<string>()
+  posts.forEach(post => {
+    post.tags.forEach(tag => tagSet.add(tag))
+  })
+  return Array.from(tagSet).sort()
+}
+
+export default async function BlogListPage({
+  searchParams,
+}: {
+  searchParams: { page?: string; tag?: string }
+}) {
   const posts: BlogPost[] = await getPosts()
+  const allTags = getAllTags(posts)
 
   const topics = [
     { icon: Code, title: "Golang", desc: "Best practices & patterns" },
@@ -151,8 +166,8 @@ export default async function BlogListPage() {
           </p>
         </div>
 
-        {/* Client search */}
-        <BlogSearch posts={posts} />
+        {/* Client-side pagination component */}
+        <BlogClientPagination posts={posts} allTags={allTags} />
 
         {/* Featured Topics - shown when no posts */}
         {posts.length === 0 && (
