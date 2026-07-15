@@ -33,15 +33,15 @@ export const HeroSection = () => {
 
       {/* Description Text */}
       <p className="text-sm md:text-base text-zinc-400 max-w-xl text-center leading-relaxed px-4 mb-10 select-text">
-        I'm <span className="font-bold text-white">Somin Dadhaniya</span> — A Software Engineer specializing in building scalable, efficient backend systems with 3 years of full-lifecycle development experience.
+        I'm <span className="font-bold text-white">Somin Dadhaniya</span> — A Software Engineer specializing in backend architecture. I translate complex business requirements into high-performance, robust systems, emphasizing technical clarity and sustainable solutions that make life easier for the entire team.
       </p>
 
       {/* Action Button */}
       <div className="flex justify-center items-center">
-        <a 
-          href={process.env.NEXT_PUBLIC_RESUME_URL} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={process.env.NEXT_PUBLIC_RESUME_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block"
         >
           <Button

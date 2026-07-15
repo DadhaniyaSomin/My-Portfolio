@@ -35,13 +35,13 @@ export const AboutSection = () => {
 
                                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
                                     <p>
-                                        My passion lies at the intersection of logic and creativity engineering robust, scalable systems and crafting intuitive digital experiences. With a Bachelor of Technology in Computer Science and 3 years of full-lifecycle development experience, I bring a unique perspective to software engineering.
+                                        I'm Somin Dadhaniya. I have a B.Tech in CS and three years of full-lifecycle experience, which mostly means I’ve learned that the fastest way to break a system is to let someone say, "Well, it worked on my machine." I build backend infrastructure that handles real-world chaos without requiring a weekend of emergency patching.
                                     </p>
                                     <p>
-                                        I don&apos;t just write code  I engineer solutions that balance technical excellence with user-centric design principles, ensuring the applications I build are both powerful and delightful to use.
+                                        Right now, I’m deep in the trenches with Golang, Docker, and Kubernetes. I picked this stack not because I love writing endless lines of YAML, but because I’m genuinely fascinated by distributed systems and I apparently enjoy a good challenge. I don’t just ship code to meet a deadline; I write it with the distinct awareness that a teammate (or future me) has to read it later without losing their sanity.
                                     </p>
                                     <p>
-                                        I am actively expanding my expertise into high-performance systems with Golang, complemented by robust DevOps practices including Docker, Kubernetes, and CI/CD pipelines.
+                                        I’m a big believer that software is a team sport. I don’t hide behind my monitor; I prefer to collaborate, survive code reviews together, and iterate until things are actually stable. If your team is looking for a developer who values clean architecture, despises ego-driven coding, and won't vanish the moment a feature goes live—we should connect.
                                     </p>
                                 </div>
                             </motion.div>

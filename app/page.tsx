@@ -42,8 +42,6 @@ async function getInitialData() {
       ],
     })
 
-    console.log("✅ Notion query successful, results:", response.results.length)
-
     const posts = response.results.map((page: any) => {
       const props = page.properties
 
