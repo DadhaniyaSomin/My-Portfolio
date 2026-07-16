@@ -35,7 +35,7 @@ export const AboutSection = () => {
 
                                 <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
                                     <p>
-                                        I'm Somin Dadhaniya. I have a B.Tech in CS and three years of full-lifecycle experience, which mostly means I’ve learned that the fastest way to break a system is to let someone say, "Well, it worked on my machine." I build backend infrastructure that handles real-world chaos without requiring a weekend of emergency patching.
+                                        I'm Somin Dadhaniya. I have a B.Tech in CS and three years of full-lifecycle experience, I build backend infrastructure that handles real-world chaos without requiring a weekend of emergency patching.
                                     </p>
                                     <p>
                                         Right now, I’m deep in the trenches with Golang, Docker, and Kubernetes. I picked this stack not because I love writing endless lines of code, but because I’m genuinely fascinated by distributed systems and I apparently enjoy a good challenge. I don’t just ship code to meet a deadline; I write it with the distinct awareness that a teammate (or future me) has to read it later without losing their sanity.
