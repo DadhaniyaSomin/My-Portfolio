@@ -57,13 +57,14 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out ${isScrolled
+      className={`fixed inset-x-0 z-50 transition-all duration-500 ${isScrolled
         ? "opacity-100 translate-y-0"
         : "opacity-0 -translate-y-6 pointer-events-none"
         }`}
+      style={{ top: "8px" }}
     >
       <div
-        className="container mx-auto max-w-6xl px-4 pt-[max(env(safe-area-inset-top),16px)]"
+        className="container mx-auto max-w-6xl px-2"
       >
         <div className="relative flex items-center justify-between rounded-2xl border border-border/50 bg-background/95 px-6 py-3 backdrop-blur-xl shadow-lg shadow-primary/5 dark:border-white/10 dark:bg-background/70">
 
