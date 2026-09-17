@@ -10,7 +10,7 @@ export const HeroSection = () => {
     >
       {/* Top Small Label */}
       <div className="text-[10px] md:text-xs font-medium tracking-[0.25em] text-zinc-400 uppercase mb-8 md:mb-10 text-center">
-        Crafting High-Performance Backend Services Since — 2022
+        Building backend systems that actually work since — 2022
       </div>
 
       {/* Main Title */}
@@ -33,7 +33,7 @@ export const HeroSection = () => {
 
       {/* Description Text */}
       <p className="text-sm md:text-base text-zinc-400 max-w-xl text-center leading-relaxed px-4 mb-10 select-text">
-        I'm <span className="font-bold text-white">Somin Dadhaniya</span> — A Software Engineer specializing in backend architecture. I translate complex business requirements into high-performance, robust systems, emphasizing technical clarity and sustainable solutions that make life easier for the entire team.
+        I'm <span className="font-bold text-white">Somin Dadhaniya</span> — A Software Engineer who loves backend architecture. I turn complex business requirements into systems that actually work and don't break every weekend. I care about writing code that makes sense to everyone on the team, not just me.
       </p>
 
       {/* Action Button */}

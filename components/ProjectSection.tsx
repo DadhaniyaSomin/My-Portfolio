@@ -92,7 +92,7 @@ const ProjectSection = ({ initialProjects }: { initialProjects?: Project[] }) =>
             PROJECTS
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A collection of tools and applications I've built to solve real-world problems
+            Here are some tools and applications I've built to solve real problems I actually ran into
           </p>
         </div>
 
@@ -118,7 +118,7 @@ const ProjectSection = ({ initialProjects }: { initialProjects?: Project[] }) =>
             className="flex gap-2 justify-center items-center text-muted-foreground hover:text-foreground transition-all ease-linear group"
             aria-label="Visit GitHub to see more projects"
           >
-            <span className="text-lg font-medium">Visit GitHub to see More</span>
+            <span className="text-lg font-medium">Check out more on GitHub</span>
             <ExternalLink
               className="w-5 h-5 stroke-1.5 group-hover:translate-x-1 transition-transform" />
           </a>

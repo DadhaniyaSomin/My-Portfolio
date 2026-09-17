@@ -40,7 +40,7 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
             Latest Blogs
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Thoughts, tutorials, and insights about software engineering
+            Here are my thoughts, tutorials, and insights about software engineering - mostly things I've learned through trial and error
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
         )}
 
         {!loading && posts.length === 0 && (
-          <p className="text-center text-gray-500">No blogs found.</p>
+          <p className="text-center text-gray-500">No blogs yet - I'm working on some posts!</p>
         )}
       </div>
     </section>

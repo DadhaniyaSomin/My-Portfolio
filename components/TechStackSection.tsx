@@ -73,7 +73,7 @@ export const TechStackSection = () => {
             Tech Stack
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Technologies I use to engineer scalable backend systems
+            These are the tools and technologies I use to build scalable backend systems that actually work
           </p>
         </div>
 

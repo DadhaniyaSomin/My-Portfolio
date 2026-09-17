@@ -2,7 +2,7 @@
 
 Backend Software Engineer | Golang | Laravel | Docker | System Design
 
-Hi! I'm Somin, a passionate backend engineer focused on building scalable, performant systems. I specialize in Golang, Laravel, and cloud infrastructure with a deep interest in database optimization and distributed systems.
+Hey! I'm Somin. I'm a backend engineer who genuinely enjoys building scalable, performant systems. I work mostly with Golang, Laravel, and cloud infrastructure - there's something about database optimization and distributed systems that keeps me hooked.
 
 ## 🛠️ Tech Stack
 
@@ -26,12 +26,12 @@ Hi! I'm Somin, a passionate backend engineer focused on building scalable, perfo
 
 ## 📝 Blog
 
-I write about backend engineering, system design, and practical tutorials. Check out my latest posts on [my blog](https://somindadhaniya.vercel.app/blog).
+I write about backend engineering, system design, and practical tutorials - mostly things I've learned the hard way so you don't have to. Check out my latest posts on [my blog](https://somindadhaniya.vercel.app/blog).
 
-Topics I cover:
-- Golang best practices
-- Laravel optimization
-- Docker containerization
+Topics I write about:
+- Golang best practices (and mistakes I've made)
+- Laravel optimization tricks
+- Docker containerization adventures
 - Database performance tuning
 - Microservices architecture
 - API design patterns
@@ -48,7 +48,7 @@ Visit my portfolio: [somindadhaniya.vercel.app](https://somindadhaniya.vercel.ap
 
 ## 🚀 Projects
 
-This portfolio showcases my work and technical writing. It's built with Next.js 15, TypeScript, and Tailwind CSS, with blog content managed via Notion CMS.
+This portfolio showcases my work and technical writing. I built it with Next.js 15, TypeScript, and Tailwind CSS - the blog content comes from Notion CMS because I like keeping things organized.
 
 ---
 

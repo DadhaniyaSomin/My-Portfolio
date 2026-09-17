@@ -96,7 +96,7 @@ export const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Building scalable systems and solving complex problems is my passion. Let's connect and discuss how we can collaborate on your next project or explore opportunities together.
+            I genuinely enjoy building scalable systems and solving complex problems. Let's connect and chat about your next project, or just explore opportunities together - I'm always up for a good conversation.
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export const ContactSection = () => {
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-foreground font-medium mb-4">Follow Me</p>
                 <div className="flex space-x-4">
-                  
+
                   <a
                     href={`https://www.linkedin.com/in/${process.env.NEXT_PUBLIC_LINKEDIN_USERNAME || "somin-dadhaniya"}`}
                     target="_blank"
@@ -156,7 +156,7 @@ export const ContactSection = () => {
                   >
                     <Linkedin className="h-5 w-5 text-foreground" />
                   </a>
-                  
+
                 </div>
               </div>
             </CardWithCorners>
@@ -179,7 +179,7 @@ export const ContactSection = () => {
                       type="text"
                       value={formData.firstName}
                       onChange={handleChange}
-                      placeholder="John"
+                      placeholder="Your first name"
                       className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                       required
                       disabled={isSubmitting}
@@ -195,7 +195,7 @@ export const ContactSection = () => {
                       type="text"
                       value={formData.lastName}
                       onChange={handleChange}
-                      placeholder="Doe"
+                      placeholder="Your last name"
                       className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                       required
                       disabled={isSubmitting}
@@ -213,7 +213,7 @@ export const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="your@email.com"
                     className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                     required
                     disabled={isSubmitting}
@@ -230,7 +230,7 @@ export const ContactSection = () => {
                     type="text"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Project Inquiry"
+                    placeholder="What's this about?"
                     className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20"
                     required
                     disabled={isSubmitting}
@@ -246,7 +246,7 @@ export const ContactSection = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell me about your query or project..."
+                    placeholder="Tell me what's on your mind..."
                     rows={5}
                     className="bg-muted border-border text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary/20 resize-none"
                     required

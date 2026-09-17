@@ -14,7 +14,7 @@ export const ExperienceSection = () => {
                     </a>
                     <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
                     <p className="text-foreground/80 text-base leading-relaxed mb-6">
-                        Introduced and implemented a CI/CD pipeline using GitHub Actions, automating testing and deployment. Built and consumed sophisticated RESTful APIs for integration with mobile applications and partner services. Pioneered the adoption of Docker for local development, standardizing the environment and onboarding new developers 50% faster. Currently leading a project to introduce Golang for a high-performance reporting microservice.
+                        I set up a CI/CD pipeline with GitHub Actions that actually made our deployments smoother - no more manual testing headaches. I built RESTful APIs that mobile apps and partner services could actually use without constant debugging. I also pushed for Docker in our local development environment, which standardized everything and got new developers up to speed 50% faster. Right now I'm leading a project to bring in Golang for a high-performance reporting microservice - excited to see how it performs.
                     </p>
                     <div className="flex flex-wrap gap-2">
                         {["Golang", "Laravel", "PHP", "Docker", "GitHub Actions", "CI/CD", "RESTful APIs", "PostgreSQL", "MySQL", "Microservices"].map((tech, i) => (
@@ -36,7 +36,7 @@ export const ExperienceSection = () => {
                     </a>
                     <p className="text-sm text-gray-500 mb-4">Ahmedabad, India</p>
                     <p className="text-foreground/80 text-base leading-relaxed mb-6">
-                        Developed new features and modules for client projects using Laravel and MySQL. Built and integrated RESTful API endpoints for front-end consumption. Collaborated with front-end developers to integrate back-end logic. Optimized database queries and implemented caching with Redis, improving application response time by 25%. Integrated multiple third-party payment APIs (Stripe, PayPal). Mentored junior developers on Laravel best practices and conducted code reviews.
+                        I built new features and modules for client projects using Laravel and MySQL - mostly making sure things actually worked as expected. I created RESTful API endpoints that the front-end team could use without constantly asking me questions. I spent time optimizing database queries and added Redis caching, which boosted response times by 25% (that felt pretty good). I also integrated payment APIs like Stripe and PayPal - always fun when money is involved. I got to mentor junior developers on Laravel best practices and review their code, which I actually enjoyed.
                     </p>
                     <div className="flex flex-wrap gap-2">
                         {["Laravel", "PHP", "MySQL", "Redis", "RESTful APIs", "Stripe", "PayPal", "Git", "PHPUnit", "MVC"].map((tech, i) => (
