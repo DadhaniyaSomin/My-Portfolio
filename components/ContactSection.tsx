@@ -9,6 +9,7 @@ import { CardWithCorners } from "@/components/ui/card-with-corners"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Loader2, Instagram, Heart } from "lucide-react"
 import { motion } from "framer-motion"
 import { toast } from "sonner"
+import { SectionHeading } from "./SectionHeading"
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -91,14 +92,11 @@ export const ContactSection = () => {
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-primary/5 to-transparent z-0"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
-            Get In Touch
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            I genuinely enjoy building scalable systems and solving complex problems. Let's connect and chat about your next project, or just explore opportunities together - I'm always up for a good conversation.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="04 / Contact"
+          title="Get In Touch"
+          description="I enjoy building scalable systems and solving difficult problems. Let’s talk about your next project or opportunity."
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Contact Info */}

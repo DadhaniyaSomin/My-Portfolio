@@ -3,6 +3,7 @@ import { ContactSection } from "@/components/ContactSection"
 import { TechStackSection } from "@/components/TechStackSection"
 import { AboutSection } from "@/components/AboutSection"
 import { ExperienceSection } from "@/components/ExperienceSection"
+// import { EngineeringApproachSection } from "@/components/EngineeringApproachSection"
 import { BlogSection } from "@/components/BlogSection"
 import { BlogPost } from "@/types/blog"
 import { Client } from "@notionhq/client"
@@ -102,6 +103,7 @@ const Index = async () => {
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
+      {/* <EngineeringApproachSection /> */}
       <TechStackSection />
       <BlogSection initialPosts={blogs} />
     </div>

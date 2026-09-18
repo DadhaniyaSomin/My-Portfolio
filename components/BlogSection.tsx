@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react"
 import { BlogPost } from "@/types/blog"
 import { BlogCardSkeleton } from "@/components/BlogCardSkeleton"
 import { BlogCard } from "./BlogCard"
+import { SectionHeading } from "./SectionHeading"
 
 export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
   const [posts, setPosts] = useState<BlogPost[]>(initialPosts || [])
@@ -35,14 +36,11 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
       <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
-            Latest Blogs
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Here are my thoughts, tutorials, and insights about software engineering - mostly things I've learned through trial and error
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="03 / Field Notes"
+          title="Latest Blogs"
+          description="Practical notes on backend engineering, distributed systems, and lessons learned while building."
+        />
 
         {/* Loader */}
         {loading && (

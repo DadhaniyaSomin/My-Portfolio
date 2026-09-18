@@ -5,6 +5,7 @@ import { CardWithCorners } from "@/components/ui/card-with-corners"
 import { Badge } from "@/components/ui/badge"
 import BlogSearch from "./search"
 import BlogClientPagination from "./client-pagination"
+import { SectionHeading } from "@/components/SectionHeading"
 import { SITE_URL } from "@/lib/utils"
 import type { Metadata } from "next"
 import { Client } from "@notionhq/client"
@@ -154,17 +155,13 @@ export default async function BlogListPage({
   ]
 
   return (
-    <div className="min-h-screen bg-background text-foreground pt-32 pb-20 transition-colors duration-300">
+    <div className="min-h-screen bg-background px-5 pb-20 pt-32 text-foreground transition-colors duration-300 md:px-8">
       <div className="container mx-auto max-w-6xl">
-
-        <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
-            Blogs
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Thoughts, tutorials, and insights about software engineering
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="03 / Archive"
+          title="Blogs"
+          description="Thoughts, tutorials, and field notes from building backend systems, APIs, and software that holds up in production."
+        />
 
         {/* Client-side pagination component */}
         <BlogClientPagination posts={posts} allTags={allTags} />

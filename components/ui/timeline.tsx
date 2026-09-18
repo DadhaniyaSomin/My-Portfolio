@@ -6,6 +6,7 @@ import {
     motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { SectionHeading } from "@/components/SectionHeading";
 
 interface TimelineEntry {
     title: string;
@@ -38,14 +39,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             ref={containerRef}
         >
             <div className="max-w-6xl mx-auto py-0 px-4 md:px-8 lg:px-10">
-                <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
-                        Experience
-                    </h2>
-                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        My professional journey so far
-                    </p>
-                </div>
+                <SectionHeading
+                    eyebrow="01 / Experience"
+                    title="Experience"
+                    description="Building dependable systems and shipping meaningful work with other teams."
+                />
             </div>
 
             <div ref={ref} className="relative max-w-6xl mx-auto pb-20">

@@ -33,7 +33,7 @@ export const HeroSection = () => {
 
       {/* Description Text */}
       <p className="text-sm md:text-base text-zinc-400 max-w-xl text-center leading-relaxed px-4 mb-10 select-text">
-        I'm <span className="font-bold text-white">Somin Dadhaniya</span> — A Software Engineer who loves backend architecture. I turn complex business requirements into systems that actually work and don't break every weekend. I care about writing code that makes sense to everyone on the team, not just me.
+        I'm <span className="font-bold text-white">Somin Dadhaniya</span> software engineer with 4+ years of experience designing distributed systems, backend platforms, cloud workflows, and full-stack products across languages and teams.
       </p>
 
       {/* Action Button */}

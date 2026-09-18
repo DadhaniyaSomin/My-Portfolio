@@ -1,6 +1,7 @@
 "use client"
 
 import { ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 interface Project {
   id: string
@@ -21,10 +22,9 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="absolute h-full w-full left-0 top-0 bg-muted group-hover:bg-[#ffd074] border border-border rounded-2xl transition-all ease-in-out"></div>
 
       {/* Main card - on top */}
-      <button
-        type="button"
+      <Link
+        href={`/projects/${project.id}`}
         className="relative flex justify-between px-6 md:px-8 rounded-2xl h-auto min-h-32 py-4 items-center bg-card border border-border hover:border-slate-400 dark:hover:border-zinc-600 top-0 left-0 group-hover:-top-2 group-hover:-left-2 transition-all ease-in-out w-full shadow-lg hover:shadow-xl"
-        onClick={() => window.open(`https://${project.url}`, "_blank")}
       >
         <div className="flex flex-col gap-2 text-start relative pr-2 min-w-0 flex-1">
           <div className="flex flex-col gap-0.5 min-w-0">
@@ -59,7 +59,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <ExternalLink className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground group-hover:text-black dark:group-hover:text-white transition-colors flex-shrink-0 ml-2" />
-      </button>
+      </Link>
     </div>
   )
 }

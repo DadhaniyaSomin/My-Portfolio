@@ -8,6 +8,7 @@ import {
 } from 'react-icons/si';
 import { FaServer, FaCode, FaNetworkWired, FaAws } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+import { SectionHeading } from './SectionHeading';
 
 interface Technology {
   name: string;
@@ -68,14 +69,11 @@ export const TechStackSection = () => {
   return (
     <section id="tech" className="py-20 md:px-6 bg-background transition-colors duration-300">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
-            Tech Stack
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            These are the tools and technologies I use to build scalable backend systems that actually work
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="02 / Toolkit"
+          title="Tech Stack"
+          description="The tools I use to design, build, operate, and improve scalable backend systems."
+        />
 
         <div className="space-y-12">
           {categories.map((category, catIndex) => (

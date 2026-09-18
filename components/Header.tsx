@@ -57,9 +57,9 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 z-50 transition-all duration-500 ${isScrolled
-        ? "opacity-100 translate-y-0"
-        : "opacity-0 -translate-y-6 pointer-events-none"
+      className={`fixed inset-x-0 z-50 opacity-100 translate-y-0 pointer-events-auto transition-all duration-500 ${isScrolled
+        ? "md:opacity-100 md:translate-y-0"
+        : "md:opacity-0 md:-translate-y-6 md:pointer-events-none"
         }`}
       style={{ top: "8px" }}
     >
@@ -117,6 +117,64 @@ export const Header = () => {
             </Button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden"
+            >
+              <div className="mt-2 rounded-2xl border border-border/50 bg-background/95 px-6 py-4 backdrop-blur-xl shadow-lg shadow-primary/5 dark:border-white/10 dark:bg-background/70">
+                <nav className="flex flex-col gap-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+                <div className="mt-6 flex items-center gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/dadhaniya-somin-3a4137121/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                  >
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="hover:bg-primary/10 hover:scale-110"
+                    >
+                      <Linkedin className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+                    </Button>
+                  </a>
+                  <a
+                    href="https://github.com/somindadhaniya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                  >
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="hover:bg-primary/10 hover:scale-110"
+                    >
+                      <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
+                    </Button>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   )
