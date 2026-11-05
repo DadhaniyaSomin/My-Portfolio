@@ -65,24 +65,11 @@ function CustomLink({
     );
 }
 
-// Rounded Image Component with Caption
-function RoundedImage({ src, alt, ...props }: { src?: string; alt?: string }) {
-    return (
-        <figure className="my-8 w-full">
-            <img
-                src={src}
-                alt={alt || ""}
-                className="rounded-xl w-full max-w-full"
-                {...props}
-            />
-            {alt && (
-                <figcaption className="mt-3 text-center text-sm text-muted-foreground italic">
-                    {alt}
-                </figcaption>
-            )}
-        </figure>
-    );
+// Writing pages are text-only; suppress embedded Notion images as well as cover art.
+function RoundedImage() {
+    return null;
 }
+RoundedImage.displayName = "RoundedImage";
 
 // Code Block Component with syntax highlighting and copy button
 function CodeBlock({
@@ -267,17 +254,16 @@ function ListItem({ children }: { children?: React.ReactNode }) {
 
 // Paragraph component
 function Paragraph({ children }: { children?: React.ReactNode }) {
-    // Detect if children is just an image (or our RoundedImage component)
-    // to avoid the "In HTML, <figcaption> cannot be a descendant of <p>" error.
-    const hasImage = React.Children.toArray(children).some((child: any) =>
-        child?.type?.displayName === "RoundedImage" || child?.props?.src || child?.type === "img" || (child?.props?.node?.tagName === "img")
+    const visibleChildren = React.Children.toArray(children).filter((child: any) =>
+        child?.type !== RoundedImage &&
+        child?.type?.displayName !== "RoundedImage" &&
+        child?.type !== "img" &&
+        child?.props?.node?.tagName !== "img"
     );
 
-    if (hasImage) {
-        return <div className="mb-6">{children}</div>;
-    }
+    if (visibleChildren.length === 0) return null;
 
-    return <p className="mb-6 text-[17px] md:text-lg leading-7 text-foreground/80">{children}</p>;
+    return <p className="mb-6 text-[17px] md:text-lg leading-7 text-foreground/80">{visibleChildren}</p>;
 }
 
 // Blockquote component

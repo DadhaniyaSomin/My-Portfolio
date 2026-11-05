@@ -14,18 +14,7 @@ export function BlogCard({ post }: Props) {
   return (
     <Link href={`/blog/${post.slug}`}>
       <CardWithCorners className="group h-full cursor-pointer overflow-hidden border-2 border-black bg-white p-4 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#00b8d4]">
-
-        {/* Cover Image with Blur and Gradient Overlay */}
-        <div className="aspect-video overflow-hidden relative -mx-4 -mt-4 mb-4 border-b-2 border-black">
-          <img
-            src={post.coverImage || "/placeholder.svg"}
-            className="w-full h-full object-cover transition-transform group-hover:scale-105"
-            alt={post.title}
-          />
-          <div className="absolute inset-0 bg-black/10" />
-        </div>
-
-        <div className="space-y-3 px-1">
+        <div className="space-y-3 px-1 py-1">
 
           {/* Metadata Row */}
           <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-wide text-neutral-500">

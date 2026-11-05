@@ -19,7 +19,6 @@ function generateBlogPostSchema(post: BlogPost, content: string) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.summary,
-    image: post.coverImage ?? undefined,
     datePublished: post.date,
     dateModified: post.date,
     author: {
@@ -161,20 +160,13 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       authors: [process.env.NEXT_PUBLIC_FULL_NAME || "Somin Dadhaniya"],
-      images: post.coverImage
-        ? [
-          {
-            url: post.coverImage,
-            alt: post.title,
-          },
-        ]
-        : [],
+      images: [],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.summary,
-      images: post.coverImage ? [post.coverImage] : [],
+      images: [],
     },
   }
 }
@@ -202,40 +194,32 @@ export default async function BlogDetailPage({
       />
 
       {/* HERO */}
-      <div className="relative flex min-h-[45vh] flex-col justify-end border-b-2 border-black bg-neutral-50 pb-10 pt-28">
-        <div className="absolute inset-0 bg-cover bg-center opacity-[0.12] grayscale" style={{ backgroundImage: `url(${post.coverImage})` }} />
+      <header className="border-b-2 border-black bg-neutral-50 pb-10 pt-28 md:pb-14">
+        <div className="container mx-auto max-w-4xl px-4 md:px-6">
+          <div>
+            <Link href="/blog" className="mb-6 flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-neutral-600 hover:text-cyan-800">
+              <ArrowLeft className="h-4 w-4" />
+              Back to Blog
+            </Link>
 
-        <div className="relative z-10 container mx-auto max-w-6xl px-4 md:px-6">
+            <h1 className="mb-5 max-w-4xl text-4xl font-extrabold uppercase leading-[.95] tracking-[-.06em] text-black md:text-6xl xl:text-7xl">{post.title}</h1>
+            <p className="mb-6 max-w-2xl font-mono text-sm leading-7 text-neutral-700 md:text-base">{post.summary}</p>
 
-          <Link href="/blog" className="mb-6 flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-neutral-600 hover:text-cyan-800">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Blog
-          </Link>
-
-          <h1 className="mb-5 max-w-4xl text-4xl font-extrabold uppercase leading-[.95] tracking-[-.06em] text-black md:text-7xl">{post.title}</h1>
-          <p className="mb-6 max-w-2xl font-mono text-sm leading-7 text-neutral-700 md:text-base">{post.summary}</p>
-
-          <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm text-foreground/60">
-
-            <span className="flex gap-1.5 items-center">
-              <Clock className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              {formatDate(post.date)}
-            </span>
-
-            <span className="flex gap-1.5 items-center">
-              <Eye className="w-3.5 h-3.5 md:w-4 md:h-4" />
-              {readingDuration(content || "")}
-            </span>
-
+            <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-foreground/60">
+              <span className="flex items-center gap-1.5">
+                <Clock className="h-4 w-4" />
+                {formatDate(post.date)}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Eye className="h-4 w-4" />
+                {readingDuration(content || "")}
+              </span>
+            </div>
           </div>
+
         </div>
-      </div>
+      </header>
 
-
-      {/* DIVIDER */}
-      <div className="container mx-auto max-w-6xl py-4">
-        <div className="h-px w-full bg-neutral-200" />
-      </div>
 
       {/* CONTENT */}
       <div className="container mx-auto max-w-6xl pt-4 pb-16 relative px-4 md:px-6">

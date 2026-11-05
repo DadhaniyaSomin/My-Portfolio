@@ -45,8 +45,8 @@ export default function BlogClientPagination({ posts, allTags }: { posts: BlogPo
           <button
             onClick={() => handleTagChange("")}
             className={`border border-black px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-widest transition-colors ${!selectedTag
-              ? "bg-primary text-black"
-              : "bg-white text-black hover:bg-cyan-50"
+              ? "bg-primary text-black dark:bg-primary dark:text-primary-foreground"
+              : "bg-white text-black hover:bg-cyan-50 dark:bg-card dark:text-foreground dark:hover:bg-primary dark:hover:text-primary-foreground"
               }`}
           >
             All
@@ -56,8 +56,8 @@ export default function BlogClientPagination({ posts, allTags }: { posts: BlogPo
               key={tag}
               onClick={() => handleTagChange(tag)}
             className={`border border-black px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-widest transition-colors ${selectedTag === tag
-              ? "bg-primary text-black"
-              : "bg-white text-black hover:bg-cyan-50"
+              ? "bg-primary text-black dark:bg-primary dark:text-primary-foreground"
+              : "bg-white text-black hover:bg-cyan-50 dark:bg-card dark:text-foreground dark:hover:bg-primary dark:hover:text-primary-foreground"
                 }`}
             >
               {tag}
