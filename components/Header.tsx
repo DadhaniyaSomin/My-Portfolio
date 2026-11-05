@@ -1,181 +1,37 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Menu, X, Github, Linkedin, Instagram } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react"
 import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "./ThemeToggle"
-import PillNav from "./PillNav"
+
+const navItems = [
+  { label: "Work", href: "/#projects" },
+  { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Writing", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
+]
 
 export const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-
-      // Track active section based on scroll position
-      const sections = ['about', 'experience', 'tech', 'blog']
-      const scrollPosition = window.scrollY + 100 // Offset for better detection
-
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(`/#${section}`)
-            return
-          }
-        }
-      }
-
-      // If at top of page, set to home
-      if (window.scrollY < 100) {
-        setActiveSection('')
-      }
-    }
-
-    handleScroll() // Call once on mount
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const navItems = [
-    { label: "About", href: "/#about" },
-    { label: "Experience", href: "/#experience" },
-    { label: "Tech Stack", href: "/#tech" },
-    { label: "Blogs", href: "/blog" },
-  ]
-
+  const [open, setOpen] = useState(false)
   return (
-    <header
-      className={`fixed inset-x-0 z-50 opacity-100 translate-y-0 pointer-events-auto transition-all duration-500 ${isScrolled
-        ? "md:opacity-100 md:translate-y-0"
-        : "md:opacity-0 md:-translate-y-6 md:pointer-events-none"
-        }`}
-      style={{ top: "8px" }}
-    >
-      <div
-        className="container mx-auto max-w-6xl px-2"
-      >
-        <div className="relative flex items-center justify-between rounded-2xl border border-border/50 bg-background/95 px-6 py-3 backdrop-blur-xl shadow-lg shadow-primary/5 dark:border-white/10 dark:bg-background/70">
-
-          {/* Desktop Navigation */}
-          <div className="hidden flex-1 justify-center md:flex">
-            <PillNav
-              items={navItems}
-              activeHref={activeSection}
-              hoverCircleBgColor="#ffffff"
-              hoveredPillTextColor="#000000"
-              ease="power2.out"
-              initialLoadAnimation
-            />
-          </div>
-
-          {/* Desktop Right */}
-          <div className="hidden items-center gap-2 md:flex absolute right-6">
-            <a
-              href="https://www.linkedin.com/in/dadhaniya-somin-3a4137121/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hover:bg-primary/10 hover:scale-110"
-              >
-                <Linkedin className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-              </Button>
-            </a>
-
-            <ThemeToggle />
-          </div>
-
-          {/* Mobile Right */}
-          <div className="ml-auto flex items-center gap-2 md:hidden">
-            <ThemeToggle />
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </Button>
-          </div>
+    <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-black bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
+        <Link href="/#home" className="font-mono text-sm font-bold uppercase tracking-tight">SD<span className="text-primary">.</span></Link>
+        <nav className="hidden items-center gap-7 md:flex">
+          {navItems.map((item, index) => <Link key={item.href} href={item.href} className="font-mono text-[11px] font-semibold uppercase tracking-[.12em] text-neutral-600 transition hover:text-cyan-700"><span className="mr-1 text-neutral-400">0{index + 1}</span>{item.label}</Link>)}
+        </nav>
+        <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
+          <Link href="/#contact" className="border-2 border-black bg-primary px-4 py-2 font-mono text-[10px] font-bold uppercase tracking-widest shadow-[3px_3px_0_#0a0a0a] transition hover:-translate-y-0.5 hover:bg-cyan-100">Let’s talk ↗</Link>
         </div>
-
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
-            >
-              <div className="mt-2 rounded-2xl border border-border/50 bg-background/95 px-6 py-4 backdrop-blur-xl shadow-lg shadow-primary/5 dark:border-white/10 dark:bg-background/70">
-                <nav className="flex flex-col gap-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="text-lg font-medium text-foreground hover:text-primary transition-colors"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </nav>
-                <div className="mt-6 flex items-center gap-4">
-                  <a
-                    href="https://www.linkedin.com/in/dadhaniya-somin-3a4137121/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group"
-                  >
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="hover:bg-primary/10 hover:scale-110"
-                    >
-                      <Linkedin className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-                    </Button>
-                  </a>
-                  <a
-                    href="https://github.com/somindadhaniya"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group"
-                  >
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="hover:bg-primary/10 hover:scale-110"
-                    >
-                      <Github className="h-5 w-5 group-hover:rotate-12 transition-transform" />
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} onClick={() => setOpen(!open)} className="border-2 border-black bg-white p-2 text-foreground dark:bg-card">{open ? <X size={18}/> : <Menu size={18}/>}</button>
+        </div>
       </div>
+      {open && <nav className="border-t border-neutral-200 bg-white px-5 py-4 md:hidden">{navItems.map((item) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className="block border-b border-neutral-100 py-3 font-mono text-xs font-semibold uppercase tracking-widest">{item.label}</Link>)}</nav>}
     </header>
   )
 }

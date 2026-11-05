@@ -5,18 +5,18 @@ import { CardWithCorners } from "@/components/ui/card-with-corners";
 
 export const AboutSection = () => {
     return (
-        <section id="about" className="py-20 md:px-6 bg-background relative overflow-hidden transition-colors duration-300">
+        <section id="about" className="border-b border-neutral-200 bg-white py-20 md:px-6">
             <div className="container mx-auto max-w-6xl relative z-10">
-                <CardWithCorners className="p-5 md:p-12">
+                <CardWithCorners className="border-2 border-black bg-white p-5 shadow-[5px_5px_0_#00b8d4] md:p-10">
                     <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
 
                         {/* Left Column - Image */}
                         <div className="w-full md:w-1/2 flex justify-center">
-                            <div className="relative w-full h-full flex items-center justify-center overflow-hidden rounded-xl">
+                            <div className="relative min-h-[320px] w-full flex items-center justify-center overflow-hidden border-2 border-black md:min-h-[440px]">
                                 <img
                                     src="/profession.jpg"
                                     alt="Somin Dadhaniya — Backend Software Engineer specializing in scalable systems and APIs"
-                                    className="w-full h-full object-cover"
+                                    className="absolute inset-0 h-full w-full object-cover grayscale"
                                 />
                             </div>
                         </div>
@@ -29,20 +29,15 @@ export const AboutSection = () => {
                                 transition={{ duration: 0.5 }}
                                 viewport={{ once: true }}
                             >
-                                <h2 className="text-2xl md:text-5xl font-bold mb-6 text-foreground uppercase tracking-tight">
+                                <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[.16em] text-cyan-700">03 / About</p>
+                                <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-black uppercase tracking-[-.06em]">
                                     About Me
                                 </h2>
 
-                                <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
-                                    <p>
-                                        I'm Somin Dadhaniya. I have a degree in Computer Science and 4+ years of experience building backend infrastructure that handles real-world complexity without requiring a weekend of emergency patching.
-                                    </p>
-                                    <p>
-                                        Right now, I’m deep in the trenches with Golang, Docker, and Kubernetes. I picked this stack not because I love writing endless lines of code, but because I’m genuinely fascinated by distributed systems and I apparently enjoy a good challenge. I don’t just ship code to meet a deadline; I write it with the distinct awareness that a teammate (or future me) has to read it later without losing their sanity.
-                                    </p>
-                                    <p>
-                                        I’m a big believer that software is a team sport. I don’t hide behind my monitor; I prefer to collaborate, survive code reviews together, and iterate until things are actually stable. If your team is looking for a developer who values clean architecture, despises ego-driven coding, and won't vanish the moment a feature goes live we should connect.
-                                    </p>
+                                <div className="space-y-5 font-mono text-sm leading-7 text-neutral-700">
+                                    <p>I’m a backend software engineer with a Computer Science degree and 4+ years of experience building APIs, backend services, and integrations for mobile apps and partner systems.</p>
+                                    <p>My work spans Go reporting services and Laravel products, with PostgreSQL, MySQL, Redis, Docker, and cloud infrastructure. I’m drawn to the engineering details that make systems dependable: clear API contracts, efficient data paths, and releases a team can repeat.</p>
+                                    <p>I see software as a team effort. I try to make technical decisions understandable, write code with its next maintainer in mind, and collaborate from early design through delivery.</p>
                                 </div>
                             </motion.div>
                         </div>

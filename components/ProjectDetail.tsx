@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { CardWithCorners } from "@/components/ui/card-with-corners"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ExternalLink, Star, Fork, GitFork, Calendar, Code, Eye } from "lucide-react"
+import { ArrowLeft, ExternalLink, Star, GitFork, Calendar, Code, Eye } from "lucide-react"
 import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 
@@ -50,11 +50,11 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
   }
 
   return (
-    <div className="min-h-screen bg-background transition-colors duration-300">
+    <div className="min-h-screen bg-white pt-14">
       {/* Header */}
       <div className="container mx-auto max-w-6xl px-6 py-12">
         <Link href="/#projects">
-          <Button variant="ghost" className="mb-8">
+          <Button variant="outline" className="mb-8 border-2 border-black font-mono text-xs uppercase tracking-widest">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Projects
           </Button>
@@ -67,10 +67,10 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
         >
           <div className="flex items-start justify-between mb-8">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              <h1 className="mb-4 text-4xl font-extrabold uppercase tracking-[-.06em] text-black md:text-7xl">
                 {formatProjectName(project.name)}
               </h1>
-              <p className="text-xl text-muted-foreground">
+              <p className="font-mono text-sm leading-7 text-neutral-600 md:text-base">
                 {project.description || "No description available"}
               </p>
             </div>
@@ -80,7 +80,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
               rel="noopener noreferrer"
               className="hidden md:block"
             >
-              <Button size="lg" className="bg-[#CCFF00] hover:bg-[#b8e600] text-black">
+              <Button size="lg" className="border-2 border-black bg-primary font-mono text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0_#0a0a0a] hover:bg-cyan-100">
                 <ExternalLink className="mr-2 h-4 w-4" />
                 View on GitHub
               </Button>
@@ -95,7 +95,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
               <span>stars</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
-              <Fork className="h-5 w-5" />
+              <GitFork className="h-5 w-5" />
               <span className="font-medium">{project.forks_count}</span>
               <span>forks</span>
             </div>
@@ -154,10 +154,10 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <CardWithCorners className="p-8">
+          <CardWithCorners className="border-2 border-black bg-white p-6 md:p-8">
             <h2 className="text-2xl font-bold mb-6">About This Project</h2>
             {project.readme ? (
-              <div className="prose prose-invert max-w-none">
+              <div className="prose max-w-none">
                 <ReactMarkdown>{project.readme}</ReactMarkdown>
               </div>
             ) : (
@@ -181,7 +181,7 @@ export const ProjectDetail = ({ project }: ProjectDetailProps) => {
             rel="noopener noreferrer"
             className="md:hidden"
           >
-            <Button size="lg" className="bg-[#CCFF00] hover:bg-[#b8e600] text-black">
+            <Button size="lg" className="border-2 border-black bg-primary font-mono text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0_#0a0a0a] hover:bg-cyan-100">
               <ExternalLink className="mr-2 h-4 w-4" />
               View on GitHub
             </Button>

@@ -3,28 +3,26 @@ import Link from "next/link"
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 pt-32">
-      <div className="text-center space-y-6 mb-12">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4 pt-24 text-black">
+      <div className="mb-12 border-2 border-black bg-white p-10 text-center shadow-[5px_5px_0_#00b8d4]">
         <div>
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">
+          <h1 className="mb-4 text-6xl font-extrabold tracking-tighter text-black md:text-8xl">
             404
           </h1>
-          <p className="text-2xl md:text-3xl font-semibold text-white mb-2">
+          <p className="mb-2 text-2xl font-bold text-black md:text-3xl">
             Blog Post Not Found
           </p>
-          <p className="text-gray-400 text-lg max-w-md">
+          <p className="max-w-md font-mono text-sm leading-7 text-neutral-600">
             The blog post you're looking for doesn't exist or has been removed.
           </p>
         </div>
       </div>
 
-      <Link href="/blog" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors group">
+      <Link href="/blog" className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-cyan-800 hover:text-black group">
         <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
-        <span className="text-lg font-medium">Back to All Blogs</span>
+        <span>Back to all posts</span>
       </Link>
 
-      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-purple-600/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 -z-10" />
-      <div className="fixed bottom-0 left-0 w-[400px] h-[400px] bg-blue-600/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 -z-10" />
     </div>
   )
 }

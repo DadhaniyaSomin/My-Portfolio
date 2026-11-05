@@ -10,12 +10,13 @@ const NotFound = () => {
   }, [])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-400 mb-4">Oops! Page not found</p>
+    <div className="flex min-h-screen items-center justify-center bg-white px-5 text-black">
+      <div className="border-2 border-black bg-white p-10 text-center shadow-[5px_5px_0_#00b8d4]">
+        <p className="mb-3 font-mono text-xs uppercase tracking-widest text-cyan-800">Route / unavailable</p>
+        <h1 className="mb-4 text-7xl font-extrabold tracking-tighter">404</h1>
+        <p className="mb-6 font-mono text-sm text-neutral-600">The page you requested could not be found.</p>
         <Link href="/">
-          <Button className="bg-blue-600 hover:bg-blue-700">Return to Home</Button>
+          <Button className="border-2 border-black bg-primary font-mono text-xs font-bold uppercase tracking-widest text-black">Return home</Button>
         </Link>
       </div>
     </div>

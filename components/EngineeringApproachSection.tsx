@@ -1,18 +1,18 @@
 const principles = [
   {
-    title: "Choose tools from the problem.",
+    title: "Design the failure path.",
     description:
-      "Languages are implementation choices, not professional identities. I work from constraints, performance, operability, team context, and delivery needs to choose the right stack.",
+      "Timeouts, retries, and clear API contracts matter as much as the happy path. I account for how a service behaves when its dependencies slow down or fail.",
   },
   {
-    title: "Treat reliability as product work.",
+    title: "Measure before optimizing.",
     description:
-      "Retries, rate limits, observability, data consistency, and failure modes shape the user experience as much as the interface does.",
+      "I look at the request and query paths before adding complexity. Query optimization and Redis caching reduced API response times by 25% in a performance-sensitive workflow.",
   },
   {
-    title: "Collaborate beyond the ticket.",
+    title: "Make delivery repeatable.",
     description:
-      "The best engineering decisions come from understanding product intent, operational constraints, and what teammates need to keep moving.",
+      "Docker standardized local development, while GitHub Actions made testing and deployment more consistent. The goal is a setup teammates can use and maintain with confidence.",
   },
 ]
 
@@ -20,36 +20,34 @@ export const EngineeringApproachSection = () => {
   return (
     <section
       id="engineering-approach"
-      className="bg-[#f3f0e8] px-5 py-20 text-[#0d1613] transition-colors duration-300 dark:bg-[#0d1613] dark:text-[#f3f0e8] md:px-8 md:py-28"
+      className="border-y border-neutral-200 bg-neutral-50 px-5 py-20 text-black md:px-8"
     >
       <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-[minmax(280px,0.8fr)_minmax(0,1.2fr)] md:gap-20">
         <div className="self-start">
-          <p className="mb-7 font-mono text-[11px] font-semibold uppercase tracking-[0.28em] text-[#ccff00]">
-            03 / Engineering Approach
+          <p className="mb-5 font-mono text-xs font-semibold uppercase tracking-[.16em] text-cyan-800">
+            05 / Approach
           </p>
-          <h2 className="max-w-md text-5xl font-medium leading-[0.96] tracking-[-0.04em] md:text-7xl">
-            Strong systems
+          <h2 className="max-w-md text-4xl font-extrabold uppercase leading-[.9] tracking-[-.06em] md:text-6xl">
+            How I
             <br />
-            make teams
-            <br />
-            <span className="font-serif italic text-[#ccff00]">move better.</span>
+            work.
           </h2>
         </div>
 
-        <div className="border-t border-[#0d1613]/15 dark:border-white/15">
+        <div className="border-t-2 border-black">
           {principles.map((principle, index) => (
             <article
               key={principle.title}
-              className="grid gap-4 border-b border-[#0d1613]/15 py-8 dark:border-white/15 md:grid-cols-[48px_1fr] md:gap-8 md:py-9"
+              className="grid gap-4 border-b border-neutral-300 py-7 md:grid-cols-[48px_1fr] md:gap-8 md:py-8"
             >
-              <span className="font-mono text-[11px] font-semibold text-[#ccff00]">
+              <span className="font-mono text-xs font-semibold text-cyan-800">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <div>
-                <h3 className="text-2xl font-medium leading-tight md:text-3xl">
+                <h3 className="text-xl font-extrabold leading-tight md:text-2xl">
                   {principle.title}
                 </h3>
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-[#0d1613]/60 dark:text-white/50 md:text-base">
+                <p className="mt-3 max-w-2xl font-mono text-xs leading-6 text-neutral-600 md:text-sm md:leading-7">
                   {principle.description}
                 </p>
               </div>

@@ -41,12 +41,12 @@ export default function BlogClientPagination({ posts, allTags }: { posts: BlogPo
     <>
       {/* Tag Filter */}
       {allTags.length > 0 && (
-        <div className="mb-8 flex flex-wrap gap-2 justify-center">
+        <div className="mb-8 flex flex-wrap justify-start gap-2">
           <button
             onClick={() => handleTagChange("")}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${!selectedTag
+            className={`border border-black px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-widest transition-colors ${!selectedTag
               ? "bg-primary text-black"
-              : "bg-muted text-foreground hover:bg-muted/80"
+              : "bg-white text-black hover:bg-cyan-50"
               }`}
           >
             All
@@ -55,9 +55,9 @@ export default function BlogClientPagination({ posts, allTags }: { posts: BlogPo
             <button
               key={tag}
               onClick={() => handleTagChange(tag)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${selectedTag === tag
-                ? "bg-primary text-black"
-                : "bg-muted text-foreground hover:bg-muted/80"
+            className={`border border-black px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-widest transition-colors ${selectedTag === tag
+              ? "bg-primary text-black"
+              : "bg-white text-black hover:bg-cyan-50"
                 }`}
             >
               {tag}
@@ -75,7 +75,7 @@ export default function BlogClientPagination({ posts, allTags }: { posts: BlogPo
           <button
             onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
-            className={`p-2 rounded-lg border border-border hover:bg-muted transition-colors ${currentPage === 1 ? "opacity-50 pointer-events-none" : ""
+            className={`border border-black p-2 hover:bg-cyan-50 transition-colors ${currentPage === 1 ? "opacity-50 pointer-events-none" : ""
               }`}
           >
             <ArrowLeft className="w-5 h-5" />
@@ -128,9 +128,9 @@ export default function BlogClientPagination({ posts, allTags }: { posts: BlogPo
                 <button
                   key={page}
                   onClick={() => handlePageChange(page as number)}
-                  className={`w-10 h-10 rounded-lg border border-border flex items-center justify-center font-medium transition-colors ${currentPage === page
-                    ? "bg-primary text-black border-primary"
-                    : "hover:bg-muted"
+                  className={`flex h-10 w-10 items-center justify-center border border-black font-mono text-xs font-semibold transition-colors ${currentPage === page
+                    ? "bg-primary text-black"
+                    : "bg-white hover:bg-cyan-50"
                     }`}
                 >
                   {page}
@@ -142,7 +142,7 @@ export default function BlogClientPagination({ posts, allTags }: { posts: BlogPo
           <button
             onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
             disabled={currentPage === totalPages}
-            className={`p-2 rounded-lg border border-border hover:bg-muted transition-colors ${currentPage === totalPages ? "opacity-50 pointer-events-none" : ""
+            className={`border border-black p-2 hover:bg-cyan-50 transition-colors ${currentPage === totalPages ? "opacity-50 pointer-events-none" : ""
               }`}
           >
             <ArrowRight className="w-5 h-5" />

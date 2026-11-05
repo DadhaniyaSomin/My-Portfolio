@@ -76,33 +76,33 @@ export const ContactSection = () => {
   }
 
   return (
-    <section id="contact" className="pt-20 pb-10 bg-background relative flex items-center justify-center w-full overflow-hidden transition-colors duration-300">
+    <section id="contact" className="relative flex w-full items-center justify-center overflow-hidden border-t-2 border-black bg-white pb-10 pt-20">
       {/* Grid Background */}
       <div
         className="absolute inset-0 h-full w-full pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(to right, hsl(var(--foreground) / 0.1) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--foreground) / 0.1) 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
+          backgroundImage: `linear-gradient(to right, rgba(10,10,10,.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,10,10,.04) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
         }}
       />
       {/* Radial gradient mask */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white/60 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
       {/* Bottom Fade Gradient */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-primary/5 to-transparent z-0"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-0 h-40 bg-gradient-to-t from-cyan-50 to-transparent"></div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
         <SectionHeading
-          eyebrow="04 / Contact"
-          title="Get In Touch"
-          description="I enjoy building scalable systems and solving difficult problems. Let’s talk about your next project or opportunity."
+          eyebrow="07 / Contact"
+          title="Have a system to build?"
+          description="From a new API to a slow data path or a service integration, share what you’re building and where it’s getting stuck. I’m happy to talk through the problem and the next step."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           {/* Contact Info */}
           <div className="space-y-8 h-full">
-            <CardWithCorners className="p-4 md:p-8 h-full">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Let's Connect</h3>
+            <CardWithCorners className="h-full border-2 border-black bg-white p-5 md:p-8">
+              <h3 className="mb-6 text-2xl font-extrabold text-black">Direct contact</h3>
 
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -111,9 +111,9 @@ export const ContactSection = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-foreground font-medium">Email</p>
-                    <p className="text-muted-foreground break-all">
+                    <a href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL || "somindadhaniya111@gmail.com"}`} className="break-all text-cyan-800 underline decoration-cyan-300 underline-offset-4 hover:text-black">
                       {process.env.NEXT_PUBLIC_CONTACT_EMAIL || "somindadhaniya111@gmail.com"}
-                    </p>
+                    </a>
                   </div>
                 </div>
 
@@ -162,8 +162,8 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="h-full">
-            <CardWithCorners className="p-4 md:p-8 h-full">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Send Message</h3>
+            <CardWithCorners className="h-full border-2 border-black bg-white p-5 md:p-8">
+              <h3 className="mb-6 text-2xl font-extrabold text-black">Send a message</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -252,7 +252,7 @@ export const ContactSection = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-black font-bold py-3 shadow-[0_0_15px_rgba(204,255,0,0.25)] hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all duration-300" disabled={isSubmitting}>
+                <Button type="submit" className="h-12 w-full border-2 border-black bg-primary font-mono text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0_#0a0a0a] transition-all hover:bg-cyan-100 hover:shadow-[5px_5px_0_#0a0a0a]" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   ) : (

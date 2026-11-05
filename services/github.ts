@@ -20,6 +20,36 @@ export interface GitHubRepo {
   updated_at: string
 }
 
+export interface FeaturedGitHubRepo {
+  id: number
+  name: string
+  html_url: string
+  description: string | null
+  language: string | null
+  stargazers_count: number
+  forks_count: number
+}
+
+const FEATURED_REPOSITORY_IDS = [617347036, 564415983, 848912262, 1141031041, 1141031572]
+
+export async function fetchFeaturedGitHubRepos(): Promise<FeaturedGitHubRepo[]> {
+  const token = process.env.GITHUB_TOKEN
+  const repos = await Promise.all(FEATURED_REPOSITORY_IDS.map(async (id) => {
+    const response = await fetch(`https://api.github.com/repositories/${id}`, {
+      headers: {
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        Accept: "application/vnd.github+json",
+      },
+      next: { revalidate: 3600 },
+    })
+
+    if (!response.ok) return null
+    return response.json() as Promise<FeaturedGitHubRepo>
+  }))
+
+  return repos.filter((repo): repo is FeaturedGitHubRepo => repo !== null)
+}
+
 export async function fetchGitHubUser(username: string): Promise<GitHubUser> {
   const response = await fetch(`https://api.github.com/users/${username}`)
   if (!response.ok) {

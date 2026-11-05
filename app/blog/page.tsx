@@ -155,11 +155,11 @@ export default async function BlogListPage({
   ]
 
   return (
-    <div className="min-h-screen bg-background px-5 pb-20 pt-32 text-foreground transition-colors duration-300 md:px-8">
+    <div className="min-h-screen bg-white px-5 pb-20 pt-32 text-black md:px-8">
       <div className="container mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="03 / Archive"
-          title="Blogs"
+          eyebrow="Writing / Archive"
+          title="Field notes."
           description="Thoughts, tutorials, and field notes from building backend systems, APIs, and software that holds up in production."
         />
 
@@ -184,9 +184,9 @@ export default async function BlogListPage({
               {topics.map((topic, i) => (
                 <div
                   key={i}
-                  className="group p-6 rounded-2xl border border-border bg-card hover:bg-accent/50 transition-all duration-300 hover:scale-105"
+                  className="group border-2 border-black bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0_#00b8d4]"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center border border-black bg-cyan-50 transition-colors group-hover:bg-primary">
                     <topic.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-2">{topic.title}</h3>
@@ -205,9 +205,6 @@ export default async function BlogListPage({
 
       </div>
 
-      {/* background glow */}
-      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 -z-10" />
-      <div className="fixed bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 -z-10" />
     </div>
   )
 }

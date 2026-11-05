@@ -11,37 +11,24 @@ type Props = {
 }
 
 export function BlogCard({ post }: Props) {
-  const tagColors: Record<string, string> = {
-    'golang': 'bg-blue-500/10 text-blue-500 border-blue-500/20',
-    'programming': 'bg-green-500/10 text-green-500 border-green-500/20',
-    'concurruncy': 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20',
-    'docker': 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20',
-    'laravel': 'bg-red-500/10 text-red-500 border-red-500/20',
-  }
-
-  const getTagColor = (tag: string) => {
-    const lowerTag = tag.toLowerCase()
-    return tagColors[lowerTag] || 'text-primary border-primary/20'
-  }
-
   return (
     <Link href={`/blog/${post.slug}`}>
-      <CardWithCorners className="group cursor-pointer overflow-hidden border-border/50">
+      <CardWithCorners className="group h-full cursor-pointer overflow-hidden border-2 border-black bg-white p-4 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0_#00b8d4]">
 
         {/* Cover Image with Blur and Gradient Overlay */}
-        <div className="aspect-video overflow-hidden relative -mx-6 -mt-6 mb-4">
+        <div className="aspect-video overflow-hidden relative -mx-4 -mt-4 mb-4 border-b-2 border-black">
           <img
             src={post.coverImage || "/placeholder.svg"}
-            className="w-full h-full object-cover blur-sm"
+            className="w-full h-full object-cover transition-transform group-hover:scale-105"
             alt={post.title}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent" />
+          <div className="absolute inset-0 bg-black/10" />
         </div>
 
         <div className="space-y-3 px-1">
 
           {/* Metadata Row */}
-          <div className="flex items-center justify-between text-xs text-muted-foreground/80">
+          <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-wide text-neutral-500">
             <span className="flex gap-1.5 items-center">
               <Calendar className="h-3.5 w-3.5" />
               {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
@@ -53,12 +40,12 @@ export function BlogCard({ post }: Props) {
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-bold  transition-colors line-clamp-2 leading-tight">
+          <h3 className="text-xl font-extrabold tracking-tight text-black transition-colors group-hover:text-cyan-800 line-clamp-2 leading-tight">
             {post.title}
           </h3>
 
           {/* Summary */}
-          <p className="text-foreground/60 text-sm line-clamp-2 leading-relaxed">
+          <p className="font-mono text-xs text-neutral-600 line-clamp-2 leading-6">
             {post.summary}
           </p>
 
@@ -67,7 +54,7 @@ export function BlogCard({ post }: Props) {
             {post.tags.slice(0, 3).map(tag => (
               <Badge
                 key={tag}
-                className={`${getTagColor(tag)} text-xs font-medium px-2.5 py-1 transition-colors`}
+                className="border border-black bg-black px-2.5 py-1 text-xs font-mono font-medium text-white transition-colors"
               >
                 {tag}
               </Badge>
@@ -76,7 +63,7 @@ export function BlogCard({ post }: Props) {
 
           {/* Read More Indicator */}
           <div className="flex items-center gap-2 text-xs text-primary/70  transition-colors pt-2">
-            <span>Read more</span>
+            <span className="font-mono uppercase tracking-widest">Read more</span>
             <ArrowRight className="h-3.5 w-3.5  transition-transform" />
           </div>
 

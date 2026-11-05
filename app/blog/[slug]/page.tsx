@@ -194,7 +194,7 @@ export default async function BlogDetailPage({
   const blogPostSchema = generateBlogPostSchema(post, content)
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden transition-colors duration-300">
+    <div className="min-h-screen overflow-x-hidden bg-white text-black">
       {/* BlogPosting JSON-LD */}
       <script
         type="application/ld+json"
@@ -202,25 +202,18 @@ export default async function BlogDetailPage({
       />
 
       {/* HERO */}
-      <div className="relative min-h-[50vh] md:min-h-[60vh] flex flex-col justify-end pb-8 pt-16 md:pt-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${post.coverImage})` }}
-        >
-          <div className="absolute inset-0 bg-background/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-        </div>
+      <div className="relative flex min-h-[45vh] flex-col justify-end border-b-2 border-black bg-neutral-50 pb-10 pt-28">
+        <div className="absolute inset-0 bg-cover bg-center opacity-[0.12] grayscale" style={{ backgroundImage: `url(${post.coverImage})` }} />
 
         <div className="relative z-10 container mx-auto max-w-6xl px-4 md:px-6">
 
-          <Link href="/blog" className="flex items-center gap-2 text-foreground/70 mb-4 md:mb-5 hover:text-foreground transition-colors">
+          <Link href="/blog" className="mb-6 flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-neutral-600 hover:text-cyan-800">
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
           </Link>
 
-          {/* <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">{post.title}</h1> */}
-
-          {/* <p className="text-foreground/70 mb-6 text-base md:text-lg line-clamp-3 md:line-clamp-2">{post.summary}</p> */}
+          <h1 className="mb-5 max-w-4xl text-4xl font-extrabold uppercase leading-[.95] tracking-[-.06em] text-black md:text-7xl">{post.title}</h1>
+          <p className="mb-6 max-w-2xl font-mono text-sm leading-7 text-neutral-700 md:text-base">{post.summary}</p>
 
           <div className="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm text-foreground/60">
 
@@ -241,7 +234,7 @@ export default async function BlogDetailPage({
 
       {/* DIVIDER */}
       <div className="container mx-auto max-w-6xl py-4">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="h-px w-full bg-neutral-200" />
       </div>
 
       {/* CONTENT */}

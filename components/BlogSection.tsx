@@ -32,14 +32,14 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
   }, [initialPosts])
 
   return (
-    <section id="blog" className="py-20 bg-background transition-colors duration-300">
+    <section id="blog" className="border-b border-neutral-200 bg-white py-20">
       <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
         <SectionHeading
-          eyebrow="03 / Field Notes"
-          title="Latest Blogs"
-          description="Practical notes on backend engineering, distributed systems, and lessons learned while building."
+          eyebrow="06 / Writing"
+          title="Field notes."
+          description="Field notes from building backend systems: Go and Laravel patterns, API design, database performance, and the tradeoffs behind reliable software."
         />
 
         {/* Loader */}
@@ -64,10 +64,10 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
             <div className="flex justify-center mt-16">
               <Link
                 href="/blog"
-                className="flex gap-2 items-center text-muted-foreground hover:text-foreground group transition-colors"
+                className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-widest text-cyan-800 transition-colors hover:text-black"
               >
-                <span className="text-lg font-medium">View more blogs</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span>View all writing</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </>

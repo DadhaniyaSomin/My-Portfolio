@@ -1,14 +1,15 @@
 import { HeroSection } from "@/components/HeroSection"
-import { ContactSection } from "@/components/ContactSection"
 import { TechStackSection } from "@/components/TechStackSection"
 import { AboutSection } from "@/components/AboutSection"
 import { ExperienceSection } from "@/components/ExperienceSection"
-// import { EngineeringApproachSection } from "@/components/EngineeringApproachSection"
+import { EngineeringApproachSection } from "@/components/EngineeringApproachSection"
 import { BlogSection } from "@/components/BlogSection"
+import ProjectSection from "@/components/ProjectSection"
+import { ProofSection } from "@/components/ProofSection"
 import { BlogPost } from "@/types/blog"
 import { Client } from "@notionhq/client"
+import { fetchFeaturedGitHubRepos } from "@/services/github"
 
-import { SITE_URL } from "@/lib/utils"
 
 async function getInitialData() {
   console.log("🚀 Fetching homepage data")
@@ -95,16 +96,37 @@ async function getInitialData() {
   }
 }
 
+async function getInitialProjects() {
+  try {
+    const repos = await fetchFeaturedGitHubRepos()
+    return repos.map((repo) => ({
+      id: String(repo.id),
+      title: repo.name.replace(/[-_]/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase()),
+      url: repo.html_url.replace("https://", ""),
+      logoUrl: "/placeholder.webp",
+      description: repo.description || undefined,
+      language: repo.language || undefined,
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+    }))
+  } catch (error) {
+    console.error("Failed to fetch featured GitHub projects:", error)
+    return []
+  }
+}
+
 const Index = async () => {
-  const { blogs } = await getInitialData()
+  const [{ blogs }, projects] = await Promise.all([getInitialData(), getInitialProjects()])
 
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+    <div className="min-h-screen bg-white text-black">
       <HeroSection />
-      <AboutSection />
+      <ProofSection />
+      <ProjectSection initialProjects={projects} />
       <ExperienceSection />
-      {/* <EngineeringApproachSection /> */}
+      <AboutSection />
       <TechStackSection />
+      <EngineeringApproachSection />
       <BlogSection initialPosts={blogs} />
     </div>
   )

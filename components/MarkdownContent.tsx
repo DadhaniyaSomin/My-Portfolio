@@ -96,11 +96,12 @@ function CodeBlock({
     const [isCopied, setIsCopied] = useState(false);
 
     const codeString = String(children).replace(/\n$/, "");
-    const isMultiLine = codeString.includes("\n");
+    const isBlock = Boolean(className) || codeString.includes("\n");
 
     // Extract language from className (format: language-javascript)
-    const match = /language-(\w+)/.exec(className || "");
+    const match = /language-([a-zA-Z0-9_+#.-]+)/.exec(className || "");
     const language = match ? match[1] : "";
+    const languageLabel = language && language.toLowerCase() !== "plaintext" ? language : "Code";
 
     const codeHTML = highlight(codeString);
 
@@ -117,7 +118,7 @@ function CodeBlock({
     };
 
     // Inline code
-    if (!isMultiLine) {
+    if (!isBlock) {
         return (
             <code
                 className="bg-muted px-1.5 py-0.5 rounded text-[15px] font-mono border border-border/50"
@@ -130,20 +131,18 @@ function CodeBlock({
 
     // Multi-line code block
     return (
-        <div className="w-full my-6 rounded-xl overflow-hidden bg-muted/30 border border-border">
+        <div className="my-6 w-full overflow-hidden border-2 border-border bg-muted/30">
             {/* Header with language and copy button */}
             <div className="flex items-center justify-between px-4 py-2 bg-muted/50 border-b border-border">
                 <div className="flex items-center gap-2">
                     <div className="flex gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-red-500/70" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/70" />
+                        <div className="h-2.5 w-2.5 border border-border bg-primary" />
+                        <div className="h-2.5 w-2.5 border border-border bg-background" />
+                        <div className="h-2.5 w-2.5 border border-border bg-background" />
                     </div>
-                    {language && (
-                        <span className="ml-2 text-xs text-muted-foreground font-mono uppercase">
-                            {language}
-                        </span>
-                    )}
+                    <span className="ml-2 text-[10px] font-semibold text-foreground/80 font-mono uppercase tracking-widest">
+                        {languageLabel}
+                    </span>
                 </div>
                 <button
                     onClick={copyToClipboard}

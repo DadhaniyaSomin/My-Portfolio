@@ -1,58 +1,45 @@
-import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
+import { ArrowDownRight, Download, Github, Linkedin } from "lucide-react"
 
-export const HeroSection = () => {
-  return (
-    <section
-      id="home"
-      role="banner"
-      className="relative min-h-screen flex flex-col justify-center items-center bg-[#050508] text-foreground overflow-hidden py-24 px-6 select-none"
-    >
-      {/* Top Small Label */}
-      <div className="text-[10px] md:text-xs font-medium tracking-[0.25em] text-zinc-400 uppercase mb-8 md:mb-10 text-center">
-        Building backend systems that actually work since — 2022
+export const HeroSection = () => (
+  <section id="home" role="banner" className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden border-b-2 border-black bg-white px-5 pb-16 pt-28 sm:px-8 lg:px-12">
+    <div className="mx-auto grid w-full max-w-6xl items-end gap-12 lg:grid-cols-[1fr_300px]">
+      <div>
+        <div className="mb-8 flex items-center gap-3 font-mono text-xs font-semibold uppercase tracking-[.16em] text-neutral-600">
+          <span className="h-2.5 w-2.5 bg-primary" /> Somin Dadhaniya <span className="text-neutral-300">/</span> Backend engineer
+        </div>
+        <h1 className="max-w-5xl text-[clamp(3.8rem,10vw,7.6rem)] font-extrabold uppercase leading-[.84] tracking-[-.075em] text-black">
+          Backend systems.<br /><span className="text-primary">Built for reality.</span>
+        </h1>
+        <p className="mt-10 max-w-2xl font-mono text-sm leading-7 tracking-wide text-neutral-700 md:text-base">
+          I’m Somin, a software engineer building dependable APIs, data systems, and cloud workflows with Go, Laravel, and PostgreSQL.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" className="inline-flex h-12 items-center gap-2 border-2 border-black bg-primary px-5 text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0_#0a0a0a] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-cyan-100 hover:shadow-[6px_6px_0_#0a0a0a]">
+            See selected work <ArrowDownRight size={16} />
+          </a>
+          {process.env.NEXT_PUBLIC_RESUME_URL ? (
+            <a href={process.env.NEXT_PUBLIC_RESUME_URL} target="_blank" rel="noreferrer" className="inline-flex h-12 items-center gap-2 border-2 border-black bg-white px-5 text-xs font-bold uppercase tracking-widest text-black transition hover:bg-neutral-100"><Download size={16} /> Résumé</a>
+          ) : (
+            <a href="#about" className="inline-flex h-12 items-center gap-2 border-2 border-black bg-white px-5 text-xs font-bold uppercase tracking-widest text-black transition hover:bg-neutral-100">About me <ArrowDownRight size={16} /></a>
+          )}
+        </div>
       </div>
-
-      {/* Main Title */}
-      <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] font-black text-center text-[#CCFF00] uppercase tracking-tighter leading-[0.85] sm:leading-[0.85] md:leading-[0.85] mb-10 md:mb-14 select-text">
-        Somin
-        <br />
-        Dadhaniya
-      </h1>
-
-      {/* Sparkle Icon */}
-      <div className="flex justify-center mb-10 md:mb-14">
-        <svg
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="w-7 h-7 md:w-9 md:h-9 text-[#CCFF00] animate-[pulse_2s_infinite]"
-        >
-          <path d="M12 0L14.6 9.4L24 12L14.6 14.6L12 24L9.4 14.6L0 12L9.4 9.4L12 0Z" />
-        </svg>
-      </div>
-
-      {/* Description Text */}
-      <p className="text-sm md:text-base text-zinc-400 max-w-xl text-center leading-relaxed px-4 mb-10 select-text">
-        I'm <span className="font-bold text-white">Somin Dadhaniya</span> software engineer with 4+ years of experience designing distributed systems, backend platforms, cloud workflows, and full-stack products across languages and teams.
-      </p>
-
-      {/* Action Button */}
-      <div className="flex justify-center items-center">
-        <a
-          href={process.env.NEXT_PUBLIC_RESUME_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block"
-        >
-          <Button
-            size="lg"
-            className="bg-[#CCFF00] hover:bg-[#b8e600] text-black px-8 py-2.5 font-bold shadow-lg hover:shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all duration-300 rounded-full text-xs md:text-sm uppercase tracking-wider"
-          >
-            <Download className="mr-2 h-4 w-4" />
-            Download Resume
-          </Button>
-        </a>
-      </div>
-    </section>
-  )
-}
+      <aside className="border-2 border-black bg-white p-5 shadow-[5px_5px_0_#00b8d4]">
+        <div className="mb-4 flex items-center justify-between border-b border-neutral-200 pb-3 font-mono text-[11px] font-semibold uppercase tracking-[.14em]">
+          <span>Engineer profile</span><span className="text-cyan-700">[SD]</span>
+        </div>
+        <dl className="space-y-3 font-mono text-xs">
+          <div className="flex justify-between gap-4"><dt className="text-neutral-500">BASED</dt><dd className="text-right font-semibold">Ahmedabad, India</dd></div>
+          <div className="flex justify-between gap-4"><dt className="text-neutral-500">FOCUS</dt><dd className="text-right font-semibold">Backend / Systems</dd></div>
+          <div className="flex justify-between gap-4"><dt className="text-neutral-500">CORE</dt><dd className="text-right font-semibold">Go · Laravel · SQL</dd></div>
+          <div className="flex justify-between gap-4"><dt className="text-neutral-500">EXPERIENCE</dt><dd className="text-right font-semibold">4+ years</dd></div>
+        </dl>
+        <div className="mt-5 flex gap-2 border-t border-neutral-200 pt-4">
+          <a aria-label="GitHub" href="https://github.com/somindadhaniya" target="_blank" rel="noreferrer" className="border border-black p-2 transition hover:bg-cyan-50"><Github size={16}/></a>
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/in/dadhaniya-somin-3a4137121/" target="_blank" rel="noreferrer" className="border border-black p-2 transition hover:bg-cyan-50"><Linkedin size={16}/></a>
+        </div>
+      </aside>
+    </div>
+    <div className="pointer-events-none absolute bottom-5 right-6 font-mono text-[10px] uppercase tracking-[.16em] text-neutral-400">Portfolio / 2026</div>
+  </section>
+)
