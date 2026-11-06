@@ -37,7 +37,7 @@ export const ExperienceSection = () => (
   <section id="experience" className="border-b border-neutral-200 bg-white py-20">
     <div className="container mx-auto max-w-6xl px-5 sm:px-8">
       <SectionHeading
-        eyebrow="02 / Experience"
+        eyebrow="01 / Experience"
         title="Where I’ve worked."
         description="Across two engineering roles, I’ve built APIs for mobile and partner systems, improved database-backed performance, automated release workflows, and developed reporting services."
       />

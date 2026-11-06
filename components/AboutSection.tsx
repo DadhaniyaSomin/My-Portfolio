@@ -29,7 +29,7 @@ export const AboutSection = () => {
                                 transition={{ duration: 0.5 }}
                                 viewport={{ once: true }}
                             >
-                                <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[.16em] text-cyan-700">03 / About</p>
+                                <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[.16em] text-cyan-700">02 / About</p>
                                 <h2 className="text-4xl md:text-6xl font-extrabold mb-6 text-black uppercase tracking-[-.06em]">
                                     About Me
                                 </h2>

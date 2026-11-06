@@ -70,7 +70,7 @@ export const TechStackSection = () => {
     <section id="tech" className="border-b border-neutral-200 bg-white py-20 md:px-6">
       <div className="container mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="04 / Toolkit"
+          eyebrow="03 / Toolkit"
           title="Tech Stack"
           description="A practical toolkit for the full backend lifecycle: shaping service boundaries, building APIs, working with data, and supporting systems in production."
         />

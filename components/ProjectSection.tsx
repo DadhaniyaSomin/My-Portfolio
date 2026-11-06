@@ -19,7 +19,7 @@ export default function ProjectSection({ initialProjects = [] }: { initialProjec
     <section id="projects" className="border-y border-neutral-200 bg-neutral-50 py-20">
       <div className="container mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mb-12 text-left">
-          <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-[.16em] text-cyan-800">01 / Selected work</p>
+          <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-[.16em] text-cyan-800">04 / Selected work</p>
           <h2 className="mb-5 text-4xl font-extrabold uppercase tracking-[-.06em] text-black md:text-6xl">Things I’ve built.</h2>
           <p className="max-w-2xl font-mono text-sm leading-7 text-neutral-600 md:text-base">
             A handpicked set of repositories, each with a quick overview and direct access to its README, implementation, and technology details.

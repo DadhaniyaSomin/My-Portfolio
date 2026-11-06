@@ -122,10 +122,10 @@ const Index = async () => {
     <div className="min-h-screen bg-white text-black">
       <HeroSection />
       <ProofSection />
-      <ProjectSection initialProjects={projects} />
       <ExperienceSection />
       <AboutSection />
       <TechStackSection />
+      <ProjectSection initialProjects={projects} />
       <EngineeringApproachSection />
       <BlogSection initialPosts={blogs} />
     </div>
