@@ -29,7 +29,7 @@ const personSchema = {
   knowsAbout: [
     "Golang",
     "PHP",
-    "Laravel",
+    "PHP",
     "Backend Architecture",
     "Microservices",
     "Docker",
@@ -56,7 +56,7 @@ const websiteSchema = {
   name: "Somin Dadhaniya — Portfolio",
   url: SITE_URL,
   description:
-    "Portfolio of Somin Dadhaniya — Backend Software Engineer specializing in scalable systems, RESTful APIs, Golang, Laravel, Docker, and cloud-native infrastructure.",
+    "Portfolio of Somin Dadhaniya — Backend Software Engineer specializing in scalable systems, RESTful APIs, Golang, PHP, Docker, and cloud-native infrastructure.",
   author: {
     "@type": "Person",
     name: "Somin Dadhaniya",
@@ -76,12 +76,12 @@ export const metadata: Metadata = {
     template: "%s | Somin Dadhaniya",
   },
   description:
-    "Backend Software Engineer with 3 years of experience building scalable systems, RESTful APIs, and cloud-native infrastructure using Golang, Laravel, Docker, and PostgreSQL.",
+    "Backend Software Engineer with 3 years of experience building scalable systems, RESTful APIs, and cloud-native infrastructure using Golang, PHP, Docker, and PostgreSQL.",
   keywords: [
     "Somin Dadhaniya",
     "Backend Software Engineer",
     "Golang Developer",
-    "Laravel Developer",
+    "PHP Development",
     "PHP Developer",
     "Backend Developer India",
     "Microservices",

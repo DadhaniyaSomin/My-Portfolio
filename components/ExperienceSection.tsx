@@ -12,9 +12,9 @@ const roles = [
       "Designed REST APIs used by mobile apps and partner systems, improving integration reliability across teams.",
       "Automated testing and deployment with GitHub Actions, making releases repeatable and reducing manual verification.",
       "Lead development of a high-performance Go reporting microservice for faster, more scalable reporting workflows.",
-      "Deliver features across Go, Laravel, PHP, PostgreSQL, and MySQL, from backend design through production.",
+      "Deliver features across Go, PHP, PostgreSQL, and MySQL, from backend design through production.",
     ],
-    tools: ["Go", "Laravel", "Docker", "GitHub Actions", "PostgreSQL", "MySQL"],
+    tools: ["Go", "PHP", "Docker", "GitHub Actions", "PostgreSQL", "MySQL"],
   },
   {
     dates: "2022 — 2024",
@@ -24,12 +24,12 @@ const roles = [
     location: "Ahmedabad, India",
     outcome: "Reduced API response times by 25% on performance-sensitive workflows through query optimization and Redis caching.",
     points: [
-      "Built Laravel and MySQL backend modules from requirements through delivery, contributing to client-facing product features.",
+      "Built PHP and MySQL backend modules from requirements through delivery, contributing to client-facing product features.",
       "Designed REST API contracts for frontend teams and external services to make integrations predictable.",
       "Integrated Stripe and PayPal payment APIs into product workflows.",
       "Mentored junior developers and reviewed code to improve consistency and long-term maintainability.",
     ],
-    tools: ["Laravel", "PHP", "MySQL", "Redis", "REST APIs", "Stripe"],
+    tools: ["PHP", "MySQL", "Redis", "REST APIs", "Stripe"],
   },
 ]
 

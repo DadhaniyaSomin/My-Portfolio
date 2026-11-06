@@ -11,7 +11,7 @@ export const HeroSection = () => (
           Backend systems.<br /><span className="text-primary">Built for reality.</span>
         </h1>
         <p className="mt-10 max-w-2xl font-mono text-sm leading-7 tracking-wide text-neutral-700 md:text-base">
-          I’m Somin, a software engineer building dependable APIs, data systems, and cloud workflows with Go, Laravel, and PostgreSQL.
+          I’m Somin, a software engineer building dependable APIs, data systems, and cloud workflows with Go, PHP, and PostgreSQL.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="#projects" className="inline-flex h-12 items-center gap-2 border-2 border-black bg-primary px-5 text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0_#0a0a0a] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-cyan-100 hover:shadow-[6px_6px_0_#0a0a0a]">
@@ -31,7 +31,7 @@ export const HeroSection = () => (
         <dl className="space-y-3 font-mono text-xs">
           <div className="flex justify-between gap-4"><dt className="text-neutral-500">BASED</dt><dd className="text-right font-semibold">Ahmedabad, India</dd></div>
           <div className="flex justify-between gap-4"><dt className="text-neutral-500">FOCUS</dt><dd className="text-right font-semibold">Backend / Systems</dd></div>
-          <div className="flex justify-between gap-4"><dt className="text-neutral-500">CORE</dt><dd className="text-right font-semibold">Go · Laravel · SQL</dd></div>
+          <div className="flex justify-between gap-4"><dt className="text-neutral-500">CORE</dt><dd className="text-right font-semibold">Go · PHP · SQL</dd></div>
           <div className="flex justify-between gap-4"><dt className="text-neutral-500">EXPERIENCE</dt><dd className="text-right font-semibold">4+ years</dd></div>
         </dl>
         <div className="mt-5 flex gap-2 border-t border-neutral-200 pt-4">

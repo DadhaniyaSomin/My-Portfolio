@@ -15,14 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Blog — Backend Insights & Tutorials | ${fullName}`,
     description:
-      `Read ${fullName}'s blog on Golang, Laravel, Docker, database optimization, and scalable backend architecture. Tutorials, tips, and system design insights.`,
+      `Read ${fullName}'s blog on Golang, PHP, Docker, database optimization, and scalable backend architecture. Tutorials, tips, and system design insights.`,
     alternates: {
       canonical: `${SITE_URL}/blog`,
     },
     openGraph: {
       title: `Blog — Backend Insights | ${fullName}`,
       description:
-        "Tutorials, insights, and tips on Golang, Laravel, Docker, and backend architecture.",
+        "Tutorials, insights, and tips on Golang, PHP, Docker, and backend architecture.",
       url: `${SITE_URL}/blog`,
       type: "website",
     },

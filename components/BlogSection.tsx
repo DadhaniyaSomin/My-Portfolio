@@ -39,7 +39,7 @@ export function BlogSection({ initialPosts }: { initialPosts?: BlogPost[] }) {
         <SectionHeading
           eyebrow="06 / Writing"
           title="Field notes."
-          description="Field notes from building backend systems: Go and Laravel patterns, API design, database performance, and the tradeoffs behind reliable software."
+          description="Field notes from building backend systems: Go and PHP patterns, API design, database performance, and the tradeoffs behind reliable software."
         />
 
         {/* Loader */}

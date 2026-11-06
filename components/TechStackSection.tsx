@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  SiGo, SiPhp, SiLaravel, SiPostgresql, SiMysql, SiRedis,
+  SiGo, SiPhp, SiPostgresql, SiMysql, SiRedis,
   SiDocker, SiKubernetes, SiGithubactions, SiGit, SiGithub,
   SiNginx, SiRabbitmq, SiApachekafka, SiGrafana, SiElasticsearch,
   SiTypescript, SiJavascript
@@ -30,7 +30,6 @@ export const TechStackSection = () => {
       technologies: [
         { name: "Golang", icon: SiGo, url: "https://go.dev" },
         { name: "PHP", icon: SiPhp, url: "https://www.php.net" },
-        { name: "Laravel", icon: SiLaravel, url: "https://laravel.com" },
         { name: "PostgreSQL", icon: SiPostgresql, url: "https://www.postgresql.org" },
         { name: "MySQL", icon: SiMysql, url: "https://www.mysql.com" },
         { name: "Redis", icon: SiRedis, url: "https://redis.io" },

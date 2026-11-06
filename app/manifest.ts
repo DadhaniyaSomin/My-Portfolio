@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: `${fullName} — Backend Software Engineer Portfolio`,
     short_name: fullName,
     description:
-      `Portfolio of ${fullName} — Backend Software Engineer specializing in scalable systems, RESTful APIs, Golang, Laravel, Docker, and cloud-native infrastructure.`,
+      `Portfolio of ${fullName} — Backend Software Engineer specializing in scalable systems, RESTful APIs, Golang, PHP, Docker, and cloud-native infrastructure.`,
     start_url: '/',
     display: 'standalone',
     background_color: '#050507',

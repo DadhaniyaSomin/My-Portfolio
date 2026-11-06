@@ -1,14 +1,14 @@
 # Somin Dadhaniya
 
-Backend Software Engineer | Golang | Laravel | Docker | System Design
+Backend Software Engineer | Golang | PHP | Docker | System Design
 
-Hey! I'm Somin. I'm a backend engineer who genuinely enjoys building scalable, performant systems. I work mostly with Golang, Laravel, and cloud infrastructure - there's something about database optimization and distributed systems that keeps me hooked.
+Hey! I'm Somin. I'm a backend engineer who enjoys building scalable, performant systems. I work mostly with Golang, PHP, and cloud infrastructure - there's something about database optimization and distributed systems that keeps me hooked.
 
 ## 🛠️ Tech Stack
 
 **Languages & Frameworks**
 - Go (Golang)
-- PHP / Laravel
+- PHP
 - TypeScript / JavaScript
 - SQL (PostgreSQL, MySQL)
 
@@ -30,7 +30,7 @@ I write about backend engineering, system design, and practical tutorials - most
 
 Topics I write about:
 - Golang best practices (and mistakes I've made)
-- Laravel optimization tricks
+- PHP optimization techniques
 - Docker containerization adventures
 - Database performance tuning
 - Microservices architecture

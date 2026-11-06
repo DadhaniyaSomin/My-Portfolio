@@ -36,7 +36,7 @@ export const AboutSection = () => {
 
                                 <div className="space-y-5 font-mono text-sm leading-7 text-neutral-700">
                                     <p>I’m a backend software engineer with a Computer Science degree and 4+ years of experience building APIs, backend services, and integrations for mobile apps and partner systems.</p>
-                                    <p>My work spans Go reporting services and Laravel products, with PostgreSQL, MySQL, Redis, Docker, and cloud infrastructure. I’m drawn to the engineering details that make systems dependable: clear API contracts, efficient data paths, and releases a team can repeat.</p>
+                                    <p>My work spans Go reporting services and PHP products, with PostgreSQL, MySQL, Redis, Docker, and cloud infrastructure. I’m drawn to the engineering details that make systems dependable: clear API contracts, efficient data paths, and releases a team can repeat.</p>
                                     <p>I see software as a team effort. I try to make technical decisions understandable, write code with its next maintainer in mind, and collaborate from early design through delivery.</p>
                                 </div>
                             </motion.div>
