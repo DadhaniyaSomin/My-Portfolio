@@ -9,10 +9,10 @@ const roles = [
     location: "Ahmedabad, India",
     outcome: "Helped new developers become productive 50% faster by standardizing the local environment with Docker.",
     points: [
-      "Designed REST APIs used by mobile apps and partner systems, improving integration reliability across teams.",
-      "Automated testing and deployment with GitHub Actions, making releases repeatable and reducing manual verification.",
-      "Lead development of a high-performance Go reporting microservice for faster, more scalable reporting workflows.",
-      "Deliver features across Go, PHP, PostgreSQL, and MySQL, from backend design through production.",
+      "Build REST APIs for mobile applications and partner systems, improving reliability across integrations.",
+      "Standardize Docker-based local development to make onboarding more consistent for new developers.",
+      "Automate test and deployment workflows with GitHub Actions to make releases repeatable and reduce manual verification.",
+      "Develop a high-performance Go reporting microservice for faster, more scalable reporting workflows.",
     ],
     tools: ["Go", "PHP", "Docker", "GitHub Actions", "PostgreSQL", "MySQL"],
   },
@@ -24,10 +24,10 @@ const roles = [
     location: "Ahmedabad, India",
     outcome: "Reduced API response times by 25% on performance-sensitive workflows through query optimization and Redis caching.",
     points: [
-      "Built PHP and MySQL backend modules from requirements through delivery, contributing to client-facing product features.",
-      "Designed REST API contracts for frontend teams and external services to make integrations predictable.",
-      "Integrated Stripe and PayPal payment APIs into product workflows.",
-      "Mentored junior developers and reviewed code to improve consistency and long-term maintainability.",
+      "Delivered PHP and MySQL backend modules for client-facing products, taking features from requirements through delivery.",
+      "Optimized database query paths and introduced Redis caching for performance-sensitive workflows.",
+      "Designed REST API contracts for frontend teams and external services, then integrated Stripe and PayPal into payment workflows.",
+      "Mentored junior developers and used code reviews to strengthen consistency and maintainability.",
     ],
     tools: ["PHP", "MySQL", "Redis", "REST APIs", "Stripe"],
   },
@@ -39,7 +39,7 @@ export const ExperienceSection = () => (
       <SectionHeading
         eyebrow="01 / Experience"
         title="Where I’ve worked."
-        description="Across two engineering roles, I’ve built APIs for mobile and partner systems, improved database-backed performance, automated release workflows, and developed reporting services."
+        description="My experience spans production APIs and integrations, release automation, database performance work, and a Go reporting service—from implementation through delivery."
       />
       <div className="border-t-2 border-black">
         {roles.map((role) => (
