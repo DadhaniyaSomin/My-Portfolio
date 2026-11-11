@@ -8,10 +8,10 @@ export const HeroSection = () => (
           <span className="h-2.5 w-2.5 bg-primary" /> Somin Dadhaniya <span className="text-neutral-300">/</span> Backend engineer
         </div>
         <h1 className="max-w-5xl text-[clamp(3.8rem,10vw,7.6rem)] font-extrabold uppercase leading-[.84] tracking-[-.075em] text-black">
-          Backend systems.<br /><span className="text-primary">Built for reality.</span>
+          BEYOND THE API.<br /><span className="text-primary">INTO THE SYSTEM.</span>
         </h1>
         <p className="mt-10 max-w-2xl font-mono text-sm leading-7 tracking-wide text-neutral-700 md:text-base">
-          I’m Somin, a software engineer building dependable APIs, data systems, and cloud workflows with Go, PHP, and PostgreSQL.
+          I'm Somin, a backend engineer focused on designing and building reliable systems, scalable APIs, and data-driven applications using Go, PHP, and PostgreSQL.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="#projects" className="inline-flex h-12 items-center gap-2 border-2 border-black bg-primary px-5 text-xs font-bold uppercase tracking-widest text-black shadow-[4px_4px_0_#0a0a0a] transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-cyan-100 hover:shadow-[6px_6px_0_#0a0a0a]">
