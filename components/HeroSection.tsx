@@ -7,7 +7,7 @@ export const HeroSection = () => (
         <div className="mb-8 flex items-center gap-3 font-mono text-xs font-semibold uppercase tracking-[.16em] text-neutral-600">
           <span className="h-2.5 w-2.5 bg-primary" /> Somin Dadhaniya <span className="text-neutral-300">/</span> Backend engineer
         </div>
-        <h1 className="max-w-5xl text-[clamp(3.8rem,10vw,7.6rem)] font-extrabold uppercase leading-[.84] tracking-[-.075em] text-black">
+        <h1 className="max-w-5xl text-[clamp(3.8rem,5vw,7.6rem)] font-extrabold uppercase leading-[.84] tracking-[-.075em] text-black">
           BEYOND THE API.<br /><span className="text-primary">INTO THE SYSTEM.</span>
         </h1>
         <p className="mt-10 max-w-2xl font-mono text-sm leading-7 tracking-wide text-neutral-700 md:text-base">
