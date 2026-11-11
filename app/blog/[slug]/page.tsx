@@ -195,8 +195,8 @@ export default async function BlogDetailPage({
 
       {/* HERO */}
       <header className="border-b-2 border-black bg-neutral-50 pb-10 pt-28 md:pb-14">
-        <div className="container mx-auto max-w-4xl px-4 md:px-6">
-          <div>
+        <div className="container mx-auto max-w-6xl px-4 md:px-6">
+          <div className="max-w-4xl">
             <Link href="/blog" className="mb-6 flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-neutral-600 hover:text-cyan-800">
               <ArrowLeft className="h-4 w-4" />
               Back to Blog
