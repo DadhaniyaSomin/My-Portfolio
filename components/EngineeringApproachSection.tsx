@@ -2,19 +2,19 @@ import { GsapReveal } from "@/components/gsap/GsapReveal"
 
 const principles = [
   {
-    title: "Design the failure path.",
+    title: "Lead with curiosity.",
     description:
-      "Timeouts, retries, and clear API contracts matter as much as the happy path. I account for how a service behaves when its dependencies slow down or fail.",
+      "I listen for context before offering answers, ask questions early, and stay open to changing my view. Good decisions make room for different perspectives and honest uncertainty.",
   },
   {
-    title: "Measure before optimizing.",
+    title: "Be clear and dependable.",
     description:
-      "I look at the request and query paths before adding complexity. Query optimization and Redis caching reduced API response times by 25% in a performance-sensitive workflow.",
+      "I communicate what I can commit to, follow through, and raise concerns while there is still time to act. When plans change, I share that early and help the team adjust.",
   },
   {
-    title: "Make delivery repeatable.",
+    title: "Make room to learn.",
     description:
-      "Docker standardized local development, while GitHub Actions made testing and deployment more consistent. The goal is a setup teammates can use and maintain with confidence.",
+      "I give feedback with respect, receive it with curiosity, and treat mistakes as something to understand together. People learn faster when they can ask, disagree, and speak up without blame.",
   },
 ]
 
