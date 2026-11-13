@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/SectionHeading"
+import { GsapReveal } from "@/components/gsap/GsapReveal"
 
 const roles = [
   {
@@ -42,24 +43,26 @@ export const ExperienceSection = () => (
         description="My experience spans production APIs and integrations, release automation, database performance work, and a Go reporting service—from implementation through delivery."
       />
       <div className="border-t-2 border-black">
-        {roles.map((role) => (
-          <article key={role.company} className="grid gap-5 border-b border-neutral-300 py-8 md:grid-cols-[170px_1fr] md:gap-10 md:py-10">
-            <p className="font-mono text-xs font-semibold uppercase tracking-widest text-neutral-500">{role.dates}</p>
-            <div>
-              <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h3 className="text-2xl font-extrabold tracking-tight text-black md:text-3xl">{role.role}</h3>
-                <a href={role.url} target="_blank" rel="noopener noreferrer" className="font-mono text-sm font-semibold text-cyan-800 underline decoration-cyan-300 underline-offset-4 hover:text-black">{role.company} ↗</a>
-                <span className="font-mono text-xs text-neutral-500">{role.location}</span>
+        {roles.map((role, index) => (
+          <GsapReveal key={role.company} delay={index * 0.08}>
+            <article className="grid gap-5 border-b border-neutral-300 py-8 md:grid-cols-[170px_1fr] md:gap-10 md:py-10">
+              <p className="font-mono text-xs font-semibold uppercase tracking-widest text-neutral-500">{role.dates}</p>
+              <div>
+                <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <h3 className="text-2xl font-extrabold tracking-tight text-black md:text-3xl">{role.role}</h3>
+                  <a href={role.url} target="_blank" rel="noopener noreferrer" className="font-mono text-sm font-semibold text-cyan-800 underline decoration-cyan-300 underline-offset-4 hover:text-black">{role.company} ↗</a>
+                  <span className="font-mono text-xs text-neutral-500">{role.location}</span>
+                </div>
+                <p className="mb-5 max-w-3xl border-l-4 border-primary bg-cyan-50 px-4 py-3 font-mono text-xs leading-6 text-neutral-800 md:text-sm">{role.outcome}</p>
+                <ul className="mb-5 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-700">
+                  {role.points.map((point) => <li key={point}>{point}</li>)}
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {role.tools.map((tool) => <span key={tool} className="border border-neutral-300 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-neutral-600">{tool}</span>)}
+                </div>
               </div>
-              <p className="mb-5 max-w-3xl border-l-4 border-primary bg-cyan-50 px-4 py-3 font-mono text-xs leading-6 text-neutral-800 md:text-sm">{role.outcome}</p>
-              <ul className="mb-5 max-w-3xl list-disc space-y-2 pl-5 text-sm leading-6 text-neutral-700">
-                {role.points.map((point) => <li key={point}>{point}</li>)}
-              </ul>
-              <div className="flex flex-wrap gap-2">
-                {role.tools.map((tool) => <span key={tool} className="border border-neutral-300 px-2 py-1 font-mono text-[10px] uppercase tracking-wide text-neutral-600">{tool}</span>)}
-              </div>
-            </div>
-          </article>
+            </article>
+          </GsapReveal>
         ))}
       </div>
     </div>

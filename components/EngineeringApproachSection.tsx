@@ -1,3 +1,5 @@
+import { GsapReveal } from "@/components/gsap/GsapReveal"
+
 const principles = [
   {
     title: "Design the failure path.",
@@ -36,22 +38,21 @@ export const EngineeringApproachSection = () => {
 
         <div className="border-t-2 border-black">
           {principles.map((principle, index) => (
-            <article
-              key={principle.title}
-              className="grid gap-4 border-b border-neutral-300 py-7 md:grid-cols-[48px_1fr] md:gap-8 md:py-8"
-            >
-              <span className="font-mono text-xs font-semibold text-cyan-800">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3 className="text-xl font-extrabold leading-tight md:text-2xl">
-                  {principle.title}
-                </h3>
-                <p className="mt-3 max-w-2xl font-mono text-xs leading-6 text-neutral-600 md:text-sm md:leading-7">
-                  {principle.description}
-                </p>
-              </div>
-            </article>
+            <GsapReveal key={principle.title} delay={index * 0.06}>
+              <article className="grid gap-4 border-b border-neutral-300 py-7 md:grid-cols-[48px_1fr] md:gap-8 md:py-8">
+                <span className="font-mono text-xs font-semibold text-cyan-800">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-xl font-extrabold leading-tight md:text-2xl">
+                    {principle.title}
+                  </h3>
+                  <p className="mt-3 max-w-2xl font-mono text-xs leading-6 text-neutral-600 md:text-sm md:leading-7">
+                    {principle.description}
+                  </p>
+                </div>
+              </article>
+            </GsapReveal>
           ))}
         </div>
       </div>

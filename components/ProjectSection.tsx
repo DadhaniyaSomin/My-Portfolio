@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react"
 import { ProjectCard } from "./ProjectCard"
+import { GsapReveal } from "@/components/gsap/GsapReveal"
 
 interface Project {
   id: string
@@ -28,7 +29,11 @@ export default function ProjectSection({ initialProjects = [] }: { initialProjec
 
         {projects.length ? (
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => <ProjectCard key={project.id} project={project} />)}
+            {projects.map((project, index) => (
+              <GsapReveal key={project.id} className="h-full" delay={index * 0.06}>
+                <ProjectCard project={project} />
+              </GsapReveal>
+            ))}
           </div>
         ) : (
           <p className="border-2 border-black bg-white p-6 font-mono text-sm text-neutral-600">
